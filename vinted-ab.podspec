@@ -20,7 +20,7 @@ DESC
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Andrius Janauskas" => "andrius.janauskas@vinted.com" }
-  s.source       = { :git => "https://github.com/vinted/vinted-ab-ios", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/vinted/vinted-ab-ios.git", :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
