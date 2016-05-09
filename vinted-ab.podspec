@@ -16,11 +16,11 @@ pick the needed level of isolation. Each test also has a seed,
 which is used to randomise how users are divided among test
 variants.
 DESC
-  s.homepage     = "git@github.com:vinted/vinted-ab-ios.git"
+  s.homepage     = "https://github.com/vinted/vinted-ab-ios"
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Andrius Janauskas" => "andrius.janauskas@vinted.com" }
-  s.source       = { :git => "git@github.com:vinted/vinted-ab-ios.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/vinted/vinted-ab-ios", :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
