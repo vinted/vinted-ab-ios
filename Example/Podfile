@@ -1,0 +1,8 @@
+use_frameworks!
+
+
+target 'vinted-ab_Tests', :exclusive => true do
+  pod 'vinted-ab', :path => '../'
+
+  
+end
