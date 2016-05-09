@@ -1,0 +1,1 @@
+../../../../../vinted-ab/Classes/VNTABTestConfig.h

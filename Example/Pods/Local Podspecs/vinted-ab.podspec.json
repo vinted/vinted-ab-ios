@@ -1,0 +1,31 @@
+{
+  "name": "vinted-ab",
+  "version": "1.1.0",
+  "summary": "Vinted AB testing framework.",
+  "description": "Vinted AB testing framework.\n* What it is - Vinted AB testing framework is used to determine\nwhether an identifier belongs to a particular ab test and which\nvariant of that ab test. Identifiers will usually represent users,\nbut other scenario are possible.\n* High-level description - Identifiers are divided into some\nnumber of buckets, using hashing. Before a test is started,\nbuckets are chosen for that test. That gives the ability to\npick the needed level of isolation. Each test also has a seed,\nwhich is used to randomise how users are divided among test\nvariants.",
+  "homepage": "https://github.com/vinted/ab-ios",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Andrius Janauskas": "andrius.janauskas@vinted.com"
+  },
+  "source": {
+    "git": "https://github.com/vinted/ab-ios.git",
+    "tag": "1.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "vinted-ab/Classes/**/*",
+  "public_header_files": "Pod/Classes/**/*.h",
+  "dependencies": {
+    "JKBigInteger": [
+      "~> 0.0.1"
+    ],
+    "JSONModel": [
+      "~> 1.0.1"
+    ]
+  }
+}

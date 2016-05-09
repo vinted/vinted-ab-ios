@@ -1,0 +1,1170 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02E501BBA4C318B2113681E8FCF4A981 /* JKBigInteger.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C98A92B41EB86667FEA40396B1615FB /* JKBigInteger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		055223CF16C7360841321870BD8CFBE5 /* JSONKeyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 155DF80678C3517A1B44D8F08D85CDA6 /* JSONKeyMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FB22465DC41157D858E19CB8FE5FB7E /* tommath.c in Sources */ = {isa = PBXBuildFile; fileRef = A20BB7953799B9DE783B8B7407EC430B /* tommath.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		11BD202F9F8B93D302FCED814445BCC5 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F84691C32B3B3042CD055D8A063205 /* JSONModelError.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1BBE651863F33D5A4B2F10C98170421D /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CEE8AC61B4C9DAA3DB860B20026910 /* JSONValueTransformer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1DC24D2D3CD1C58E15B71C463F6ECCB3 /* Pods-vinted-ab_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4796407E638CFFD99336424D5CD78AEE /* Pods-vinted-ab_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22D196F412CECADE1FBFB11CBA9747B6 /* Pods-vinted-ab_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3375954A706CB5FFEE74F8809B7F441B /* Pods-vinted-ab_Tests-dummy.m */; };
+		287B37167F2B5DA603FA64291F7FFFA0 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBAFD85C19E91FDF155A68A3045D18B /* JSONModelClassProperty.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2D832F290FFB1A17CDC11FA458FEA586 /* JSONModel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D277FE98DEFE1D41C249BCC71053EDB4 /* JSONModel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FCE5451CDCC43843CDB5D37EC42307F /* JSONModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98CFAA93ACDD39754B46F66FEA7357FF /* JSONModel.framework */; };
+		337D853DFE91A45486FA4E5C91228BB3 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 840692FDBFBF113DD59510E4C8FFB0BE /* JSONModel+networking.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3FB0CA854E193E42CFDAC6B3100B9261 /* JKBigInteger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A7605E550AC78828FF5CAE5B440B8026 /* JKBigInteger-dummy.m */; };
+		451CB74E149431699023AA6184CA07C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0364E7896EA848DD4B138DF83939695 /* Foundation.framework */; };
+		4DE003EC9B88E68B112FFD17A0C2E1AC /* JKBigInteger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D038B11AE22A093A18A51A19635F99F6 /* JKBigInteger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53B115375C8F85EB157F86835C66FD79 /* VNTABTestVariant.m in Sources */ = {isa = PBXBuildFile; fileRef = A35F4A8F996A59623C620749887C03DE /* VNTABTestVariant.m */; };
+		54756F953CFFFD98FF02680D384BD6B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0364E7896EA848DD4B138DF83939695 /* Foundation.framework */; };
+		556AA28F976A339B5239C14E8C6E13F5 /* vinted-ab-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E96DC8F44DEEE88F482F2EE73B929D /* vinted-ab-dummy.m */; };
+		5F78DC921FF80B1A4F41C9AF3E83E69D /* JSONModelLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 51846588B45F01F80AB5D4F04F974A4C /* JSONModelLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		605A119DB396AE1B797E67BD3FE2F7E5 /* JKBigInteger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C1063A6018B3C923C372C4B92FFEBC7 /* JKBigInteger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63B746A7021633C5F60353235BA47ED9 /* JSONAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = DA2ABF2503E57D8DA2ADBDFF0343C7CE /* JSONAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68133644F1CC15034CD2DA719608D3F5 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 958EA60B9E23243FE4AEA23DFC15BAC0 /* JSONModelArray.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6C1A09BFA3D2AAE949D1A128A2E94E57 /* JSONHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = EB14B00D61563138F3C4C7CC82400A24 /* JSONHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7547EF087EC7267A6788EF86D2BE8950 /* JSONModelClassProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 42041F6527A1C945CF8C590E735EE072 /* JSONModelClassProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76FBB555D961FA416B986BE338E21D4B /* tommath.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F87F3D9C06A4E18E8816752272CF709 /* tommath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FE4A6A4CC336375B0110155CC424B3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0364E7896EA848DD4B138DF83939695 /* Foundation.framework */; };
+		84ED1889D89189530E04883633474E2A /* VNTABTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C703D28FBA4032D3F0361A8AC00E714 /* VNTABTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C16645860940C9FFC3D8E427EE13DE5 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E1E4877F786519253C50A66574DD754 /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94BDF213C750BA8646CFFD1A7A3A5957 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0364E7896EA848DD4B138DF83939695 /* Foundation.framework */; };
+		9C98133E1175795D2E0E9DEEAA9999E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0364E7896EA848DD4B138DF83939695 /* Foundation.framework */; };
+		9F1C7DE543A7AA83B8868D5935BD2771 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FFD0B67B3758A1AD59649480585F02 /* Pods-dummy.m */; };
+		A8C4BB6BFD6EC4B6F20CBD8BE9B64D47 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3F745FBA535900EFE895C73817BBEE /* JSONKeyMapper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		ABAC02972EFB0E4820B0D8209147449E /* VNTABTestConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4457D6D54DB9361CCF05D6A6B1460C21 /* VNTABTestConfig.m */; };
+		AE2251C0564638EF498949C296CE60ED /* vinted-ab-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7AF86A737D1FCEE5CD89EC10773216B /* vinted-ab-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA60164DB139CCFA89C15344D21D6723 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 283E252C1924EC4FA7923A0DA2D0EB96 /* JSONHTTPClient.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		CFED87D1C93F39FB31368209FF6200B9 /* NSArray+JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = A24011531976480A4DE5B73A94917380 /* NSArray+JSONModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D20D39E2229A3F71D2E7926DBCB844BA /* JSONModelError.h in Headers */ = {isa = PBXBuildFile; fileRef = E7936C29E18E227FC935C986AA34C1CF /* JSONModelError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D36A4B44EAB3D1A4B5D2897D6DBA237A /* JSONModelArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 35557F9C304C7B027856FD46DD407FE1 /* JSONModelArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4F4119C3249326F838BC725FF63C502 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEDB164AA0F225F45C42B2430601E0E /* JSONAPI.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DEB8E9D70D141D8320637E2B6DE88680 /* VNTABTestConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FEE41494D4A10344EC9DFD262F894B3 /* VNTABTestConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6AC9CC428A70DC3B7FC721ED7B4C0A5 /* JKBigInteger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6214E7892B0F3A69FDD59DC5129CF4F /* JKBigInteger.framework */; };
+		ECDD6B4CEB787E79EA5EE26662053E9C /* JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = B74AD814A6DF31BA4E6148ECB6CAC85B /* JSONModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE8C87FA5B21A6B1BDEAFE77246285C6 /* tommath_superclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FCD2B8379F4A2BE27A171F0EECFE468 /* tommath_superclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF2120E2DBCE9F71D0C4A7C6A713A6B6 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EA8AB2D1C35897561A943642680FA6 /* JSONModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F0024353DAEBDB510E0D043C231989BD /* JSONModel+networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 718EF9A5A6AAE9ED2606F252CB98895A /* JSONModel+networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F0D2611AB66DB1C7306EC6FB4B8AB703 /* VNTABTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22EBA7E343C10F1888ADB793478FB465 /* VNTABTest.m */; };
+		F4D841DB8732586D516532E00E459E30 /* tommath_class.h in Headers */ = {isa = PBXBuildFile; fileRef = 78524F1E161D37BEA6E89A6843D15644 /* tommath_class.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F75F9331BDDE295E2273596CFFD5B62A /* JSONValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 80BD180C953D2367C50631EDDF7FD9E5 /* JSONValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8F954F962A88B25DFB3A2FE81C59ACC /* JSONModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C0332E3B3B42972A5B9D716716DC56 /* JSONModel-dummy.m */; };
+		F9E9A516070213F5BE11C36E22B3FB12 /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 941CC825C31878193B7DE6D3065D3F38 /* NSArray+JSONModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F9FB5D1C83358346AF94E1904D2558F6 /* VNTABTestVariant.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D1F6D543E7817F213C2CC3002064740 /* VNTABTestVariant.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0280012EC9263DF9E6299E5FF1BBEA19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E0756BE0C5B560A735A90229119FF8A;
+			remoteInfo = JSONModel;
+		};
+		0990FDC19024A51368A7C93E8A2BC8E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 150473D71E6386B3630214A49C9A089C;
+			remoteInfo = "vinted-ab";
+		};
+		20808D5D2D4FCC6BE1448AC124B73DAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E0756BE0C5B560A735A90229119FF8A;
+			remoteInfo = JSONModel;
+		};
+		5F51DBBFAD75AB761B827734FD7AE897 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCAF8E9506A4D1A0D7BA3EEAF97A525B;
+			remoteInfo = JKBigInteger;
+		};
+		6BA2E456FE6D7766C7578E9A42D70C2A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5E0756BE0C5B560A735A90229119FF8A;
+			remoteInfo = JSONModel;
+		};
+		9B64A9D9770B1DFA3C4546892855BD6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCAF8E9506A4D1A0D7BA3EEAF97A525B;
+			remoteInfo = JKBigInteger;
+		};
+		F6C6B05CC81D45A4453C5EA8A7BF4D2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCAF8E9506A4D1A0D7BA3EEAF97A525B;
+			remoteInfo = JKBigInteger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02FFD0B67B3758A1AD59649480585F02 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		07CEE8AC61B4C9DAA3DB860B20026910 /* JSONValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONValueTransformer.m; path = JSONModel/JSONModelTransformations/JSONValueTransformer.m; sourceTree = "<group>"; };
+		083C7A5B83EE27FE8752528844E95A84 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		0D1F6D543E7817F213C2CC3002064740 /* VNTABTestVariant.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VNTABTestVariant.h; sourceTree = "<group>"; };
+		0E1E4877F786519253C50A66574DD754 /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		0F87F3D9C06A4E18E8816752272CF709 /* tommath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = tommath.h; path = JKBigInteger/LibTomMath/tommath.h; sourceTree = "<group>"; };
+		155DF80678C3517A1B44D8F08D85CDA6 /* JSONKeyMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONKeyMapper.h; path = JSONModel/JSONModelTransformations/JSONKeyMapper.h; sourceTree = "<group>"; };
+		1B3F745FBA535900EFE895C73817BBEE /* JSONKeyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONKeyMapper.m; path = JSONModel/JSONModelTransformations/JSONKeyMapper.m; sourceTree = "<group>"; };
+		22EA8AB2D1C35897561A943642680FA6 /* JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModel.m; path = JSONModel/JSONModel/JSONModel.m; sourceTree = "<group>"; };
+		22EBA7E343C10F1888ADB793478FB465 /* VNTABTest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VNTABTest.m; sourceTree = "<group>"; };
+		27885E11B5B38708AB8A64FA2FBD54D7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		283E252C1924EC4FA7923A0DA2D0EB96 /* JSONHTTPClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONHTTPClient.m; path = JSONModel/JSONModelNetworking/JSONHTTPClient.m; sourceTree = "<group>"; };
+		2BAB1F0BFA480C50BE0A2E8C96DF3755 /* JSONModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3375954A706CB5FFEE74F8809B7F441B /* Pods-vinted-ab_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-vinted-ab_Tests-dummy.m"; sourceTree = "<group>"; };
+		340BCCD300DD09F0C796737040D56E13 /* JKBigInteger.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JKBigInteger.xcconfig; sourceTree = "<group>"; };
+		35557F9C304C7B027856FD46DD407FE1 /* JSONModelArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelArray.h; path = JSONModel/JSONModel/JSONModelArray.h; sourceTree = "<group>"; };
+		37E434B575082E357119698525434C6C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39F24F2FD69CBFFBAB4D3B5B3906593E /* Pods-vinted-ab_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-vinted-ab_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		3CE3C8611A884ABDE11827BA64CE4149 /* JSONModel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSONModel-prefix.pch"; sourceTree = "<group>"; };
+		3E2DA2C5A1515EBA35F245D24FB0E7E2 /* Pods_vinted_ab_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vinted_ab_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FCD2B8379F4A2BE27A171F0EECFE468 /* tommath_superclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = tommath_superclass.h; path = JKBigInteger/LibTomMath/tommath_superclass.h; sourceTree = "<group>"; };
+		42041F6527A1C945CF8C590E735EE072 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelClassProperty.h; path = JSONModel/JSONModel/JSONModelClassProperty.h; sourceTree = "<group>"; };
+		43A2B95364FB3018292E34CAD4B2F813 /* Pods-vinted-ab_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-vinted-ab_Tests-resources.sh"; sourceTree = "<group>"; };
+		4457D6D54DB9361CCF05D6A6B1460C21 /* VNTABTestConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VNTABTestConfig.m; sourceTree = "<group>"; };
+		45F9511350E1EAF7608FDE3B23C71DE2 /* JKBigInteger-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "JKBigInteger-Private.xcconfig"; sourceTree = "<group>"; };
+		4796407E638CFFD99336424D5CD78AEE /* Pods-vinted-ab_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-vinted-ab_Tests-umbrella.h"; sourceTree = "<group>"; };
+		4B3ECDA2222CA1CB245A258510C61F42 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EBAFD85C19E91FDF155A68A3045D18B /* JSONModelClassProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelClassProperty.m; path = JSONModel/JSONModel/JSONModelClassProperty.m; sourceTree = "<group>"; };
+		4FEDB164AA0F225F45C42B2430601E0E /* JSONAPI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONAPI.m; path = JSONModel/JSONModelNetworking/JSONAPI.m; sourceTree = "<group>"; };
+		50DACB50717BEF0225AB8A63FCC1E886 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
+		51846588B45F01F80AB5D4F04F974A4C /* JSONModelLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelLib.h; path = JSONModel/JSONModelLib.h; sourceTree = "<group>"; };
+		59F84691C32B3B3042CD055D8A063205 /* JSONModelError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelError.m; path = JSONModel/JSONModel/JSONModelError.m; sourceTree = "<group>"; };
+		5A3E16713CFAB461CBE390ABA9E5C54B /* Pods-vinted-ab_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-vinted-ab_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5C1063A6018B3C923C372C4B92FFEBC7 /* JKBigInteger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JKBigInteger.h; path = JKBigInteger/JKBigInteger.h; sourceTree = "<group>"; };
+		5FEE41494D4A10344EC9DFD262F894B3 /* VNTABTestConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VNTABTestConfig.h; sourceTree = "<group>"; };
+		643943BE3AF7A4F29DD68947D8DBBECD /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		68E96DC8F44DEEE88F482F2EE73B929D /* vinted-ab-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "vinted-ab-dummy.m"; sourceTree = "<group>"; };
+		6C98A92B41EB86667FEA40396B1615FB /* JKBigInteger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JKBigInteger.m; path = JKBigInteger/JKBigInteger.m; sourceTree = "<group>"; };
+		6F22472A25D5462865DE1A170B765B40 /* JSONModel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JSONModel.modulemap; sourceTree = "<group>"; };
+		718EF9A5A6AAE9ED2606F252CB98895A /* JSONModel+networking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "JSONModel+networking.h"; path = "JSONModel/JSONModelNetworking/JSONModel+networking.h"; sourceTree = "<group>"; };
+		78524F1E161D37BEA6E89A6843D15644 /* tommath_class.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = tommath_class.h; path = JKBigInteger/LibTomMath/tommath_class.h; sourceTree = "<group>"; };
+		7C60FFC9DEF49D896C6A728DB04727D0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80BD180C953D2367C50631EDDF7FD9E5 /* JSONValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONValueTransformer.h; path = JSONModel/JSONModelTransformations/JSONValueTransformer.h; sourceTree = "<group>"; };
+		840692FDBFBF113DD59510E4C8FFB0BE /* JSONModel+networking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "JSONModel+networking.m"; path = "JSONModel/JSONModelNetworking/JSONModel+networking.m"; sourceTree = "<group>"; };
+		86C816F593E5DC9D4CFB02A3DE0D4DD9 /* JSONModel-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "JSONModel-Private.xcconfig"; sourceTree = "<group>"; };
+		8C703D28FBA4032D3F0361A8AC00E714 /* VNTABTest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = VNTABTest.h; sourceTree = "<group>"; };
+		8DA77380D2227A40F6E5C97DF4C8ABAF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		8F2F3A08D3916886A6E20EEF30D9E67A /* vinted-ab-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "vinted-ab-Private.xcconfig"; sourceTree = "<group>"; };
+		90DA97A90D9A9CF7A5B644302BC10DA5 /* Pods-vinted-ab_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-vinted-ab_Tests.modulemap"; sourceTree = "<group>"; };
+		941CC825C31878193B7DE6D3065D3F38 /* NSArray+JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+JSONModel.m"; path = "JSONModel/JSONModelCategories/NSArray+JSONModel.m"; sourceTree = "<group>"; };
+		958EA60B9E23243FE4AEA23DFC15BAC0 /* JSONModelArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelArray.m; path = JSONModel/JSONModel/JSONModelArray.m; sourceTree = "<group>"; };
+		97A0A5C75952746A3219E82743DFD012 /* JKBigInteger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JKBigInteger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98CFAA93ACDD39754B46F66FEA7357FF /* JSONModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0364E7896EA848DD4B138DF83939695 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A1AD1176A3EFE0AA1E943176F9CE3156 /* Pods-vinted-ab_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-vinted-ab_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A20BB7953799B9DE783B8B7407EC430B /* tommath.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = tommath.c; path = JKBigInteger/LibTomMath/tommath.c; sourceTree = "<group>"; };
+		A24011531976480A4DE5B73A94917380 /* NSArray+JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+JSONModel.h"; path = "JSONModel/JSONModelCategories/NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		A35F4A8F996A59623C620749887C03DE /* VNTABTestVariant.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VNTABTestVariant.m; sourceTree = "<group>"; };
+		A7605E550AC78828FF5CAE5B440B8026 /* JKBigInteger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JKBigInteger-dummy.m"; sourceTree = "<group>"; };
+		B2A45CA171227ACB2E1332E561633D2E /* Pods-vinted-ab_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-vinted-ab_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B301834EDA24FEADFB1AED7AD9109F01 /* JKBigInteger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JKBigInteger-prefix.pch"; sourceTree = "<group>"; };
+		B44DF93F85EA020D47094824987378AE /* JSONModel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JSONModel.xcconfig; sourceTree = "<group>"; };
+		B6214E7892B0F3A69FDD59DC5129CF4F /* JKBigInteger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JKBigInteger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B74AD814A6DF31BA4E6148ECB6CAC85B /* JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModel.h; path = JSONModel/JSONModel/JSONModel.h; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BBEB65A523BB09A0A76F7ED4DADA1B0B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C58E09B1DA52BCE4CD9D128E2EB02812 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6C0332E3B3B42972A5B9D716716DC56 /* JSONModel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JSONModel-dummy.m"; sourceTree = "<group>"; };
+		C7AF86A737D1FCEE5CD89EC10773216B /* vinted-ab-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "vinted-ab-umbrella.h"; sourceTree = "<group>"; };
+		CFAA46C749669BEC9377A4ECD118082E /* vinted-ab.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "vinted-ab.xcconfig"; sourceTree = "<group>"; };
+		D038B11AE22A093A18A51A19635F99F6 /* JKBigInteger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JKBigInteger-umbrella.h"; sourceTree = "<group>"; };
+		D2359EE259C60CFDDF30190558FCE562 /* JKBigInteger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = JKBigInteger.modulemap; sourceTree = "<group>"; };
+		D277FE98DEFE1D41C249BCC71053EDB4 /* JSONModel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JSONModel-umbrella.h"; sourceTree = "<group>"; };
+		DA2ABF2503E57D8DA2ADBDFF0343C7CE /* JSONAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONAPI.h; path = JSONModel/JSONModelNetworking/JSONAPI.h; sourceTree = "<group>"; };
+		E4F584519FDC6FDAEE213DBAC66D69DC /* vinted_ab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = vinted_ab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E51FEA2BDD70FB7217EDBF0D6AFD2632 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		E7936C29E18E227FC935C986AA34C1CF /* JSONModelError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelError.h; path = JSONModel/JSONModel/JSONModelError.h; sourceTree = "<group>"; };
+		EB13164A674A613C5593D1D16212B81C /* Pods-vinted-ab_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-vinted-ab_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		EB14B00D61563138F3C4C7CC82400A24 /* JSONHTTPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONHTTPClient.h; path = JSONModel/JSONModelNetworking/JSONHTTPClient.h; sourceTree = "<group>"; };
+		F0FB76BAA5E2291064E7FEDFFA1A03F7 /* vinted-ab-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "vinted-ab-prefix.pch"; sourceTree = "<group>"; };
+		F22109E8F1280709CB7363605030BE19 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		F25816752787BD2AED18E02A87EC7E5C /* vinted-ab.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "vinted-ab.modulemap"; sourceTree = "<group>"; };
+		F56C1ED9D5A021CE84187B5667ADE457 /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		002F1916CA42CD46F7197EB681A492D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451CB74E149431699023AA6184CA07C8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CAE5CB1A6C87147F377F821373C3512 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C98133E1175795D2E0E9DEEAA9999E1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		585186F7260CF76EF460AE50C738A31A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94BDF213C750BA8646CFFD1A7A3A5957 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6B3E87BABC283147D82BEF9FDE5CAB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE4A6A4CC336375B0110155CC424B3B /* Foundation.framework in Frameworks */,
+				E6AC9CC428A70DC3B7FC721ED7B4C0A5 /* JKBigInteger.framework in Frameworks */,
+				2FCE5451CDCC43843CDB5D37EC42307F /* JSONModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E81A4BD9940943265C63AD6B3916DD9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54756F953CFFFD98FF02680D384BD6B7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2820A412438AF731DB680CB5E2AE3D69 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				59A257824E309F2C133F6AC3A4E6CC18 /* Pods */,
+				293418DC099EFC1CA8BF279E26D9A593 /* Pods-vinted-ab_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		293418DC099EFC1CA8BF279E26D9A593 /* Pods-vinted-ab_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4B3ECDA2222CA1CB245A258510C61F42 /* Info.plist */,
+				90DA97A90D9A9CF7A5B644302BC10DA5 /* Pods-vinted-ab_Tests.modulemap */,
+				5A3E16713CFAB461CBE390ABA9E5C54B /* Pods-vinted-ab_Tests-acknowledgements.markdown */,
+				39F24F2FD69CBFFBAB4D3B5B3906593E /* Pods-vinted-ab_Tests-acknowledgements.plist */,
+				3375954A706CB5FFEE74F8809B7F441B /* Pods-vinted-ab_Tests-dummy.m */,
+				EB13164A674A613C5593D1D16212B81C /* Pods-vinted-ab_Tests-frameworks.sh */,
+				43A2B95364FB3018292E34CAD4B2F813 /* Pods-vinted-ab_Tests-resources.sh */,
+				4796407E638CFFD99336424D5CD78AEE /* Pods-vinted-ab_Tests-umbrella.h */,
+				B2A45CA171227ACB2E1332E561633D2E /* Pods-vinted-ab_Tests.debug.xcconfig */,
+				A1AD1176A3EFE0AA1E943176F9CE3156 /* Pods-vinted-ab_Tests.release.xcconfig */,
+			);
+			name = "Pods-vinted-ab_Tests";
+			path = "Target Support Files/Pods-vinted-ab_Tests";
+			sourceTree = "<group>";
+		};
+		3EF3AC374FB4C53A813B905BFB31E784 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6214E7892B0F3A69FDD59DC5129CF4F /* JKBigInteger.framework */,
+				98CFAA93ACDD39754B46F66FEA7357FF /* JSONModel.framework */,
+				D9C3F5FAE3E1A93020DFA905C6320F7C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4EBB88DBFBF5856A572B646A1BC89EF6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7C60FFC9DEF49D896C6A728DB04727D0 /* Info.plist */,
+				F25816752787BD2AED18E02A87EC7E5C /* vinted-ab.modulemap */,
+				CFAA46C749669BEC9377A4ECD118082E /* vinted-ab.xcconfig */,
+				8F2F3A08D3916886A6E20EEF30D9E67A /* vinted-ab-Private.xcconfig */,
+				68E96DC8F44DEEE88F482F2EE73B929D /* vinted-ab-dummy.m */,
+				F0FB76BAA5E2291064E7FEDFFA1A03F7 /* vinted-ab-prefix.pch */,
+				C7AF86A737D1FCEE5CD89EC10773216B /* vinted-ab-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/vinted-ab";
+			sourceTree = "<group>";
+		};
+		4F98384ADE725741B283D566FCA172EC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBEB65A523BB09A0A76F7ED4DADA1B0B /* Info.plist */,
+				6F22472A25D5462865DE1A170B765B40 /* JSONModel.modulemap */,
+				B44DF93F85EA020D47094824987378AE /* JSONModel.xcconfig */,
+				86C816F593E5DC9D4CFB02A3DE0D4DD9 /* JSONModel-Private.xcconfig */,
+				C6C0332E3B3B42972A5B9D716716DC56 /* JSONModel-dummy.m */,
+				3CE3C8611A884ABDE11827BA64CE4149 /* JSONModel-prefix.pch */,
+				D277FE98DEFE1D41C249BCC71053EDB4 /* JSONModel-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JSONModel";
+			sourceTree = "<group>";
+		};
+		5581A4F6E6E25B67FF941A44599398C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F5BE08529A902FBDBF8F5F509BA9C6B /* JKBigInteger */,
+				A3088E05884969E4538E0541FE653447 /* JSONModel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		59A257824E309F2C133F6AC3A4E6CC18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C58E09B1DA52BCE4CD9D128E2EB02812 /* Info.plist */,
+				F56C1ED9D5A021CE84187B5667ADE457 /* Pods.modulemap */,
+				643943BE3AF7A4F29DD68947D8DBBECD /* Pods-acknowledgements.markdown */,
+				E51FEA2BDD70FB7217EDBF0D6AFD2632 /* Pods-acknowledgements.plist */,
+				02FFD0B67B3758A1AD59649480585F02 /* Pods-dummy.m */,
+				50DACB50717BEF0225AB8A63FCC1E886 /* Pods-frameworks.sh */,
+				083C7A5B83EE27FE8752528844E95A84 /* Pods-resources.sh */,
+				0E1E4877F786519253C50A66574DD754 /* Pods-umbrella.h */,
+				F22109E8F1280709CB7363605030BE19 /* Pods.debug.xcconfig */,
+				8DA77380D2227A40F6E5C97DF4C8ABAF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		5EB53679B012D7F75B08EB1C7F23833B /* vinted-ab */ = {
+			isa = PBXGroup;
+			children = (
+				4EBB88DBFBF5856A572B646A1BC89EF6 /* Support Files */,
+				8801ADBA40AEBC01C0BCC19AF962394E /* vinted-ab */,
+			);
+			name = "vinted-ab";
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				D2E8E125A46050F1E171C0E08556CAAA /* Development Pods */,
+				3EF3AC374FB4C53A813B905BFB31E784 /* Frameworks */,
+				5581A4F6E6E25B67FF941A44599398C2 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				2820A412438AF731DB680CB5E2AE3D69 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7F5BE08529A902FBDBF8F5F509BA9C6B /* JKBigInteger */ = {
+			isa = PBXGroup;
+			children = (
+				5C1063A6018B3C923C372C4B92FFEBC7 /* JKBigInteger.h */,
+				6C98A92B41EB86667FEA40396B1615FB /* JKBigInteger.m */,
+				A20BB7953799B9DE783B8B7407EC430B /* tommath.c */,
+				0F87F3D9C06A4E18E8816752272CF709 /* tommath.h */,
+				78524F1E161D37BEA6E89A6843D15644 /* tommath_class.h */,
+				3FCD2B8379F4A2BE27A171F0EECFE468 /* tommath_superclass.h */,
+				9815B67998BA4C05D01C65ED5EA38DF5 /* Support Files */,
+			);
+			path = JKBigInteger;
+			sourceTree = "<group>";
+		};
+		8801ADBA40AEBC01C0BCC19AF962394E /* vinted-ab */ = {
+			isa = PBXGroup;
+			children = (
+				A02C2B42365F922DC77EE95460BE1032 /* Classes */,
+			);
+			path = "vinted-ab";
+			sourceTree = "<group>";
+		};
+		9815B67998BA4C05D01C65ED5EA38DF5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				37E434B575082E357119698525434C6C /* Info.plist */,
+				D2359EE259C60CFDDF30190558FCE562 /* JKBigInteger.modulemap */,
+				340BCCD300DD09F0C796737040D56E13 /* JKBigInteger.xcconfig */,
+				45F9511350E1EAF7608FDE3B23C71DE2 /* JKBigInteger-Private.xcconfig */,
+				A7605E550AC78828FF5CAE5B440B8026 /* JKBigInteger-dummy.m */,
+				B301834EDA24FEADFB1AED7AD9109F01 /* JKBigInteger-prefix.pch */,
+				D038B11AE22A093A18A51A19635F99F6 /* JKBigInteger-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JKBigInteger";
+			sourceTree = "<group>";
+		};
+		A02C2B42365F922DC77EE95460BE1032 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8C703D28FBA4032D3F0361A8AC00E714 /* VNTABTest.h */,
+				22EBA7E343C10F1888ADB793478FB465 /* VNTABTest.m */,
+				5FEE41494D4A10344EC9DFD262F894B3 /* VNTABTestConfig.h */,
+				4457D6D54DB9361CCF05D6A6B1460C21 /* VNTABTestConfig.m */,
+				0D1F6D543E7817F213C2CC3002064740 /* VNTABTestVariant.h */,
+				A35F4A8F996A59623C620749887C03DE /* VNTABTestVariant.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A3088E05884969E4538E0541FE653447 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				DA2ABF2503E57D8DA2ADBDFF0343C7CE /* JSONAPI.h */,
+				4FEDB164AA0F225F45C42B2430601E0E /* JSONAPI.m */,
+				EB14B00D61563138F3C4C7CC82400A24 /* JSONHTTPClient.h */,
+				283E252C1924EC4FA7923A0DA2D0EB96 /* JSONHTTPClient.m */,
+				155DF80678C3517A1B44D8F08D85CDA6 /* JSONKeyMapper.h */,
+				1B3F745FBA535900EFE895C73817BBEE /* JSONKeyMapper.m */,
+				B74AD814A6DF31BA4E6148ECB6CAC85B /* JSONModel.h */,
+				22EA8AB2D1C35897561A943642680FA6 /* JSONModel.m */,
+				718EF9A5A6AAE9ED2606F252CB98895A /* JSONModel+networking.h */,
+				840692FDBFBF113DD59510E4C8FFB0BE /* JSONModel+networking.m */,
+				35557F9C304C7B027856FD46DD407FE1 /* JSONModelArray.h */,
+				958EA60B9E23243FE4AEA23DFC15BAC0 /* JSONModelArray.m */,
+				42041F6527A1C945CF8C590E735EE072 /* JSONModelClassProperty.h */,
+				4EBAFD85C19E91FDF155A68A3045D18B /* JSONModelClassProperty.m */,
+				E7936C29E18E227FC935C986AA34C1CF /* JSONModelError.h */,
+				59F84691C32B3B3042CD055D8A063205 /* JSONModelError.m */,
+				51846588B45F01F80AB5D4F04F974A4C /* JSONModelLib.h */,
+				80BD180C953D2367C50631EDDF7FD9E5 /* JSONValueTransformer.h */,
+				07CEE8AC61B4C9DAA3DB860B20026910 /* JSONValueTransformer.m */,
+				A24011531976480A4DE5B73A94917380 /* NSArray+JSONModel.h */,
+				941CC825C31878193B7DE6D3065D3F38 /* NSArray+JSONModel.m */,
+				4F98384ADE725741B283D566FCA172EC /* Support Files */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97A0A5C75952746A3219E82743DFD012 /* JKBigInteger.framework */,
+				2BAB1F0BFA480C50BE0A2E8C96DF3755 /* JSONModel.framework */,
+				27885E11B5B38708AB8A64FA2FBD54D7 /* Pods.framework */,
+				3E2DA2C5A1515EBA35F245D24FB0E7E2 /* Pods_vinted_ab_Tests.framework */,
+				E4F584519FDC6FDAEE213DBAC66D69DC /* vinted_ab.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2E8E125A46050F1E171C0E08556CAAA /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EB53679B012D7F75B08EB1C7F23833B /* vinted-ab */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		D9C3F5FAE3E1A93020DFA905C6320F7C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A0364E7896EA848DD4B138DF83939695 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		157097262E4FFE02F8ADD8F0E4420FFC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84ED1889D89189530E04883633474E2A /* VNTABTest.h in Headers */,
+				DEB8E9D70D141D8320637E2B6DE88680 /* VNTABTestConfig.h in Headers */,
+				F9FB5D1C83358346AF94E1904D2558F6 /* VNTABTestVariant.h in Headers */,
+				AE2251C0564638EF498949C296CE60ED /* vinted-ab-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CCE0FE9A4DB59FBC68013B765996A7C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63B746A7021633C5F60353235BA47ED9 /* JSONAPI.h in Headers */,
+				6C1A09BFA3D2AAE949D1A128A2E94E57 /* JSONHTTPClient.h in Headers */,
+				055223CF16C7360841321870BD8CFBE5 /* JSONKeyMapper.h in Headers */,
+				F0024353DAEBDB510E0D043C231989BD /* JSONModel+networking.h in Headers */,
+				2D832F290FFB1A17CDC11FA458FEA586 /* JSONModel-umbrella.h in Headers */,
+				ECDD6B4CEB787E79EA5EE26662053E9C /* JSONModel.h in Headers */,
+				D36A4B44EAB3D1A4B5D2897D6DBA237A /* JSONModelArray.h in Headers */,
+				7547EF087EC7267A6788EF86D2BE8950 /* JSONModelClassProperty.h in Headers */,
+				D20D39E2229A3F71D2E7926DBCB844BA /* JSONModelError.h in Headers */,
+				5F78DC921FF80B1A4F41C9AF3E83E69D /* JSONModelLib.h in Headers */,
+				F75F9331BDDE295E2273596CFFD5B62A /* JSONValueTransformer.h in Headers */,
+				CFED87D1C93F39FB31368209FF6200B9 /* NSArray+JSONModel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8732BA32A017F5EEF5564C26F08CB863 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DE003EC9B88E68B112FFD17A0C2E1AC /* JKBigInteger-umbrella.h in Headers */,
+				605A119DB396AE1B797E67BD3FE2F7E5 /* JKBigInteger.h in Headers */,
+				76FBB555D961FA416B986BE338E21D4B /* tommath.h in Headers */,
+				F4D841DB8732586D516532E00E459E30 /* tommath_class.h in Headers */,
+				EE8C87FA5B21A6B1BDEAFE77246285C6 /* tommath_superclass.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B15F7BAD759A74AE81EC806482CE17CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C16645860940C9FFC3D8E427EE13DE5 /* Pods-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB5F36A2874BE2EC2C09524F11808507 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DC24D2D3CD1C58E15B71C463F6ECCB3 /* Pods-vinted-ab_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		150473D71E6386B3630214A49C9A089C /* vinted-ab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B0852CD3BF76A5F3FFFCD1A6EAE21F5 /* Build configuration list for PBXNativeTarget "vinted-ab" */;
+			buildPhases = (
+				578E550069689E5309C07DF034EE68B6 /* Sources */,
+				E6B3E87BABC283147D82BEF9FDE5CAB9 /* Frameworks */,
+				157097262E4FFE02F8ADD8F0E4420FFC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7AD6871320FB6A721ABE9AD492F065BD /* PBXTargetDependency */,
+				FBD0753802D1CD92C9D9A01CECA62BC3 /* PBXTargetDependency */,
+			);
+			name = "vinted-ab";
+			productName = "vinted-ab";
+			productReference = E4F584519FDC6FDAEE213DBAC66D69DC /* vinted_ab.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		41CFA22867F1E05212FF2B073FEA2306 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1768F0B0C4BE462EA717AC4E9AE4A05 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				C2D1D6E9AB6EEFAD3E9B0E223C21E62A /* Sources */,
+				E81A4BD9940943265C63AD6B3916DD9F /* Frameworks */,
+				B15F7BAD759A74AE81EC806482CE17CB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E22548CEB47711815A5E834F8F37A1CE /* PBXTargetDependency */,
+				B4660CE08A87AA31D9CDC4B04180611D /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 27885E11B5B38708AB8A64FA2FBD54D7 /* Pods.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5E0756BE0C5B560A735A90229119FF8A /* JSONModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E44ECCF0AB424C52FDAA03124B4D01CF /* Build configuration list for PBXNativeTarget "JSONModel" */;
+			buildPhases = (
+				1BD1AC049B2B0B68A8981260522F3076 /* Sources */,
+				585186F7260CF76EF460AE50C738A31A /* Frameworks */,
+				6CCE0FE9A4DB59FBC68013B765996A7C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSONModel;
+			productName = JSONModel;
+			productReference = 2BAB1F0BFA480C50BE0A2E8C96DF3755 /* JSONModel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5FE19E2BF158BD9D5F2CD7BDEB9EB1ED /* Pods-vinted-ab_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AB1B6893F065CDFE1D4F4E228EE08F9 /* Build configuration list for PBXNativeTarget "Pods-vinted-ab_Tests" */;
+			buildPhases = (
+				50D1010479FE24804EB84FFA3850F46C /* Sources */,
+				3CAE5CB1A6C87147F377F821373C3512 /* Frameworks */,
+				DB5F36A2874BE2EC2C09524F11808507 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7C607422F83DDF089FBDDB29BD6CA4B4 /* PBXTargetDependency */,
+				5F5243810E5AD7882E5E42D72B2C9C36 /* PBXTargetDependency */,
+				8866BF6201971AD53926905268DFD71F /* PBXTargetDependency */,
+			);
+			name = "Pods-vinted-ab_Tests";
+			productName = "Pods-vinted-ab_Tests";
+			productReference = 3E2DA2C5A1515EBA35F245D24FB0E7E2 /* Pods_vinted_ab_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BCAF8E9506A4D1A0D7BA3EEAF97A525B /* JKBigInteger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 573D9CF3707F8DAF7E44315D734C3DC5 /* Build configuration list for PBXNativeTarget "JKBigInteger" */;
+			buildPhases = (
+				F28326C20E8FCAEEA23AF6C2697CC01D /* Sources */,
+				002F1916CA42CD46F7197EB681A492D2 /* Frameworks */,
+				8732BA32A017F5EEF5564C26F08CB863 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JKBigInteger;
+			productName = JKBigInteger;
+			productReference = 97A0A5C75952746A3219E82743DFD012 /* JKBigInteger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCAF8E9506A4D1A0D7BA3EEAF97A525B /* JKBigInteger */,
+				5E0756BE0C5B560A735A90229119FF8A /* JSONModel */,
+				41CFA22867F1E05212FF2B073FEA2306 /* Pods */,
+				5FE19E2BF158BD9D5F2CD7BDEB9EB1ED /* Pods-vinted-ab_Tests */,
+				150473D71E6386B3630214A49C9A089C /* vinted-ab */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BD1AC049B2B0B68A8981260522F3076 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F4119C3249326F838BC725FF63C502 /* JSONAPI.m in Sources */,
+				CA60164DB139CCFA89C15344D21D6723 /* JSONHTTPClient.m in Sources */,
+				A8C4BB6BFD6EC4B6F20CBD8BE9B64D47 /* JSONKeyMapper.m in Sources */,
+				337D853DFE91A45486FA4E5C91228BB3 /* JSONModel+networking.m in Sources */,
+				F8F954F962A88B25DFB3A2FE81C59ACC /* JSONModel-dummy.m in Sources */,
+				EF2120E2DBCE9F71D0C4A7C6A713A6B6 /* JSONModel.m in Sources */,
+				68133644F1CC15034CD2DA719608D3F5 /* JSONModelArray.m in Sources */,
+				287B37167F2B5DA603FA64291F7FFFA0 /* JSONModelClassProperty.m in Sources */,
+				11BD202F9F8B93D302FCED814445BCC5 /* JSONModelError.m in Sources */,
+				1BBE651863F33D5A4B2F10C98170421D /* JSONValueTransformer.m in Sources */,
+				F9E9A516070213F5BE11C36E22B3FB12 /* NSArray+JSONModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50D1010479FE24804EB84FFA3850F46C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22D196F412CECADE1FBFB11CBA9747B6 /* Pods-vinted-ab_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		578E550069689E5309C07DF034EE68B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0D2611AB66DB1C7306EC6FB4B8AB703 /* VNTABTest.m in Sources */,
+				ABAC02972EFB0E4820B0D8209147449E /* VNTABTestConfig.m in Sources */,
+				53B115375C8F85EB157F86835C66FD79 /* VNTABTestVariant.m in Sources */,
+				556AA28F976A339B5239C14E8C6E13F5 /* vinted-ab-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2D1D6E9AB6EEFAD3E9B0E223C21E62A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F1C7DE543A7AA83B8868D5935BD2771 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F28326C20E8FCAEEA23AF6C2697CC01D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FB0CA854E193E42CFDAC6B3100B9261 /* JKBigInteger-dummy.m in Sources */,
+				02E501BBA4C318B2113681E8FCF4A981 /* JKBigInteger.m in Sources */,
+				0FB22465DC41157D858E19CB8FE5FB7E /* tommath.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F5243810E5AD7882E5E42D72B2C9C36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JSONModel;
+			target = 5E0756BE0C5B560A735A90229119FF8A /* JSONModel */;
+			targetProxy = 6BA2E456FE6D7766C7578E9A42D70C2A /* PBXContainerItemProxy */;
+		};
+		7AD6871320FB6A721ABE9AD492F065BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JKBigInteger;
+			target = BCAF8E9506A4D1A0D7BA3EEAF97A525B /* JKBigInteger */;
+			targetProxy = F6C6B05CC81D45A4453C5EA8A7BF4D2F /* PBXContainerItemProxy */;
+		};
+		7C607422F83DDF089FBDDB29BD6CA4B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JKBigInteger;
+			target = BCAF8E9506A4D1A0D7BA3EEAF97A525B /* JKBigInteger */;
+			targetProxy = 9B64A9D9770B1DFA3C4546892855BD6C /* PBXContainerItemProxy */;
+		};
+		8866BF6201971AD53926905268DFD71F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "vinted-ab";
+			target = 150473D71E6386B3630214A49C9A089C /* vinted-ab */;
+			targetProxy = 0990FDC19024A51368A7C93E8A2BC8E0 /* PBXContainerItemProxy */;
+		};
+		B4660CE08A87AA31D9CDC4B04180611D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JSONModel;
+			target = 5E0756BE0C5B560A735A90229119FF8A /* JSONModel */;
+			targetProxy = 20808D5D2D4FCC6BE1448AC124B73DAE /* PBXContainerItemProxy */;
+		};
+		E22548CEB47711815A5E834F8F37A1CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JKBigInteger;
+			target = BCAF8E9506A4D1A0D7BA3EEAF97A525B /* JKBigInteger */;
+			targetProxy = 5F51DBBFAD75AB761B827734FD7AE897 /* PBXContainerItemProxy */;
+		};
+		FBD0753802D1CD92C9D9A01CECA62BC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JSONModel;
+			target = 5E0756BE0C5B560A735A90229119FF8A /* JSONModel */;
+			targetProxy = 0280012EC9263DF9E6299E5FF1BBEA19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		221E9BB73815AAD94BA94AF45D8921F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2A45CA171227ACB2E1332E561633D2E /* Pods-vinted-ab_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-vinted-ab_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-vinted-ab_Tests/Pods-vinted-ab_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_vinted_ab_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		36D6012E7398FF911760477C93B203BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1AD1176A3EFE0AA1E943176F9CE3156 /* Pods-vinted-ab_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-vinted-ab_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-vinted-ab_Tests/Pods-vinted-ab_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_vinted_ab_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4C96F3D320449111EB0CE005FA137E3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86C816F593E5DC9D4CFB02A3DE0D4DD9 /* JSONModel-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JSONModel/JSONModel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JSONModel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JSONModel/JSONModel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = JSONModel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5FCCB32C71E2443CEF38CDA76AEBC3AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F2F3A08D3916886A6E20EEF30D9E67A /* vinted-ab-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/vinted-ab/vinted-ab-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/vinted-ab/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/vinted-ab/vinted-ab.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = vinted_ab;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		64B173BC82AA61303AE5C0D3C4E985BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F22109E8F1280709CB7363605030BE19 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6C0783DEBDF2CF91C45B7C92886C6B72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F2F3A08D3916886A6E20EEF30D9E67A /* vinted-ab-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/vinted-ab/vinted-ab-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/vinted-ab/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/vinted-ab/vinted-ab.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = vinted_ab;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6FC96D6FE4F5105B4DE726720A880067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45F9511350E1EAF7608FDE3B23C71DE2 /* JKBigInteger-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JKBigInteger/JKBigInteger-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JKBigInteger/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JKBigInteger/JKBigInteger.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = JKBigInteger;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7FF02AD8C950867CA8F0225EBE70EFCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86C816F593E5DC9D4CFB02A3DE0D4DD9 /* JSONModel-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JSONModel/JSONModel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JSONModel/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JSONModel/JSONModel.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = JSONModel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CD2D4BCC16EF8E041F1F6A64C1CE218A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45F9511350E1EAF7608FDE3B23C71DE2 /* JKBigInteger-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/JKBigInteger/JKBigInteger-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JKBigInteger/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JKBigInteger/JKBigInteger.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = JKBigInteger;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E5A78B4DFB301BD69F179E4101DAD2CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DA77380D2227A40F6E5C97DF4C8ABAF /* Pods.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
+				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		573D9CF3707F8DAF7E44315D734C3DC5 /* Build configuration list for PBXNativeTarget "JKBigInteger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD2D4BCC16EF8E041F1F6A64C1CE218A /* Debug */,
+				6FC96D6FE4F5105B4DE726720A880067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AB1B6893F065CDFE1D4F4E228EE08F9 /* Build configuration list for PBXNativeTarget "Pods-vinted-ab_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221E9BB73815AAD94BA94AF45D8921F6 /* Debug */,
+				36D6012E7398FF911760477C93B203BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B0852CD3BF76A5F3FFFCD1A6EAE21F5 /* Build configuration list for PBXNativeTarget "vinted-ab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5FCCB32C71E2443CEF38CDA76AEBC3AB /* Debug */,
+				6C0783DEBDF2CF91C45B7C92886C6B72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1768F0B0C4BE462EA717AC4E9AE4A05 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64B173BC82AA61303AE5C0D3C4E985BC /* Debug */,
+				E5A78B4DFB301BD69F179E4101DAD2CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E44ECCF0AB424C52FDAA03124B4D01CF /* Build configuration list for PBXNativeTarget "JSONModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C96F3D320449111EB0CE005FA137E3D /* Debug */,
+				7FF02AD8C950867CA8F0225EBE70EFCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

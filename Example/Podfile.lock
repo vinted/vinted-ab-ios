@@ -1,0 +1,22 @@
+PODS:
+  - JKBigInteger (0.0.1)
+  - JSONModel (1.0.2)
+  - vinted-ab (1.1.0):
+    - JKBigInteger (~> 0.0.1)
+    - JSONModel (~> 1.0.1)
+
+DEPENDENCIES:
+  - JKBigInteger (~> 0.0.1)
+  - JSONModel (~> 1.0.1)
+  - vinted-ab (from `../`)
+
+EXTERNAL SOURCES:
+  vinted-ab:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JKBigInteger: 7f3894ca331bf271a8e2ee0d5329707ca6eda6e0
+  JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
+  vinted-ab: 3312f9b6f6dbb96484668816cfc79c5d1b4e7586
+
+COCOAPODS: 0.38.0

@@ -1,8 +1,9 @@
 use_frameworks!
 
+pod 'JSONModel', '~> 1.0.1'
+pod 'JKBigInteger', '~> 0.0.1'
 
 target 'vinted-ab_Tests', :exclusive => true do
   pod 'vinted-ab', :path => '../'
-
-  
 end
+

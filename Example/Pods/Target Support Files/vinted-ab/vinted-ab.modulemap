@@ -1,0 +1,6 @@
+framework module vinted_ab {
+  umbrella header "vinted-ab-umbrella.h"
+
+  export *
+  module * { export * }
+}

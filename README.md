@@ -1,29 +1,22 @@
-# vinted-ab
+What is Vinted-AB?
+-------------------
+If you didn't guess it from the name, this library is meant for ab testing. But it doesn't cover everything associated with it, it lacks configuration and management parts. The library is only used to determine which variant should be applied for a user. Two inputs are expected - [configuration](#configuration) and identifier. Identifier, at least in Vinted's case, represents users, but other scenarios are certainly possible.
 
-[![CI Status](http://img.shields.io/travis/Andrius Janauskas/vinted-ab.svg?style=flat)](https://travis-ci.org/Andrius Janauskas/vinted-ab)
-[![Version](https://img.shields.io/cocoapods/v/vinted-ab.svg?style=flat)](http://cocoapods.org/pods/vinted-ab)
-[![License](https://img.shields.io/cocoapods/l/vinted-ab.svg?style=flat)](http://cocoapods.org/pods/vinted-ab)
-[![Platform](https://img.shields.io/cocoapods/p/vinted-ab.svg?style=flat)](http://cocoapods.org/pods/vinted-ab)
+Each identifier is assigned to a bucket, using a hashing function. Buckets can then be assigned to tests. That allows isolation control, when we don't want clashing and creation of biases. Each test also has a seed, which is used to randomise how identifiers are divided among test variants.
 
-## Example
+![users](https://cloud.githubusercontent.com/assets/54526/2971326/0535267a-db69-11e3-9878-e2b6a5d5505d.png)
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+This pod implements the logic in Objective-C and is designed to be used in iOS projects.
 
-## Requirements
+Running tests
+-------------------
+The project in this repository should be setup using Pods. So in order to run tests you need to do a few things:
+- Checkout the repository
+- Navigate to the directory of the repo
+- Run ```pod install``` (*important:* make sure you have cocoapods installed)
+- Open *vinted-ab.xcworkspace*
+- Inspect examples, source code and run tests via CMD+U
 
-## Installation
-
-vinted-ab is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "vinted-ab"
-```
-
-## Author
-
-Andrius Janauskas, andrius.janauskas@gmail.com
-
-## License
-
-vinted-ab is available under the MIT license. See the LICENSE file for more info.
+Usage
+-------------------
+TBA
