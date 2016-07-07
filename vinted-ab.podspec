@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "vinted-ab"
-  s.version          = "1.1.0"
+  s.version          = "1.1.1"
   s.summary          = "Vinted AB testing framework."
 
   s.description  = <<-DESC
@@ -28,5 +28,5 @@ DESC
   s.public_header_files = 'vinted-ab/Classes/*.h'
 
   s.dependency 'JKBigInteger', '~> 0.0.1'
-  s.dependency 'JSONModel', '~> 1.0.1'
+  s.dependency 'JSONModel', '~> 1.2.0'
 end
