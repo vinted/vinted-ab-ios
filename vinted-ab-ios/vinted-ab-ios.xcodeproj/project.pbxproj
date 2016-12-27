@@ -35,6 +35,7 @@
 		370881831E12B59C0027CDE4 /* VNTABtestVariant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABtestVariant.swift; sourceTree = "<group>"; };
 		3708818A1E12BD480027CDE4 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = "vinted-ab-ios/Carthage/Build/iOS/Unbox.framework"; sourceTree = "<group>"; };
 		3708818D1E12BF370027CDE4 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = "vinted-ab-ios/Carthage/Build/iOS/BigInt.framework"; sourceTree = "<group>"; };
+		370881901E12BFDB0027CDE4 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +62,7 @@
 		3708815F1E12B54C0027CDE4 = {
 			isa = PBXGroup;
 			children = (
+				3708818F1E12BFDB0027CDE4 /* CCommonCrypto */,
 				3708816B1E12B54C0027CDE4 /* vinted-ab-ios */,
 				370881761E12B54C0027CDE4 /* vinted-ab-iosTests */,
 				3708816A1E12B54C0027CDE4 /* Products */,
@@ -103,6 +105,14 @@
 				3708818A1E12BD480027CDE4 /* Unbox.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3708818F1E12BFDB0027CDE4 /* CCommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				370881901E12BFDB0027CDE4 /* module.modulemap */,
+			);
+			path = CCommonCrypto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vinted.vinted-ab-ios";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/CCommonCrypto";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -401,6 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vinted.vinted-ab-ios";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/CCommonCrypto";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
