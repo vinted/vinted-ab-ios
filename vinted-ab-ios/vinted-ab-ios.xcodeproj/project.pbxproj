@@ -11,6 +11,7 @@
 		370881781E12B54C0027CDE4 /* vinted_ab_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881771E12B54C0027CDE4 /* vinted_ab_iosTests.swift */; };
 		3708817A1E12B54C0027CDE4 /* vinted-ab-ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 3708816C1E12B54C0027CDE4 /* vinted-ab-ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		370881841E12B59C0027CDE4 /* VNTABtestVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881831E12B59C0027CDE4 /* VNTABtestVariant.swift */; };
+		3708818B1E12BD480027CDE4 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3708818A1E12BD480027CDE4 /* Unbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		370881771E12B54C0027CDE4 /* vinted_ab_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vinted_ab_iosTests.swift; sourceTree = "<group>"; };
 		370881791E12B54C0027CDE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		370881831E12B59C0027CDE4 /* VNTABtestVariant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABtestVariant.swift; sourceTree = "<group>"; };
+		3708818A1E12BD480027CDE4 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = "vinted-ab-ios/Carthage/Build/iOS/Unbox.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3708818B1E12BD480027CDE4 /* Unbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +61,7 @@
 				3708816B1E12B54C0027CDE4 /* vinted-ab-ios */,
 				370881761E12B54C0027CDE4 /* vinted-ab-iosTests */,
 				3708816A1E12B54C0027CDE4 /* Products */,
+				370881891E12BD480027CDE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +93,14 @@
 			path = "vinted-ab-iosTests";
 			sourceTree = "<group>";
 		};
+		370881891E12BD480027CDE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3708818A1E12BD480027CDE4 /* Unbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -111,6 +123,7 @@
 				370881651E12B54C0027CDE4 /* Frameworks */,
 				370881661E12B54C0027CDE4 /* Headers */,
 				370881671E12B54C0027CDE4 /* Resources */,
+				3708818C1E12BD540027CDE4 /* copy carthage frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +207,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3708818C1E12BD540027CDE4 /* copy carthage frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/vinted-ab-ios/Carthage/Build/iOS/Unbox.framework",
+			);
+			name = "copy carthage frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		370881641E12B54C0027CDE4 /* Sources */ = {
@@ -331,6 +362,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/vinted-ab-ios/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "vinted-ab-ios/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -351,6 +386,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/vinted-ab-ios/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "vinted-ab-ios/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
