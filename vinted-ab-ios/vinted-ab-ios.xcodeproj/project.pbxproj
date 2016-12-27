@@ -239,6 +239,22 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		370881951E12C48A0027CDE4 /* copy carthage frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/vinted-ab-ios/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/vinted-ab-ios/Carthage/Build/iOS/Nimble.framework",
+			);
+			name = "copy carthage frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
