@@ -1,1 +1,3 @@
+github "lorentey/SipHash" "v1.1.0"
 github "johnsundell/unbox" "2.3.0"
+github "lorentey/BigInt" "v2.1.1"

@@ -12,6 +12,7 @@
 		3708817A1E12B54C0027CDE4 /* vinted-ab-ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 3708816C1E12B54C0027CDE4 /* vinted-ab-ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		370881841E12B59C0027CDE4 /* VNTABtestVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881831E12B59C0027CDE4 /* VNTABtestVariant.swift */; };
 		3708818B1E12BD480027CDE4 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3708818A1E12BD480027CDE4 /* Unbox.framework */; };
+		3708818E1E12BF370027CDE4 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3708818D1E12BF370027CDE4 /* BigInt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		370881791E12B54C0027CDE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		370881831E12B59C0027CDE4 /* VNTABtestVariant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABtestVariant.swift; sourceTree = "<group>"; };
 		3708818A1E12BD480027CDE4 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = "vinted-ab-ios/Carthage/Build/iOS/Unbox.framework"; sourceTree = "<group>"; };
+		3708818D1E12BF370027CDE4 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = "vinted-ab-ios/Carthage/Build/iOS/BigInt.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3708818B1E12BD480027CDE4 /* Unbox.framework in Frameworks */,
+				3708818E1E12BF370027CDE4 /* BigInt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +99,7 @@
 		370881891E12BD480027CDE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3708818D1E12BF370027CDE4 /* BigInt.framework */,
 				3708818A1E12BD480027CDE4 /* Unbox.framework */,
 			);
 			name = Frameworks;
@@ -216,6 +220,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/vinted-ab-ios/Carthage/Build/iOS/Unbox.framework",
+				"$(SRCROOT)/vinted-ab-ios/Carthage/Build/iOS/BigInt.framework",
 			);
 			name = "copy carthage frameworks";
 			outputPaths = (
