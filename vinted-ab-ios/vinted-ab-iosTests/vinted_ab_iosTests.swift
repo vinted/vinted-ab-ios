@@ -1,11 +1,3 @@
-//
-//  vinted_ab_iosTests.swift
-//  vinted-ab-iosTests
-//
-//  Created by Arnas Dundulis on 12/27/16.
-//  Copyright © 2016 Vinted. All rights reserved.
-//
-
 import XCTest
 @testable import vinted_ab_ios
 

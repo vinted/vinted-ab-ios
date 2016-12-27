@@ -1,11 +1,3 @@
-//
-//  vinted-ab-ios.h
-//  vinted-ab-ios
-//
-//  Created by Arnas Dundulis on 12/27/16.
-//  Copyright © 2016 Vinted. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for vinted-ab-ios.
