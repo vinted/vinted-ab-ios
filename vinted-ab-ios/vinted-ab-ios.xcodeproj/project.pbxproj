@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		370881731E12B54C0027CDE4 /* vinted-ab-ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370881691E12B54C0027CDE4 /* vinted-ab-ios.framework */; };
+		370881731E12B54C0027CDE4 /* vinted_ab_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370881691E12B54C0027CDE4 /* vinted_ab_ios.framework */; };
 		370881781E12B54C0027CDE4 /* vinted_ab_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881771E12B54C0027CDE4 /* vinted_ab_iosTests.swift */; };
 		3708817A1E12B54C0027CDE4 /* vinted-ab-ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 3708816C1E12B54C0027CDE4 /* vinted-ab-ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		370881841E12B59C0027CDE4 /* VNTABtestVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881831E12B59C0027CDE4 /* VNTABtestVariant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +24,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		370881691E12B54C0027CDE4 /* vinted-ab-ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "vinted-ab-ios.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		370881691E12B54C0027CDE4 /* vinted_ab_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = vinted_ab_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3708816C1E12B54C0027CDE4 /* vinted-ab-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "vinted-ab-ios.h"; sourceTree = "<group>"; };
 		3708816D1E12B54C0027CDE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		370881721E12B54C0027CDE4 /* vinted-ab-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "vinted-ab-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		370881771E12B54C0027CDE4 /* vinted_ab_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vinted_ab_iosTests.swift; sourceTree = "<group>"; };
 		370881791E12B54C0027CDE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		370881831E12B59C0027CDE4 /* VNTABtestVariant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABtestVariant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				370881731E12B54C0027CDE4 /* vinted-ab-ios.framework in Frameworks */,
+				370881731E12B54C0027CDE4 /* vinted_ab_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +64,7 @@
 		3708816A1E12B54C0027CDE4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				370881691E12B54C0027CDE4 /* vinted-ab-ios.framework */,
+				370881691E12B54C0027CDE4 /* vinted_ab_ios.framework */,
 				370881721E12B54C0027CDE4 /* vinted-ab-iosTests.xctest */,
 			);
 			name = Products;
@@ -73,6 +75,7 @@
 			children = (
 				3708816C1E12B54C0027CDE4 /* vinted-ab-ios.h */,
 				3708816D1E12B54C0027CDE4 /* Info.plist */,
+				370881831E12B59C0027CDE4 /* VNTABtestVariant.swift */,
 			);
 			path = "vinted-ab-ios";
 			sourceTree = "<group>";
@@ -115,7 +118,7 @@
 			);
 			name = "vinted-ab-ios";
 			productName = "vinted-ab-ios";
-			productReference = 370881691E12B54C0027CDE4 /* vinted-ab-ios.framework */;
+			productReference = 370881691E12B54C0027CDE4 /* vinted_ab_ios.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		370881711E12B54C0027CDE4 /* vinted-ab-iosTests */ = {
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					370881681E12B54C0027CDE4 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					370881711E12B54C0027CDE4 = {
@@ -196,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370881841E12B59C0027CDE4 /* VNTABtestVariant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +325,7 @@
 		3708817E1E12B54C0027CDE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -339,6 +345,7 @@
 		3708817F1E12B54C0027CDE4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -348,7 +355,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vinted.vinted-ab-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -357,6 +364,7 @@
 		370881811E12B54C0027CDE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "vinted-ab-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vinted.vinted-ab-iosTests";
@@ -368,6 +376,7 @@
 		370881821E12B54C0027CDE4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "vinted-ab-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vinted.vinted-ab-iosTests";
