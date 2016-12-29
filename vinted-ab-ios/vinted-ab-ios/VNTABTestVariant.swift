@@ -1,7 +1,7 @@
 import Foundation
 import Unbox
 
-public class VNTABTestVariant: Unboxable {
+public final class VNTABTestVariant: Unboxable {
     public let name: String
     public let chanceWeight: Int
     
