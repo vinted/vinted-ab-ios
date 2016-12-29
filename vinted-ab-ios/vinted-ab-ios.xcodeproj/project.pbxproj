@@ -21,6 +21,7 @@
 		370881C61E15093E0027CDE4 /* VNTABTest[full].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881C41E15093E0027CDE4 /* VNTABTest[full].json */; };
 		370881C71E15093E0027CDE4 /* VNTABTest[required].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881C51E15093E0027CDE4 /* VNTABTest[required].json */; };
 		370881C91E150EA30027CDE4 /* VNTISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881C81E150EA30027CDE4 /* VNTISO8601DateFormatter.swift */; };
+		370881CB1E1527110027CDE4 /* VNTABTestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881CA1E1527110027CDE4 /* VNTABTestConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		370881C41E15093E0027CDE4 /* VNTABTest[full].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTest[full].json"; sourceTree = "<group>"; };
 		370881C51E15093E0027CDE4 /* VNTABTest[required].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTest[required].json"; sourceTree = "<group>"; };
 		370881C81E150EA30027CDE4 /* VNTISO8601DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTISO8601DateFormatter.swift; sourceTree = "<group>"; };
+		370881CA1E1527110027CDE4 /* VNTABTestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				3708816D1E12B54C0027CDE4 /* Info.plist */,
 				370881831E12B59C0027CDE4 /* VNTABTestVariant.swift */,
 				370881BF1E1506430027CDE4 /* VNTABTest.swift */,
+				370881CA1E1527110027CDE4 /* VNTABTestConfig.swift */,
 				370881C81E150EA30027CDE4 /* VNTISO8601DateFormatter.swift */,
 			);
 			path = "vinted-ab-ios";
@@ -329,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				370881C01E1506430027CDE4 /* VNTABTest.swift in Sources */,
+				370881CB1E1527110027CDE4 /* VNTABTestConfig.swift in Sources */,
 				370881C91E150EA30027CDE4 /* VNTISO8601DateFormatter.swift in Sources */,
 				370881B41E14FA0E0027CDE4 /* Unbox+Testable.swift in Sources */,
 				370881841E12B59C0027CDE4 /* VNTABTestVariant.swift in Sources */,
