@@ -76,6 +76,18 @@ class VNTABTestTests: QuickSpec {
             }
         }
         
+        describe("buckets") {
+            it("ignores invalid elements") {
+                let array: [Any] = ["null", 1, 2, "null", 3]
+                guard let object = VNTABTest.loadSample(bundle, index: ModelType.full.rawValue, replace: "buckets", with: array as AnyObject?) else {
+                    fail()
+                    return
+                }
+                
+                expect(object.buckets).to(equal([1,2,3]))
+            }
+        }
+        
         describe("isRunning") {
             context("with both dates missing") {
                 it("returns true") {

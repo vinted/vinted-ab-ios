@@ -25,7 +25,7 @@ public final class VNTABTest: Unboxable {
         self.startAt = unboxer.unbox(key: "start_at", formatter: dateFormatter)
         self.endAt = unboxer.unbox(key: "end_at", formatter: dateFormatter)
         self.seed = try unboxer.unbox(key: "seed")
-        self.buckets = unboxer.unbox(key: "buckets")
+        self.buckets = unboxer.unbox(key: "buckets", allowInvalidElements: true)
         self.allBuckets = (try? unboxer.unbox(key: "all_buckets")) ?? false
         self.variants = try unboxer.unbox(key: "variants")
     }
