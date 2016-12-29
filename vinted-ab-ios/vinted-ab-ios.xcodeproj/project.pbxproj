@@ -8,19 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		370881731E12B54C0027CDE4 /* vinted_ab_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370881691E12B54C0027CDE4 /* vinted_ab_ios.framework */; };
-		3708817A1E12B54C0027CDE4 /* vinted-ab-ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 3708816C1E12B54C0027CDE4 /* vinted-ab-ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		370881841E12B59C0027CDE4 /* VNTABTestVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881831E12B59C0027CDE4 /* VNTABTestVariant.swift */; };
 		3708818B1E12BD480027CDE4 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3708818A1E12BD480027CDE4 /* Unbox.framework */; };
 		3708818E1E12BF370027CDE4 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3708818D1E12BF370027CDE4 /* BigInt.framework */; };
 		370881A71E13C06D0027CDE4 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370881A61E13C06D0027CDE4 /* SipHash.framework */; };
 		370881B11E14F9BB0027CDE4 /* VNTABTestVariantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881AF1E14F9BB0027CDE4 /* VNTABTestVariantTests.swift */; };
-		370881B41E14FA0E0027CDE4 /* Unbox+Testable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881B31E14FA0E0027CDE4 /* Unbox+Testable.swift */; };
 		370881BC1E1505800027CDE4 /* VNTABTestVariant[required].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881BB1E1505800027CDE4 /* VNTABTestVariant[required].json */; };
 		370881C01E1506430027CDE4 /* VNTABTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881BF1E1506430027CDE4 /* VNTABTest.swift */; };
 		370881C21E1509080027CDE4 /* VNTABTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881C11E1509080027CDE4 /* VNTABTestTests.swift */; };
 		370881C61E15093E0027CDE4 /* VNTABTest[full].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881C41E15093E0027CDE4 /* VNTABTest[full].json */; };
 		370881C71E15093E0027CDE4 /* VNTABTest[required].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881C51E15093E0027CDE4 /* VNTABTest[required].json */; };
-		370881C91E150EA30027CDE4 /* VNTISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881C81E150EA30027CDE4 /* VNTISO8601DateFormatter.swift */; };
 		370881CB1E1527110027CDE4 /* VNTABTestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881CA1E1527110027CDE4 /* VNTABTestConfig.swift */; };
 		370881CD1E1540E30027CDE4 /* VNTABTestConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881CC1E1540E30027CDE4 /* VNTABTestConfigTests.swift */; };
 		370881FA1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881ED1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json */; };
@@ -50,6 +47,10 @@
 		3708821F1E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882121E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json */; };
 		370882201E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882131E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json */; };
 		370882221E156A070027CDE4 /* VNTABTestVariant[full].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882211E156A070027CDE4 /* VNTABTestVariant[full].json */; };
+		370882261E156DAB0027CDE4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 370882241E156DAB0027CDE4 /* Info.plist */; };
+		370882271E156DAB0027CDE4 /* vinted-ab-ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 370882251E156DAB0027CDE4 /* vinted-ab-ios.h */; };
+		370882291E156DB40027CDE4 /* Unbox+Testable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370882281E156DB40027CDE4 /* Unbox+Testable.swift */; };
+		3708822C1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3708822B1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +65,6 @@
 
 /* Begin PBXFileReference section */
 		370881691E12B54C0027CDE4 /* vinted_ab_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = vinted_ab_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3708816C1E12B54C0027CDE4 /* vinted-ab-ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "vinted-ab-ios.h"; sourceTree = "<group>"; };
-		3708816D1E12B54C0027CDE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		370881721E12B54C0027CDE4 /* vinted-ab-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "vinted-ab-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		370881791E12B54C0027CDE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		370881831E12B59C0027CDE4 /* VNTABTestVariant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestVariant.swift; sourceTree = "<group>"; };
@@ -74,7 +73,6 @@
 		370881901E12BFDB0027CDE4 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		370881A61E13C06D0027CDE4 /* SipHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SipHash.framework; path = "vinted-ab-ios/Carthage/Build/iOS/SipHash.framework"; sourceTree = "<group>"; };
 		370881AF1E14F9BB0027CDE4 /* VNTABTestVariantTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestVariantTests.swift; sourceTree = "<group>"; };
-		370881B31E14FA0E0027CDE4 /* Unbox+Testable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Unbox+Testable.swift"; sourceTree = "<group>"; };
 		370881B61E1504510027CDE4 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "vinted-ab-ios/Carthage/Build/iOS/Quick.framework"; sourceTree = "<group>"; };
 		370881B81E1504540027CDE4 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "vinted-ab-ios/Carthage/Build/iOS/Nimble.framework"; sourceTree = "<group>"; };
 		370881BB1E1505800027CDE4 /* VNTABTestVariant[required].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "VNTABTestVariant[required].json"; path = "JSON model files/VNTABTestVariant/VNTABTestVariant[required].json"; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 		370881C11E1509080027CDE4 /* VNTABTestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestTests.swift; sourceTree = "<group>"; };
 		370881C41E15093E0027CDE4 /* VNTABTest[full].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTest[full].json"; sourceTree = "<group>"; };
 		370881C51E15093E0027CDE4 /* VNTABTest[required].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTest[required].json"; sourceTree = "<group>"; };
-		370881C81E150EA30027CDE4 /* VNTISO8601DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTISO8601DateFormatter.swift; sourceTree = "<group>"; };
 		370881CA1E1527110027CDE4 /* VNTABTestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestConfig.swift; sourceTree = "<group>"; };
 		370881CC1E1540E30027CDE4 /* VNTABTestConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestConfigTests.swift; sourceTree = "<group>"; };
 		370881ED1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[all_buckets_input].json"; sourceTree = "<group>"; };
@@ -112,6 +109,10 @@
 		370882121E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[zero_buckets_output].json"; sourceTree = "<group>"; };
 		370882131E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[zero_weight_output].json"; sourceTree = "<group>"; };
 		370882211E156A070027CDE4 /* VNTABTestVariant[full].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "VNTABTestVariant[full].json"; path = "JSON model files/VNTABTestVariant/VNTABTestVariant[full].json"; sourceTree = "<group>"; };
+		370882241E156DAB0027CDE4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		370882251E156DAB0027CDE4 /* vinted-ab-ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "vinted-ab-ios.h"; sourceTree = "<group>"; };
+		370882281E156DB40027CDE4 /* Unbox+Testable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Unbox+Testable.swift"; path = "Extensions/Unbox+Testable.swift"; sourceTree = "<group>"; };
+		3708822B1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTISO8601DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,12 +161,11 @@
 			isa = PBXGroup;
 			children = (
 				370881B51E14FA1C0027CDE4 /* Extensions */,
-				3708816C1E12B54C0027CDE4 /* vinted-ab-ios.h */,
-				3708816D1E12B54C0027CDE4 /* Info.plist */,
+				370882231E156DAB0027CDE4 /* Supporting Files */,
+				3708822A1E156DCE0027CDE4 /* Helpers */,
 				370881831E12B59C0027CDE4 /* VNTABTestVariant.swift */,
 				370881BF1E1506430027CDE4 /* VNTABTest.swift */,
 				370881CA1E1527110027CDE4 /* VNTABTestConfig.swift */,
-				370881C81E150EA30027CDE4 /* VNTISO8601DateFormatter.swift */,
 			);
 			path = "vinted-ab-ios";
 			sourceTree = "<group>";
@@ -205,7 +205,7 @@
 		370881B51E14FA1C0027CDE4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				370881B31E14FA0E0027CDE4 /* Unbox+Testable.swift */,
+				370882281E156DB40027CDE4 /* Unbox+Testable.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -273,6 +273,23 @@
 			path = "JSON model files/VNTABTestConfig";
 			sourceTree = "<group>";
 		};
+		370882231E156DAB0027CDE4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				370882241E156DAB0027CDE4 /* Info.plist */,
+				370882251E156DAB0027CDE4 /* vinted-ab-ios.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3708822A1E156DCE0027CDE4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3708822B1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -280,7 +297,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3708817A1E12B54C0027CDE4 /* vinted-ab-ios.h in Headers */,
+				370882271E156DAB0027CDE4 /* vinted-ab-ios.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370882261E156DAB0027CDE4 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,9 +471,9 @@
 			files = (
 				370881C01E1506430027CDE4 /* VNTABTest.swift in Sources */,
 				370881CB1E1527110027CDE4 /* VNTABTestConfig.swift in Sources */,
-				370881C91E150EA30027CDE4 /* VNTISO8601DateFormatter.swift in Sources */,
-				370881B41E14FA0E0027CDE4 /* Unbox+Testable.swift in Sources */,
+				3708822C1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift in Sources */,
 				370881841E12B59C0027CDE4 /* VNTABTestVariant.swift in Sources */,
+				370882291E156DB40027CDE4 /* Unbox+Testable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,7 +610,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/vinted-ab-ios/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "vinted-ab-ios/Info.plist";
+				INFOPLIST_FILE = "vinted-ab-ios/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -618,7 +636,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/vinted-ab-ios/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "vinted-ab-ios/Info.plist";
+				INFOPLIST_FILE = "vinted-ab-ios/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
