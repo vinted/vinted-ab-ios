@@ -22,6 +22,33 @@
 		370881C71E15093E0027CDE4 /* VNTABTest[required].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881C51E15093E0027CDE4 /* VNTABTest[required].json */; };
 		370881C91E150EA30027CDE4 /* VNTISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881C81E150EA30027CDE4 /* VNTISO8601DateFormatter.swift */; };
 		370881CB1E1527110027CDE4 /* VNTABTestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881CA1E1527110027CDE4 /* VNTABTestConfig.swift */; };
+		370881CD1E1540E30027CDE4 /* VNTABTestConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881CC1E1540E30027CDE4 /* VNTABTestConfigTests.swift */; };
+		370881FA1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881ED1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json */; };
+		370881FB1E15444B0027CDE4 /* VNTABTestConfig[already_finished_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881EE1E15444B0027CDE4 /* VNTABTestConfig[already_finished_input].json */; };
+		370881FC1E15444B0027CDE4 /* VNTABTestConfig[big_weights_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881EF1E15444B0027CDE4 /* VNTABTestConfig[big_weights_input].json */; };
+		370881FD1E15444B0027CDE4 /* VNTABTestConfig[explicit_times_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F01E15444B0027CDE4 /* VNTABTestConfig[explicit_times_input].json */; };
+		370881FE1E15444B0027CDE4 /* VNTABTestConfig[few_buckets_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F11E15444B0027CDE4 /* VNTABTestConfig[few_buckets_input].json */; };
+		370881FF1E15444B0027CDE4 /* VNTABTestConfig[has_not_started_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F21E15444B0027CDE4 /* VNTABTestConfig[has_not_started_input].json */; };
+		370882001E15444B0027CDE4 /* VNTABTestConfig[multiple_tests_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F31E15444B0027CDE4 /* VNTABTestConfig[multiple_tests_input].json */; };
+		370882011E15444B0027CDE4 /* VNTABTestConfig[multiple_variants_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F41E15444B0027CDE4 /* VNTABTestConfig[multiple_variants_input].json */; };
+		370882021E15444B0027CDE4 /* VNTABTestConfig[no_buckets_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F51E15444B0027CDE4 /* VNTABTestConfig[no_buckets_input].json */; };
+		370882031E15444B0027CDE4 /* VNTABTestConfig[no_end_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F61E15444B0027CDE4 /* VNTABTestConfig[no_end_input].json */; };
+		370882041E15444B0027CDE4 /* VNTABTestConfig[no_variants_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F71E15444B0027CDE4 /* VNTABTestConfig[no_variants_input].json */; };
+		370882051E15444B0027CDE4 /* VNTABTestConfig[zero_buckets_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F81E15444B0027CDE4 /* VNTABTestConfig[zero_buckets_input].json */; };
+		370882061E15444B0027CDE4 /* VNTABTestConfig[zero_weight_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F91E15444B0027CDE4 /* VNTABTestConfig[zero_weight_input].json */; };
+		370882141E155FB50027CDE4 /* VNTABTestConfig[all_buckets_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882071E155FB50027CDE4 /* VNTABTestConfig[all_buckets_output].json */; };
+		370882151E155FB50027CDE4 /* VNTABTestConfig[already_finished_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882081E155FB50027CDE4 /* VNTABTestConfig[already_finished_output].json */; };
+		370882161E155FB50027CDE4 /* VNTABTestConfig[big_weights_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882091E155FB50027CDE4 /* VNTABTestConfig[big_weights_output].json */; };
+		370882171E155FB50027CDE4 /* VNTABTestConfig[explicit_times_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 3708820A1E155FB50027CDE4 /* VNTABTestConfig[explicit_times_output].json */; };
+		370882181E155FB50027CDE4 /* VNTABTestConfig[few_buckets_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 3708820B1E155FB50027CDE4 /* VNTABTestConfig[few_buckets_output].json */; };
+		370882191E155FB50027CDE4 /* VNTABTestConfig[has_not_started_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 3708820C1E155FB50027CDE4 /* VNTABTestConfig[has_not_started_output].json */; };
+		3708821A1E155FB50027CDE4 /* VNTABTestConfig[multiple_tests_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 3708820D1E155FB50027CDE4 /* VNTABTestConfig[multiple_tests_output].json */; };
+		3708821B1E155FB50027CDE4 /* VNTABTestConfig[multiple_variants_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 3708820E1E155FB50027CDE4 /* VNTABTestConfig[multiple_variants_output].json */; };
+		3708821C1E155FB50027CDE4 /* VNTABTestConfig[no_buckets_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 3708820F1E155FB50027CDE4 /* VNTABTestConfig[no_buckets_output].json */; };
+		3708821D1E155FB50027CDE4 /* VNTABTestConfig[no_end_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882101E155FB50027CDE4 /* VNTABTestConfig[no_end_output].json */; };
+		3708821E1E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882111E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json */; };
+		3708821F1E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882121E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json */; };
+		370882201E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882131E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +83,33 @@
 		370881C51E15093E0027CDE4 /* VNTABTest[required].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTest[required].json"; sourceTree = "<group>"; };
 		370881C81E150EA30027CDE4 /* VNTISO8601DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTISO8601DateFormatter.swift; sourceTree = "<group>"; };
 		370881CA1E1527110027CDE4 /* VNTABTestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestConfig.swift; sourceTree = "<group>"; };
+		370881CC1E1540E30027CDE4 /* VNTABTestConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestConfigTests.swift; sourceTree = "<group>"; };
+		370881ED1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[all_buckets_input].json"; sourceTree = "<group>"; };
+		370881EE1E15444B0027CDE4 /* VNTABTestConfig[already_finished_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[already_finished_input].json"; sourceTree = "<group>"; };
+		370881EF1E15444B0027CDE4 /* VNTABTestConfig[big_weights_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[big_weights_input].json"; sourceTree = "<group>"; };
+		370881F01E15444B0027CDE4 /* VNTABTestConfig[explicit_times_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[explicit_times_input].json"; sourceTree = "<group>"; };
+		370881F11E15444B0027CDE4 /* VNTABTestConfig[few_buckets_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[few_buckets_input].json"; sourceTree = "<group>"; };
+		370881F21E15444B0027CDE4 /* VNTABTestConfig[has_not_started_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[has_not_started_input].json"; sourceTree = "<group>"; };
+		370881F31E15444B0027CDE4 /* VNTABTestConfig[multiple_tests_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[multiple_tests_input].json"; sourceTree = "<group>"; };
+		370881F41E15444B0027CDE4 /* VNTABTestConfig[multiple_variants_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[multiple_variants_input].json"; sourceTree = "<group>"; };
+		370881F51E15444B0027CDE4 /* VNTABTestConfig[no_buckets_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_buckets_input].json"; sourceTree = "<group>"; };
+		370881F61E15444B0027CDE4 /* VNTABTestConfig[no_end_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_end_input].json"; sourceTree = "<group>"; };
+		370881F71E15444B0027CDE4 /* VNTABTestConfig[no_variants_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_variants_input].json"; sourceTree = "<group>"; };
+		370881F81E15444B0027CDE4 /* VNTABTestConfig[zero_buckets_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[zero_buckets_input].json"; sourceTree = "<group>"; };
+		370881F91E15444B0027CDE4 /* VNTABTestConfig[zero_weight_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[zero_weight_input].json"; sourceTree = "<group>"; };
+		370882071E155FB50027CDE4 /* VNTABTestConfig[all_buckets_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[all_buckets_output].json"; sourceTree = "<group>"; };
+		370882081E155FB50027CDE4 /* VNTABTestConfig[already_finished_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[already_finished_output].json"; sourceTree = "<group>"; };
+		370882091E155FB50027CDE4 /* VNTABTestConfig[big_weights_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[big_weights_output].json"; sourceTree = "<group>"; };
+		3708820A1E155FB50027CDE4 /* VNTABTestConfig[explicit_times_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[explicit_times_output].json"; sourceTree = "<group>"; };
+		3708820B1E155FB50027CDE4 /* VNTABTestConfig[few_buckets_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[few_buckets_output].json"; sourceTree = "<group>"; };
+		3708820C1E155FB50027CDE4 /* VNTABTestConfig[has_not_started_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[has_not_started_output].json"; sourceTree = "<group>"; };
+		3708820D1E155FB50027CDE4 /* VNTABTestConfig[multiple_tests_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[multiple_tests_output].json"; sourceTree = "<group>"; };
+		3708820E1E155FB50027CDE4 /* VNTABTestConfig[multiple_variants_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[multiple_variants_output].json"; sourceTree = "<group>"; };
+		3708820F1E155FB50027CDE4 /* VNTABTestConfig[no_buckets_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_buckets_output].json"; sourceTree = "<group>"; };
+		370882101E155FB50027CDE4 /* VNTABTestConfig[no_end_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_end_output].json"; sourceTree = "<group>"; };
+		370882111E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_variants_output].json"; sourceTree = "<group>"; };
+		370882121E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[zero_buckets_output].json"; sourceTree = "<group>"; };
+		370882131E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[zero_weight_output].json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				370881AF1E14F9BB0027CDE4 /* VNTABTestVariantTests.swift */,
+				370881CC1E1540E30027CDE4 /* VNTABTestConfigTests.swift */,
 				370881C11E1509080027CDE4 /* VNTABTestTests.swift */,
 				370881BD1E1505850027CDE4 /* JSON model files */,
 				370881791E12B54C0027CDE4 /* Info.plist */,
@@ -156,6 +211,7 @@
 		370881BD1E1505850027CDE4 /* JSON model files */ = {
 			isa = PBXGroup;
 			children = (
+				370881CE1E1540F20027CDE4 /* VNTABTestConfig */,
 				370881C31E15093E0027CDE4 /* VNTABTest */,
 				370881BE1E1505920027CDE4 /* VNTABTestVariant */,
 			);
@@ -178,6 +234,40 @@
 			);
 			name = VNTABTest;
 			path = "JSON model files/VNTABTest";
+			sourceTree = "<group>";
+		};
+		370881CE1E1540F20027CDE4 /* VNTABTestConfig */ = {
+			isa = PBXGroup;
+			children = (
+				370881ED1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json */,
+				370881EE1E15444B0027CDE4 /* VNTABTestConfig[already_finished_input].json */,
+				370881EF1E15444B0027CDE4 /* VNTABTestConfig[big_weights_input].json */,
+				370881F01E15444B0027CDE4 /* VNTABTestConfig[explicit_times_input].json */,
+				370881F11E15444B0027CDE4 /* VNTABTestConfig[few_buckets_input].json */,
+				370881F21E15444B0027CDE4 /* VNTABTestConfig[has_not_started_input].json */,
+				370881F31E15444B0027CDE4 /* VNTABTestConfig[multiple_tests_input].json */,
+				370881F41E15444B0027CDE4 /* VNTABTestConfig[multiple_variants_input].json */,
+				370881F51E15444B0027CDE4 /* VNTABTestConfig[no_buckets_input].json */,
+				370881F61E15444B0027CDE4 /* VNTABTestConfig[no_end_input].json */,
+				370881F71E15444B0027CDE4 /* VNTABTestConfig[no_variants_input].json */,
+				370881F81E15444B0027CDE4 /* VNTABTestConfig[zero_buckets_input].json */,
+				370881F91E15444B0027CDE4 /* VNTABTestConfig[zero_weight_input].json */,
+				370882071E155FB50027CDE4 /* VNTABTestConfig[all_buckets_output].json */,
+				370882081E155FB50027CDE4 /* VNTABTestConfig[already_finished_output].json */,
+				370882091E155FB50027CDE4 /* VNTABTestConfig[big_weights_output].json */,
+				3708820A1E155FB50027CDE4 /* VNTABTestConfig[explicit_times_output].json */,
+				3708820B1E155FB50027CDE4 /* VNTABTestConfig[few_buckets_output].json */,
+				3708820C1E155FB50027CDE4 /* VNTABTestConfig[has_not_started_output].json */,
+				3708820D1E155FB50027CDE4 /* VNTABTestConfig[multiple_tests_output].json */,
+				3708820E1E155FB50027CDE4 /* VNTABTestConfig[multiple_variants_output].json */,
+				3708820F1E155FB50027CDE4 /* VNTABTestConfig[no_buckets_output].json */,
+				370882101E155FB50027CDE4 /* VNTABTestConfig[no_end_output].json */,
+				370882111E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json */,
+				370882121E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json */,
+				370882131E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json */,
+			);
+			name = VNTABTestConfig;
+			path = "JSON model files/VNTABTestConfig";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,9 +373,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370881FE1E15444B0027CDE4 /* VNTABTestConfig[few_buckets_input].json in Resources */,
 				370881C61E15093E0027CDE4 /* VNTABTest[full].json in Resources */,
+				3708821B1E155FB50027CDE4 /* VNTABTestConfig[multiple_variants_output].json in Resources */,
+				370882061E15444B0027CDE4 /* VNTABTestConfig[zero_weight_input].json in Resources */,
+				370882021E15444B0027CDE4 /* VNTABTestConfig[no_buckets_input].json in Resources */,
+				370882201E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json in Resources */,
+				370881FB1E15444B0027CDE4 /* VNTABTestConfig[already_finished_input].json in Resources */,
+				370882181E155FB50027CDE4 /* VNTABTestConfig[few_buckets_output].json in Resources */,
+				370882151E155FB50027CDE4 /* VNTABTestConfig[already_finished_output].json in Resources */,
+				370882161E155FB50027CDE4 /* VNTABTestConfig[big_weights_output].json in Resources */,
+				370882041E15444B0027CDE4 /* VNTABTestConfig[no_variants_input].json in Resources */,
+				370882191E155FB50027CDE4 /* VNTABTestConfig[has_not_started_output].json in Resources */,
+				370882031E15444B0027CDE4 /* VNTABTestConfig[no_end_input].json in Resources */,
+				370882051E15444B0027CDE4 /* VNTABTestConfig[zero_buckets_input].json in Resources */,
+				3708821A1E155FB50027CDE4 /* VNTABTestConfig[multiple_tests_output].json in Resources */,
+				370881FF1E15444B0027CDE4 /* VNTABTestConfig[has_not_started_input].json in Resources */,
+				370881FD1E15444B0027CDE4 /* VNTABTestConfig[explicit_times_input].json in Resources */,
 				370881C71E15093E0027CDE4 /* VNTABTest[required].json in Resources */,
+				370881FA1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json in Resources */,
+				3708821F1E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json in Resources */,
+				3708821E1E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json in Resources */,
+				370882141E155FB50027CDE4 /* VNTABTestConfig[all_buckets_output].json in Resources */,
+				370881FC1E15444B0027CDE4 /* VNTABTestConfig[big_weights_input].json in Resources */,
+				370882011E15444B0027CDE4 /* VNTABTestConfig[multiple_variants_input].json in Resources */,
+				3708821C1E155FB50027CDE4 /* VNTABTestConfig[no_buckets_output].json in Resources */,
 				370881BC1E1505800027CDE4 /* VNTABTestVariant[required].json in Resources */,
+				370882001E15444B0027CDE4 /* VNTABTestConfig[multiple_tests_input].json in Resources */,
+				370882171E155FB50027CDE4 /* VNTABTestConfig[explicit_times_output].json in Resources */,
+				3708821D1E155FB50027CDE4 /* VNTABTestConfig[no_end_output].json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +461,7 @@
 			files = (
 				370881B11E14F9BB0027CDE4 /* VNTABTestVariantTests.swift in Sources */,
 				370881C21E1509080027CDE4 /* VNTABTestTests.swift in Sources */,
+				370881CD1E1540E30027CDE4 /* VNTABTestConfigTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

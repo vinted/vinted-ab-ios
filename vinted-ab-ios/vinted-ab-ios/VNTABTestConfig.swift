@@ -14,20 +14,6 @@ public final class VNTABTestConfig: Unboxable {
         self.abTests = try unboxer.unbox(key: "ab_tests")
     }
     
-    public func assignedTests(forIdentifier: String) -> [VNTABTest] {
-        guard let bucketIdentifier = bucketIdentifier(forIdentifier: forIdentifier) else {
-            return []
-        }
-        return abTests.filter { test in
-            if test.allBuckets || test.buckets?.contains(bucketIdentifier) == true {
-                if test.isRunning {
-                    return true
-                }
-            }
-            return false
-        }
-    }
-    
     public func assignedVariant(forTestName name:String, identifier:String) -> VNTABTestVariant? {
         guard let test = abtest(forName: name) else {
             return nil
