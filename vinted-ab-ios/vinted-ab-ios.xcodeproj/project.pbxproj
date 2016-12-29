@@ -49,6 +49,7 @@
 		3708821E1E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882111E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json */; };
 		3708821F1E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882121E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json */; };
 		370882201E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882131E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json */; };
+		370882221E156A070027CDE4 /* VNTABTestVariant[full].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882211E156A070027CDE4 /* VNTABTestVariant[full].json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		370882111E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_variants_output].json"; sourceTree = "<group>"; };
 		370882121E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[zero_buckets_output].json"; sourceTree = "<group>"; };
 		370882131E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[zero_weight_output].json"; sourceTree = "<group>"; };
+		370882211E156A070027CDE4 /* VNTABTestVariant[full].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "VNTABTestVariant[full].json"; path = "JSON model files/VNTABTestVariant/VNTABTestVariant[full].json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				370881BB1E1505800027CDE4 /* VNTABTestVariant[required].json */,
+				370882211E156A070027CDE4 /* VNTABTestVariant[full].json */,
 			);
 			name = VNTABTestVariant;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				370882181E155FB50027CDE4 /* VNTABTestConfig[few_buckets_output].json in Resources */,
 				370882151E155FB50027CDE4 /* VNTABTestConfig[already_finished_output].json in Resources */,
 				370882161E155FB50027CDE4 /* VNTABTestConfig[big_weights_output].json in Resources */,
+				370882221E156A070027CDE4 /* VNTABTestVariant[full].json in Resources */,
 				370882041E15444B0027CDE4 /* VNTABTestConfig[no_variants_input].json in Resources */,
 				370882191E155FB50027CDE4 /* VNTABTestConfig[has_not_started_output].json in Resources */,
 				370882031E15444B0027CDE4 /* VNTABTestConfig[no_end_input].json in Resources */,
