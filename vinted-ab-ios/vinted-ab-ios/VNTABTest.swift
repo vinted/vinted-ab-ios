@@ -21,8 +21,7 @@ public final class VNTABTest: Unboxable {
     public required init(unboxer: Unboxer) throws {
         self.identifier = try unboxer.unbox(key: "id")
         self.name = try unboxer.unbox(key: "name")
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy MM dd"
+        let dateFormatter = VNTISO8601DateFormatter()
         self.startAt = unboxer.unbox(key: "start_at", formatter: dateFormatter)
         self.endAt = unboxer.unbox(key: "end_at", formatter: dateFormatter)
         self.seed = try unboxer.unbox(key: "seed")

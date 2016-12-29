@@ -17,6 +17,10 @@
 		370881B41E14FA0E0027CDE4 /* Unbox+Testable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881B31E14FA0E0027CDE4 /* Unbox+Testable.swift */; };
 		370881BC1E1505800027CDE4 /* VNTABTestVariant[required].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881BB1E1505800027CDE4 /* VNTABTestVariant[required].json */; };
 		370881C01E1506430027CDE4 /* VNTABTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881BF1E1506430027CDE4 /* VNTABTest.swift */; };
+		370881C21E1509080027CDE4 /* VNTABTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881C11E1509080027CDE4 /* VNTABTestTests.swift */; };
+		370881C61E15093E0027CDE4 /* VNTABTest[full].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881C41E15093E0027CDE4 /* VNTABTest[full].json */; };
+		370881C71E15093E0027CDE4 /* VNTABTest[required].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881C51E15093E0027CDE4 /* VNTABTest[required].json */; };
+		370881C91E150EA30027CDE4 /* VNTISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881C81E150EA30027CDE4 /* VNTISO8601DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		370881B81E1504540027CDE4 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "vinted-ab-ios/Carthage/Build/iOS/Nimble.framework"; sourceTree = "<group>"; };
 		370881BB1E1505800027CDE4 /* VNTABTestVariant[required].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "VNTABTestVariant[required].json"; path = "JSON model files/VNTABTestVariant/VNTABTestVariant[required].json"; sourceTree = "<group>"; };
 		370881BF1E1506430027CDE4 /* VNTABTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTest.swift; sourceTree = "<group>"; };
+		370881C11E1509080027CDE4 /* VNTABTestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestTests.swift; sourceTree = "<group>"; };
+		370881C41E15093E0027CDE4 /* VNTABTest[full].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTest[full].json"; sourceTree = "<group>"; };
+		370881C51E15093E0027CDE4 /* VNTABTest[required].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTest[required].json"; sourceTree = "<group>"; };
+		370881C81E150EA30027CDE4 /* VNTISO8601DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTISO8601DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,7 @@
 				3708816D1E12B54C0027CDE4 /* Info.plist */,
 				370881831E12B59C0027CDE4 /* VNTABTestVariant.swift */,
 				370881BF1E1506430027CDE4 /* VNTABTest.swift */,
+				370881C81E150EA30027CDE4 /* VNTISO8601DateFormatter.swift */,
 			);
 			path = "vinted-ab-ios";
 			sourceTree = "<group>";
@@ -106,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				370881AF1E14F9BB0027CDE4 /* VNTABTestVariantTests.swift */,
+				370881C11E1509080027CDE4 /* VNTABTestTests.swift */,
 				370881BD1E1505850027CDE4 /* JSON model files */,
 				370881791E12B54C0027CDE4 /* Info.plist */,
 			);
@@ -143,6 +153,7 @@
 		370881BD1E1505850027CDE4 /* JSON model files */ = {
 			isa = PBXGroup;
 			children = (
+				370881C31E15093E0027CDE4 /* VNTABTest */,
 				370881BE1E1505920027CDE4 /* VNTABTestVariant */,
 			);
 			name = "JSON model files";
@@ -154,6 +165,16 @@
 				370881BB1E1505800027CDE4 /* VNTABTestVariant[required].json */,
 			);
 			name = VNTABTestVariant;
+			sourceTree = "<group>";
+		};
+		370881C31E15093E0027CDE4 /* VNTABTest */ = {
+			isa = PBXGroup;
+			children = (
+				370881C41E15093E0027CDE4 /* VNTABTest[full].json */,
+				370881C51E15093E0027CDE4 /* VNTABTest[required].json */,
+			);
+			name = VNTABTest;
+			path = "JSON model files/VNTABTest";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +280,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370881C61E15093E0027CDE4 /* VNTABTest[full].json in Resources */,
+				370881C71E15093E0027CDE4 /* VNTABTest[required].json in Resources */,
 				370881BC1E1505800027CDE4 /* VNTABTestVariant[required].json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				370881C01E1506430027CDE4 /* VNTABTest.swift in Sources */,
+				370881C91E150EA30027CDE4 /* VNTISO8601DateFormatter.swift in Sources */,
 				370881B41E14FA0E0027CDE4 /* Unbox+Testable.swift in Sources */,
 				370881841E12B59C0027CDE4 /* VNTABTestVariant.swift in Sources */,
 			);
@@ -316,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				370881B11E14F9BB0027CDE4 /* VNTABTestVariantTests.swift in Sources */,
+				370881C21E1509080027CDE4 /* VNTABTestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

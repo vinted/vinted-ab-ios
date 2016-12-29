@@ -1,0 +1,19 @@
+{
+    "id": 42,
+    "name": "experiment",
+    "seed": "aaaa1111",
+    "variants": [
+                 {
+                 "name": "green_button",
+                 "chance_weight": 1
+                 },
+                 {
+                 "name": "red_button",
+                 "chance_weight": 2
+                 },
+                 {
+                 "name": "control",
+                 "chance_weight": 3
+                 }
+                ]
+}
