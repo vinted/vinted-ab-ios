@@ -16,6 +16,7 @@
 		370881B11E14F9BB0027CDE4 /* VNTABTestVariantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881AF1E14F9BB0027CDE4 /* VNTABTestVariantTests.swift */; };
 		370881B41E14FA0E0027CDE4 /* Unbox+Testable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881B31E14FA0E0027CDE4 /* Unbox+Testable.swift */; };
 		370881BC1E1505800027CDE4 /* VNTABTestVariant[required].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881BB1E1505800027CDE4 /* VNTABTestVariant[required].json */; };
+		370881C01E1506430027CDE4 /* VNTABTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881BF1E1506430027CDE4 /* VNTABTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		370881B61E1504510027CDE4 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "vinted-ab-ios/Carthage/Build/iOS/Quick.framework"; sourceTree = "<group>"; };
 		370881B81E1504540027CDE4 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "vinted-ab-ios/Carthage/Build/iOS/Nimble.framework"; sourceTree = "<group>"; };
 		370881BB1E1505800027CDE4 /* VNTABTestVariant[required].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "VNTABTestVariant[required].json"; path = "JSON model files/VNTABTestVariant/VNTABTestVariant[required].json"; sourceTree = "<group>"; };
+		370881BF1E1506430027CDE4 /* VNTABTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				3708816C1E12B54C0027CDE4 /* vinted-ab-ios.h */,
 				3708816D1E12B54C0027CDE4 /* Info.plist */,
 				370881831E12B59C0027CDE4 /* VNTABTestVariant.swift */,
+				370881BF1E1506430027CDE4 /* VNTABTest.swift */,
 			);
 			path = "vinted-ab-ios";
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370881C01E1506430027CDE4 /* VNTABTest.swift in Sources */,
 				370881B41E14FA0E0027CDE4 /* Unbox+Testable.swift in Sources */,
 				370881841E12B59C0027CDE4 /* VNTABTestVariant.swift in Sources */,
 			);
