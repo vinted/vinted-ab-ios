@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		370881731E12B54C0027CDE4 /* vinted_ab_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370881691E12B54C0027CDE4 /* vinted_ab_ios.framework */; };
 		370881841E12B59C0027CDE4 /* VNTABTestVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881831E12B59C0027CDE4 /* VNTABTestVariant.swift */; };
-		3708818B1E12BD480027CDE4 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3708818A1E12BD480027CDE4 /* Unbox.framework */; };
 		3708818E1E12BF370027CDE4 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3708818D1E12BF370027CDE4 /* BigInt.framework */; };
 		370881A71E13C06D0027CDE4 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370881A61E13C06D0027CDE4 /* SipHash.framework */; };
 		370881B11E14F9BB0027CDE4 /* VNTABTestVariantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881AF1E14F9BB0027CDE4 /* VNTABTestVariantTests.swift */; };
@@ -124,7 +123,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3708818B1E12BD480027CDE4 /* Unbox.framework in Frameworks */,
 				3708818E1E12BF370027CDE4 /* BigInt.framework in Frameworks */,
 				370881A71E13C06D0027CDE4 /* SipHash.framework in Frameworks */,
 			);
@@ -443,7 +441,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/vinted-ab-ios/Carthage/Build/iOS/Unbox.framework",
 				"$(SRCROOT)/vinted-ab-ios/Carthage/Build/iOS/BigInt.framework",
 				"$(SRCROOT)/vinted-ab-ios/Carthage/Build/iOS/SipHash.framework",
 			);
