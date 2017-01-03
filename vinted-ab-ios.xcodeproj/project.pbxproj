@@ -46,7 +46,6 @@
 		3708821F1E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882121E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json */; };
 		370882201E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882131E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json */; };
 		370882221E156A070027CDE4 /* VNTABTestVariant[full].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882211E156A070027CDE4 /* VNTABTestVariant[full].json */; };
-		370882261E156DAB0027CDE4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 370882241E156DAB0027CDE4 /* Info.plist */; };
 		370882271E156DAB0027CDE4 /* vinted-ab-ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 370882251E156DAB0027CDE4 /* vinted-ab-ios.h */; };
 		370882291E156DB40027CDE4 /* VNTModel+Testable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370882281E156DB40027CDE4 /* VNTModel+Testable.swift */; };
 		3708822C1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3708822B1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift */; };
@@ -390,7 +389,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				370882261E156DAB0027CDE4 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
