@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		370881731E12B54C0027CDE4 /* vinted_ab_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370881691E12B54C0027CDE4 /* vinted_ab_ios.framework */; };
 		370881841E12B59C0027CDE4 /* VNTABTestVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881831E12B59C0027CDE4 /* VNTABTestVariant.swift */; };
-		3708818E1E12BF370027CDE4 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3708818D1E12BF370027CDE4 /* BigInt.framework */; };
-		370881A71E13C06D0027CDE4 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370881A61E13C06D0027CDE4 /* SipHash.framework */; };
 		370881B11E14F9BB0027CDE4 /* VNTABTestVariantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881AF1E14F9BB0027CDE4 /* VNTABTestVariantTests.swift */; };
 		370881BC1E1505800027CDE4 /* VNTABTestVariant[required].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881BB1E1505800027CDE4 /* VNTABTestVariant[required].json */; };
 		370881C01E1506430027CDE4 /* VNTABTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881BF1E1506430027CDE4 /* VNTABTest.swift */; };
@@ -51,6 +49,8 @@
 		3708822C1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3708822B1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift */; };
 		37BFCC401E1A77BE003BC359 /* VNTABTest[null_variant].json in Resources */ = {isa = PBXBuildFile; fileRef = 37BFCC3F1E1A77BE003BC359 /* VNTABTest[null_variant].json */; };
 		37BFCC421E1B7A71003BC359 /* VNTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BFCC411E1B7A71003BC359 /* VNTModel.swift */; };
+		37BFCC501E1BCBFE003BC359 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BFCC4E1E1BCBFE003BC359 /* BigInt.framework */; };
+		37BFCC511E1BCBFE003BC359 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BFCC4F1E1BCBFE003BC359 /* SipHash.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +115,9 @@
 		3708822B1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTISO8601DateFormatter.swift; sourceTree = "<group>"; };
 		37BFCC3F1E1A77BE003BC359 /* VNTABTest[null_variant].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTest[null_variant].json"; sourceTree = "<group>"; };
 		37BFCC411E1B7A71003BC359 /* VNTModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTModel.swift; sourceTree = "<group>"; };
+		37BFCC4E1E1BCBFE003BC359 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = Carthage/Build/iOS/BigInt.framework; sourceTree = "<group>"; };
+		37BFCC4F1E1BCBFE003BC359 /* SipHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SipHash.framework; path = Carthage/Build/iOS/SipHash.framework; sourceTree = "<group>"; };
+		37BFCC521E1BCC22003BC359 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +125,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3708818E1E12BF370027CDE4 /* BigInt.framework in Frameworks */,
-				370881A71E13C06D0027CDE4 /* SipHash.framework in Frameworks */,
+				37BFCC501E1BCBFE003BC359 /* BigInt.framework in Frameworks */,
+				37BFCC511E1BCBFE003BC359 /* SipHash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +190,9 @@
 		370881891E12BD480027CDE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37BFCC521E1BCC22003BC359 /* Nimble.framework */,
+				37BFCC4E1E1BCBFE003BC359 /* BigInt.framework */,
+				37BFCC4F1E1BCBFE003BC359 /* SipHash.framework */,
 				370881B81E1504540027CDE4 /* Nimble.framework */,
 				370881B61E1504510027CDE4 /* Quick.framework */,
 				370881A61E13C06D0027CDE4 /* SipHash.framework */,
@@ -333,7 +339,7 @@
 				3708816E1E12B54C0027CDE4 /* Sources */,
 				3708816F1E12B54C0027CDE4 /* Frameworks */,
 				370881701E12B54C0027CDE4 /* Resources */,
-				370881BA1E15046B0027CDE4 /* ShellScript */,
+				370881BA1E15046B0027CDE4 /* copy carthage frameworks */,
 			);
 			buildRules = (
 			);
@@ -439,8 +445,8 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/vinted-ab-ios/Carthage/Build/iOS/BigInt.framework",
-				"$(SRCROOT)/vinted-ab-ios/Carthage/Build/iOS/SipHash.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BigInt.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SipHash.framework",
 			);
 			name = "copy carthage frameworks";
 			outputPaths = (
@@ -449,15 +455,16 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		370881BA1E15046B0027CDE4 /* ShellScript */ = {
+		370881BA1E15046B0027CDE4 /* copy carthage frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/vinted-ab-ios/Carthage/Build/iOS/Quick.framework",
-				"$(SRCROOT)/vinted-ab-ios/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 			);
+			name = "copy carthage frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +619,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vinted-ab-ios/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "vinted-ab-ios/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -638,6 +646,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vinted-ab-ios/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "vinted-ab-ios/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -658,6 +667,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vinted-ab-ios/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "vinted-ab-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -674,6 +684,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vinted-ab-ios/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "vinted-ab-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
