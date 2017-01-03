@@ -24,6 +24,28 @@ public extension Unboxable {
     }
 }
 
+public extension VNTModel {
+    static func mappedObject(bundle: Bundle, index: String, dictChanges: [(key: String, value: AnyObject?)] = []) -> Self? {
+        guard let dict = jsonFileDictionary(forType: self,
+                                            bundle: bundle,
+                                            index: index) else { return nil }
+        
+        var updatedDict = dict
+        for dictChange in dictChanges {
+            updatedDict = updateDictionary(dict: dict as [String : AnyObject], keyPath: dictChange.key, value: dictChange.value)
+        }
+        return self.init(dictionary: updatedDict)
+    }
+    
+    static func loadSample(_ bundle: Bundle, index: String = "0", replace key: String? = nil, with value: AnyObject? = nil) -> Self? {
+        if let key = key {
+            return mappedObject(bundle: bundle, index: index, dictChanges: [(key: key, value: value)])
+        }
+        return mappedObject(bundle: bundle, index: index)
+    }
+}
+
+
 private func updateDictionary(dict: [String: AnyObject], keyPath: String, value: AnyObject?) -> [String: AnyObject] {
     var dictToEdit: [String: AnyObject] = dict
     

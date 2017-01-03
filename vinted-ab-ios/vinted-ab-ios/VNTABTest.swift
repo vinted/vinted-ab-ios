@@ -34,8 +34,8 @@ public final class VNTABTest: Unboxable {
         var tempArray: [VNTABTestVariant] = []
         if let variants: [Any] = dictionary["variants"] as? [Any] {
             for variant in variants {
-                if let variantDict = variant as? UnboxableDictionary,
-                    let unboxedVariant: VNTABTestVariant = try? unbox(dictionary: variantDict) {
+                if let variantDict = variant as? [String : Any],
+                    let unboxedVariant = VNTABTestVariant(dictionary: variantDict) {
                     tempArray.append(unboxedVariant)
                 }
             }

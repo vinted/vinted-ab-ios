@@ -1,12 +1,20 @@
 import Foundation
-import Unbox
 
-public final class VNTABTestVariant: Unboxable {
+public protocol VNTModel {
+    init?(dictionary: [String : Any])
+}
+
+public final class VNTABTestVariant: VNTModel {
     public let name: String?
     public let chanceWeight: Int
     
-    public required init(unboxer: Unboxer) throws {
-        self.name = unboxer.unbox(key: "name")
-        self.chanceWeight = try unboxer.unbox(key: "chance_weight")
+    public required init?(dictionary: [String : Any]) {
+        self.name = dictionary["name"] as? String
+        if let chanceWeight = dictionary["chance_weight"] as? Int {
+            self.chanceWeight = chanceWeight
+        } else {
+            self.chanceWeight = 0
+            return nil
+        }
     }
 }
