@@ -11,7 +11,20 @@ public final class VNTABTestConfig: Unboxable {
     public required init(unboxer: Unboxer) throws {
         self.salt = try unboxer.unbox(key: "salt")
         self.bucketCount = (try? unboxer.unbox(key: "bucket_count")) ?? 0
-        self.abTests = try unboxer.unbox(key: "ab_tests")
+        self.abTests = { () -> [VNTABTest] in
+            if let array = unboxer.dictionary["ab_tests"] as? [Any] {
+                var retArray: [VNTABTest] = []
+                for element in array {
+                    if let dictionary = element as? [String : Any],
+                       let unboxedValue = VNTABTest(dictionary: dictionary) {
+                        retArray.append(unboxedValue)
+                    }
+                }
+                return retArray
+            } else {
+                return []
+            }
+        }()
     }
     
     public func assignedVariant(forTestName name:String, identifier:String) -> VNTABTestVariant? {

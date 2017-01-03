@@ -90,7 +90,7 @@ class VNTABTestTests: QuickSpec {
         }
         
         describe("variants") {
-            fit("ignores invalid elements") {
+            it("ignores invalid elements") {
                 guard let object = VNTABTest.mappedObject(bundle: bundle, index: ModelType.null_variant.rawValue) else {
                     fail()
                     return
