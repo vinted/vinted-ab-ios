@@ -1,18 +1,20 @@
 import Foundation
-import Unbox
 import CCommonCrypto
 import BigInt
 
-public final class VNTABTestConfig: Unboxable {
+public final class VNTABTestConfig: VNTModel {
     public let salt: String
     public let bucketCount: Int
     public let abTests: [VNTABTest]
     
-    public required init(unboxer: Unboxer) throws {
-        self.salt = try unboxer.unbox(key: "salt")
-        self.bucketCount = (try? unboxer.unbox(key: "bucket_count")) ?? 0
+    public required init?(dictionary: [String : Any]) {
+        guard let salt = dictionary["salt"] as? String else {
+            return nil
+        }
+        self.salt = salt
+        self.bucketCount = (dictionary["bucket_count"] as? Int) ?? 0
         self.abTests = { () -> [VNTABTest] in
-            if let array = unboxer.dictionary["ab_tests"] as? [Any] {
+            if let array = dictionary["ab_tests"] as? [Any] {
                 var retArray: [VNTABTest] = []
                 for element in array {
                     if let dictionary = element as? [String : Any],
