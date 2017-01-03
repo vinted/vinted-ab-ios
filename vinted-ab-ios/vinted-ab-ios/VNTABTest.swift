@@ -27,6 +27,19 @@ public final class VNTABTest: Unboxable {
         self.seed = try unboxer.unbox(key: "seed")
         self.buckets = unboxer.unbox(key: "buckets", allowInvalidElements: true)
         self.allBuckets = (try? unboxer.unbox(key: "all_buckets")) ?? false
-        self.variants = try unboxer.unbox(key: "variants")
+        self.variants = VNTABTest.unboxVariants(dictionary: unboxer.dictionary)
+    }
+    
+    private class func unboxVariants(dictionary: UnboxableDictionary) -> [VNTABTestVariant] {
+        var tempArray: [VNTABTestVariant] = []
+        if let variants: [Any] = dictionary["variants"] as? [Any] {
+            for variant in variants {
+                if let variantDict = variant as? UnboxableDictionary,
+                    let unboxedVariant: VNTABTestVariant = try? unbox(dictionary: variantDict) {
+                    tempArray.append(unboxedVariant)
+                }
+            }
+        }
+        return tempArray
     }
 }

@@ -5,6 +5,7 @@ import Quick
 fileprivate enum ModelType: String {
     case full
     case required
+    case null_variant
 }
 
 class VNTABTestTests: QuickSpec {
@@ -85,6 +86,17 @@ class VNTABTestTests: QuickSpec {
                 }
                 
                 expect(object.buckets).to(equal([1,2,3]))
+            }
+        }
+        
+        describe("variants") {
+            fit("ignores invalid elements") {
+                guard let object = VNTABTest.mappedObject(bundle: bundle, index: ModelType.null_variant.rawValue) else {
+                    fail()
+                    return
+                }
+                expect(object).toNot(beNil())
+                expect(object.variants.count).to(equal(3))
             }
         }
         
