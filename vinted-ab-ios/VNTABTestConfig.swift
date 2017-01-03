@@ -2,7 +2,7 @@ import Foundation
 import CCommonCrypto
 import BigInt
 
-public final class VNTABTestConfig: VNTModel {
+public final class VNTABTestConfig: NSObject, VNTModel {
     public let salt: String
     public let bucketCount: Int
     public let abTests: [VNTABTest]

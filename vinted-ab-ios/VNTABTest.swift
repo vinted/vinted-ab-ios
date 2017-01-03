@@ -1,6 +1,6 @@
 import Foundation
 
-public final class VNTABTest: VNTModel {
+public final class VNTABTest: NSObject, VNTModel {
     public let identifier: String
     public let name: String
     public let startAt: Date?

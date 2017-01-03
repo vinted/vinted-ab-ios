@@ -1,6 +1,6 @@
 import Foundation
 
-public final class VNTABTestVariant: VNTModel {
+public final class VNTABTestVariant: NSObject, VNTModel {
     public let name: String?
     public let chanceWeight: Int
     

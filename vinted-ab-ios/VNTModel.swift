@@ -1,3 +1,6 @@
+import Foundation
+
+@objc
 public protocol VNTModel {
     init?(dictionary: [String : Any])
 }
