@@ -1,3 +1,1 @@
 github "lorentey/BigInt" == 2.1.1
-github "Quick/Quick" == 0.10.0
-github "Quick/Nimble" == 5.1.1
