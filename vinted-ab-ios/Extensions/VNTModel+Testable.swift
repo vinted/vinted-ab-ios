@@ -2,7 +2,7 @@ import Foundation
 
 private let NumberedJsonFileFormat = "%@[%@]"
 
-public extension VNTModel {
+extension VNTModel {
     static func mappedObject(bundle: Bundle, index: String, dictChanges: [(key: String, value: AnyObject?)] = []) -> Self? {
         guard let dict = jsonFileDictionary(forType: self,
                                             bundle: bundle,
@@ -41,12 +41,12 @@ private func updateDictionary(dict: [String: AnyObject], keyPath: String, value:
     return dictToEdit
 }
 
-public func jsonFileString(forType type: Any, bundle: Bundle, index: String) -> String? {
+func jsonFileString(forType type: Any, bundle: Bundle, index: String) -> String? {
     guard let data = jsonFileData(forType: type, bundle: bundle, index: index) else { return nil }
     return String(data: data, encoding: String.Encoding.utf8)
 }
 
-public func jsonFileDictionary(forType type: Any, bundle: Bundle, index: String) -> [String : Any]? {
+func jsonFileDictionary(forType type: Any, bundle: Bundle, index: String) -> [String : Any]? {
     guard let data = jsonFileData(forType: type, bundle: bundle, index: index) else { return nil }
     var dict: [String : Any]?
     do {
