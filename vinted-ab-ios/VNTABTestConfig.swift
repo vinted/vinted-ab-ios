@@ -1,5 +1,5 @@
 import Foundation
-import CCommonCrypto
+import CommonCrypto
 import BigInt
 
 public final class VNTABTestConfig: NSObject, VNTModel {
