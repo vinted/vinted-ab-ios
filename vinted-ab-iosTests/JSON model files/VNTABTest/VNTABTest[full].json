@@ -1,0 +1,23 @@
+{
+    "id": 42,
+    "name": "experiment",
+    "start_at": "2014-05-21T11:06:30+0300",
+    "end_at": "2014-05-28T11:06:30+0300",
+    "seed": "aaaa1111",
+    "buckets": [1, 2, 3, 4, 5],
+    "all_buckets":true,
+    "variants": [
+                 {
+                 "name": "green_button",
+                 "chance_weight": 1
+                 },
+                 {
+                 "name": "red_button",
+                 "chance_weight": 2
+                 },
+                 {
+                 "name": "control",
+                 "chance_weight": 3
+                 }
+                ]
+}

@@ -1,0 +1,856 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		370881731E12B54C0027CDE4 /* vinted_ab_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370881691E12B54C0027CDE4 /* vinted_ab_ios.framework */; };
+		370881841E12B59C0027CDE4 /* VNTABTestVariant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881831E12B59C0027CDE4 /* VNTABTestVariant.swift */; };
+		370881B11E14F9BB0027CDE4 /* VNTABTestVariantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881AF1E14F9BB0027CDE4 /* VNTABTestVariantTests.swift */; };
+		370881BC1E1505800027CDE4 /* VNTABTestVariant[required].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881BB1E1505800027CDE4 /* VNTABTestVariant[required].json */; };
+		370881C01E1506430027CDE4 /* VNTABTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881BF1E1506430027CDE4 /* VNTABTest.swift */; };
+		370881C21E1509080027CDE4 /* VNTABTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881C11E1509080027CDE4 /* VNTABTestTests.swift */; };
+		370881C61E15093E0027CDE4 /* VNTABTest[full].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881C41E15093E0027CDE4 /* VNTABTest[full].json */; };
+		370881C71E15093E0027CDE4 /* VNTABTest[required].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881C51E15093E0027CDE4 /* VNTABTest[required].json */; };
+		370881CB1E1527110027CDE4 /* VNTABTestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881CA1E1527110027CDE4 /* VNTABTestConfig.swift */; };
+		370881CD1E1540E30027CDE4 /* VNTABTestConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370881CC1E1540E30027CDE4 /* VNTABTestConfigTests.swift */; };
+		370881FA1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881ED1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json */; };
+		370881FB1E15444B0027CDE4 /* VNTABTestConfig[already_finished_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881EE1E15444B0027CDE4 /* VNTABTestConfig[already_finished_input].json */; };
+		370881FC1E15444B0027CDE4 /* VNTABTestConfig[big_weights_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881EF1E15444B0027CDE4 /* VNTABTestConfig[big_weights_input].json */; };
+		370881FD1E15444B0027CDE4 /* VNTABTestConfig[explicit_times_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F01E15444B0027CDE4 /* VNTABTestConfig[explicit_times_input].json */; };
+		370881FE1E15444B0027CDE4 /* VNTABTestConfig[few_buckets_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F11E15444B0027CDE4 /* VNTABTestConfig[few_buckets_input].json */; };
+		370881FF1E15444B0027CDE4 /* VNTABTestConfig[has_not_started_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F21E15444B0027CDE4 /* VNTABTestConfig[has_not_started_input].json */; };
+		370882001E15444B0027CDE4 /* VNTABTestConfig[multiple_tests_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F31E15444B0027CDE4 /* VNTABTestConfig[multiple_tests_input].json */; };
+		370882011E15444B0027CDE4 /* VNTABTestConfig[multiple_variants_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F41E15444B0027CDE4 /* VNTABTestConfig[multiple_variants_input].json */; };
+		370882021E15444B0027CDE4 /* VNTABTestConfig[no_buckets_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F51E15444B0027CDE4 /* VNTABTestConfig[no_buckets_input].json */; };
+		370882031E15444B0027CDE4 /* VNTABTestConfig[no_end_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F61E15444B0027CDE4 /* VNTABTestConfig[no_end_input].json */; };
+		370882041E15444B0027CDE4 /* VNTABTestConfig[no_variants_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F71E15444B0027CDE4 /* VNTABTestConfig[no_variants_input].json */; };
+		370882051E15444B0027CDE4 /* VNTABTestConfig[zero_buckets_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F81E15444B0027CDE4 /* VNTABTestConfig[zero_buckets_input].json */; };
+		370882061E15444B0027CDE4 /* VNTABTestConfig[zero_weight_input].json in Resources */ = {isa = PBXBuildFile; fileRef = 370881F91E15444B0027CDE4 /* VNTABTestConfig[zero_weight_input].json */; };
+		370882141E155FB50027CDE4 /* VNTABTestConfig[all_buckets_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882071E155FB50027CDE4 /* VNTABTestConfig[all_buckets_output].json */; };
+		370882151E155FB50027CDE4 /* VNTABTestConfig[already_finished_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882081E155FB50027CDE4 /* VNTABTestConfig[already_finished_output].json */; };
+		370882161E155FB50027CDE4 /* VNTABTestConfig[big_weights_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882091E155FB50027CDE4 /* VNTABTestConfig[big_weights_output].json */; };
+		370882171E155FB50027CDE4 /* VNTABTestConfig[explicit_times_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 3708820A1E155FB50027CDE4 /* VNTABTestConfig[explicit_times_output].json */; };
+		370882181E155FB50027CDE4 /* VNTABTestConfig[few_buckets_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 3708820B1E155FB50027CDE4 /* VNTABTestConfig[few_buckets_output].json */; };
+		370882191E155FB50027CDE4 /* VNTABTestConfig[has_not_started_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 3708820C1E155FB50027CDE4 /* VNTABTestConfig[has_not_started_output].json */; };
+		3708821A1E155FB50027CDE4 /* VNTABTestConfig[multiple_tests_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 3708820D1E155FB50027CDE4 /* VNTABTestConfig[multiple_tests_output].json */; };
+		3708821B1E155FB50027CDE4 /* VNTABTestConfig[multiple_variants_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 3708820E1E155FB50027CDE4 /* VNTABTestConfig[multiple_variants_output].json */; };
+		3708821C1E155FB50027CDE4 /* VNTABTestConfig[no_buckets_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 3708820F1E155FB50027CDE4 /* VNTABTestConfig[no_buckets_output].json */; };
+		3708821D1E155FB50027CDE4 /* VNTABTestConfig[no_end_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882101E155FB50027CDE4 /* VNTABTestConfig[no_end_output].json */; };
+		3708821E1E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882111E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json */; };
+		3708821F1E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882121E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json */; };
+		370882201E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882131E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json */; };
+		370882221E156A070027CDE4 /* VNTABTestVariant[full].json in Resources */ = {isa = PBXBuildFile; fileRef = 370882211E156A070027CDE4 /* VNTABTestVariant[full].json */; };
+		370882271E156DAB0027CDE4 /* vinted-ab-ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 370882251E156DAB0027CDE4 /* vinted-ab-ios.h */; };
+		370882291E156DB40027CDE4 /* VNTModel+Testable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370882281E156DB40027CDE4 /* VNTModel+Testable.swift */; };
+		3708822C1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3708822B1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift */; };
+		37BFCC401E1A77BE003BC359 /* VNTABTest[null_variant].json in Resources */ = {isa = PBXBuildFile; fileRef = 37BFCC3F1E1A77BE003BC359 /* VNTABTest[null_variant].json */; };
+		37BFCC421E1B7A71003BC359 /* VNTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BFCC411E1B7A71003BC359 /* VNTModel.swift */; };
+		37BFCC501E1BCBFE003BC359 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BFCC4E1E1BCBFE003BC359 /* BigInt.framework */; };
+		37BFCC511E1BCBFE003BC359 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BFCC4F1E1BCBFE003BC359 /* SipHash.framework */; };
+		37BFCC751E1D4DB4003BC359 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BFCC661E1D4B4F003BC359 /* CommonCrypto.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		370881741E12B54C0027CDE4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 370881601E12B54C0027CDE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 370881681E12B54C0027CDE4;
+			remoteInfo = "vinted-ab-ios";
+		};
+		37BFCC731E1D4CEE003BC359 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 370881601E12B54C0027CDE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37BFCC651E1D4B4F003BC359;
+			remoteInfo = CommonCrypto;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		370881691E12B54C0027CDE4 /* vinted_ab_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = vinted_ab_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		370881721E12B54C0027CDE4 /* vinted-ab-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "vinted-ab-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		370881791E12B54C0027CDE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		370881831E12B59C0027CDE4 /* VNTABTestVariant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestVariant.swift; sourceTree = "<group>"; };
+		3708818D1E12BF370027CDE4 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = "vinted-ab-ios/Carthage/Build/iOS/BigInt.framework"; sourceTree = "<group>"; };
+		370881A61E13C06D0027CDE4 /* SipHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SipHash.framework; path = "vinted-ab-ios/Carthage/Build/iOS/SipHash.framework"; sourceTree = "<group>"; };
+		370881AF1E14F9BB0027CDE4 /* VNTABTestVariantTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestVariantTests.swift; sourceTree = "<group>"; };
+		370881B61E1504510027CDE4 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "vinted-ab-ios/Carthage/Build/iOS/Quick.framework"; sourceTree = "<group>"; };
+		370881B81E1504540027CDE4 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "vinted-ab-ios/Carthage/Build/iOS/Nimble.framework"; sourceTree = "<group>"; };
+		370881BB1E1505800027CDE4 /* VNTABTestVariant[required].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "VNTABTestVariant[required].json"; path = "JSON model files/VNTABTestVariant/VNTABTestVariant[required].json"; sourceTree = "<group>"; };
+		370881BF1E1506430027CDE4 /* VNTABTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTest.swift; sourceTree = "<group>"; };
+		370881C11E1509080027CDE4 /* VNTABTestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestTests.swift; sourceTree = "<group>"; };
+		370881C41E15093E0027CDE4 /* VNTABTest[full].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTest[full].json"; sourceTree = "<group>"; };
+		370881C51E15093E0027CDE4 /* VNTABTest[required].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTest[required].json"; sourceTree = "<group>"; };
+		370881CA1E1527110027CDE4 /* VNTABTestConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestConfig.swift; sourceTree = "<group>"; };
+		370881CC1E1540E30027CDE4 /* VNTABTestConfigTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTABTestConfigTests.swift; sourceTree = "<group>"; };
+		370881ED1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[all_buckets_input].json"; sourceTree = "<group>"; };
+		370881EE1E15444B0027CDE4 /* VNTABTestConfig[already_finished_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[already_finished_input].json"; sourceTree = "<group>"; };
+		370881EF1E15444B0027CDE4 /* VNTABTestConfig[big_weights_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[big_weights_input].json"; sourceTree = "<group>"; };
+		370881F01E15444B0027CDE4 /* VNTABTestConfig[explicit_times_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[explicit_times_input].json"; sourceTree = "<group>"; };
+		370881F11E15444B0027CDE4 /* VNTABTestConfig[few_buckets_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[few_buckets_input].json"; sourceTree = "<group>"; };
+		370881F21E15444B0027CDE4 /* VNTABTestConfig[has_not_started_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[has_not_started_input].json"; sourceTree = "<group>"; };
+		370881F31E15444B0027CDE4 /* VNTABTestConfig[multiple_tests_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[multiple_tests_input].json"; sourceTree = "<group>"; };
+		370881F41E15444B0027CDE4 /* VNTABTestConfig[multiple_variants_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[multiple_variants_input].json"; sourceTree = "<group>"; };
+		370881F51E15444B0027CDE4 /* VNTABTestConfig[no_buckets_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_buckets_input].json"; sourceTree = "<group>"; };
+		370881F61E15444B0027CDE4 /* VNTABTestConfig[no_end_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_end_input].json"; sourceTree = "<group>"; };
+		370881F71E15444B0027CDE4 /* VNTABTestConfig[no_variants_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_variants_input].json"; sourceTree = "<group>"; };
+		370881F81E15444B0027CDE4 /* VNTABTestConfig[zero_buckets_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[zero_buckets_input].json"; sourceTree = "<group>"; };
+		370881F91E15444B0027CDE4 /* VNTABTestConfig[zero_weight_input].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[zero_weight_input].json"; sourceTree = "<group>"; };
+		370882071E155FB50027CDE4 /* VNTABTestConfig[all_buckets_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[all_buckets_output].json"; sourceTree = "<group>"; };
+		370882081E155FB50027CDE4 /* VNTABTestConfig[already_finished_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[already_finished_output].json"; sourceTree = "<group>"; };
+		370882091E155FB50027CDE4 /* VNTABTestConfig[big_weights_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[big_weights_output].json"; sourceTree = "<group>"; };
+		3708820A1E155FB50027CDE4 /* VNTABTestConfig[explicit_times_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[explicit_times_output].json"; sourceTree = "<group>"; };
+		3708820B1E155FB50027CDE4 /* VNTABTestConfig[few_buckets_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[few_buckets_output].json"; sourceTree = "<group>"; };
+		3708820C1E155FB50027CDE4 /* VNTABTestConfig[has_not_started_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[has_not_started_output].json"; sourceTree = "<group>"; };
+		3708820D1E155FB50027CDE4 /* VNTABTestConfig[multiple_tests_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[multiple_tests_output].json"; sourceTree = "<group>"; };
+		3708820E1E155FB50027CDE4 /* VNTABTestConfig[multiple_variants_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[multiple_variants_output].json"; sourceTree = "<group>"; };
+		3708820F1E155FB50027CDE4 /* VNTABTestConfig[no_buckets_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_buckets_output].json"; sourceTree = "<group>"; };
+		370882101E155FB50027CDE4 /* VNTABTestConfig[no_end_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_end_output].json"; sourceTree = "<group>"; };
+		370882111E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[no_variants_output].json"; sourceTree = "<group>"; };
+		370882121E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[zero_buckets_output].json"; sourceTree = "<group>"; };
+		370882131E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTestConfig[zero_weight_output].json"; sourceTree = "<group>"; };
+		370882211E156A070027CDE4 /* VNTABTestVariant[full].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "VNTABTestVariant[full].json"; path = "JSON model files/VNTABTestVariant/VNTABTestVariant[full].json"; sourceTree = "<group>"; };
+		370882241E156DAB0027CDE4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		370882251E156DAB0027CDE4 /* vinted-ab-ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "vinted-ab-ios.h"; sourceTree = "<group>"; };
+		370882281E156DB40027CDE4 /* VNTModel+Testable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "VNTModel+Testable.swift"; path = "Extensions/VNTModel+Testable.swift"; sourceTree = "<group>"; };
+		3708822B1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTISO8601DateFormatter.swift; sourceTree = "<group>"; };
+		37BFCC3F1E1A77BE003BC359 /* VNTABTest[null_variant].json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "VNTABTest[null_variant].json"; sourceTree = "<group>"; };
+		37BFCC411E1B7A71003BC359 /* VNTModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNTModel.swift; sourceTree = "<group>"; };
+		37BFCC4E1E1BCBFE003BC359 /* BigInt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BigInt.framework; path = Carthage/Build/iOS/BigInt.framework; sourceTree = "<group>"; };
+		37BFCC4F1E1BCBFE003BC359 /* SipHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SipHash.framework; path = Carthage/Build/iOS/SipHash.framework; sourceTree = "<group>"; };
+		37BFCC521E1BCC22003BC359 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		37BFCC661E1D4B4F003BC359 /* CommonCrypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonCrypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37BFCC691E1D4B4F003BC359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37BFCC6E1E1D4B80003BC359 /* CommonCrypto.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = CommonCrypto.xcconfig; sourceTree = "<group>"; };
+		37BFCC6F1E1D4BB4003BC359 /* iphoneos.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphoneos.modulemap; sourceTree = "<group>"; };
+		37BFCC701E1D4C0B003BC359 /* iphonesimulator.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = iphonesimulator.modulemap; sourceTree = "<group>"; };
+		37BFCC711E1D4C2E003BC359 /* macosx.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = macosx.modulemap; sourceTree = "<group>"; };
+		37BFCC7B1E1EA3FA003BC359 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		370881651E12B54C0027CDE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37BFCC501E1BCBFE003BC359 /* BigInt.framework in Frameworks */,
+				37BFCC751E1D4DB4003BC359 /* CommonCrypto.framework in Frameworks */,
+				37BFCC511E1BCBFE003BC359 /* SipHash.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3708816F1E12B54C0027CDE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				370881731E12B54C0027CDE4 /* vinted_ab_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37BFCC621E1D4B4F003BC359 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3708815F1E12B54C0027CDE4 = {
+			isa = PBXGroup;
+			children = (
+				3708816B1E12B54C0027CDE4 /* vinted-ab-ios */,
+				370881761E12B54C0027CDE4 /* vinted-ab-iosTests */,
+				37BFCC671E1D4B4F003BC359 /* CommonCrypto */,
+				3708816A1E12B54C0027CDE4 /* Products */,
+				370881891E12BD480027CDE4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3708816A1E12B54C0027CDE4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				370881691E12B54C0027CDE4 /* vinted_ab_ios.framework */,
+				370881721E12B54C0027CDE4 /* vinted-ab-iosTests.xctest */,
+				37BFCC661E1D4B4F003BC359 /* CommonCrypto.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3708816B1E12B54C0027CDE4 /* vinted-ab-ios */ = {
+			isa = PBXGroup;
+			children = (
+				370881B51E14FA1C0027CDE4 /* Extensions */,
+				370882231E156DAB0027CDE4 /* Supporting Files */,
+				3708822A1E156DCE0027CDE4 /* Helpers */,
+				370881831E12B59C0027CDE4 /* VNTABTestVariant.swift */,
+				370881CA1E1527110027CDE4 /* VNTABTestConfig.swift */,
+				370881BF1E1506430027CDE4 /* VNTABTest.swift */,
+				37BFCC411E1B7A71003BC359 /* VNTModel.swift */,
+			);
+			path = "vinted-ab-ios";
+			sourceTree = "<group>";
+		};
+		370881761E12B54C0027CDE4 /* vinted-ab-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				370881AF1E14F9BB0027CDE4 /* VNTABTestVariantTests.swift */,
+				370881CC1E1540E30027CDE4 /* VNTABTestConfigTests.swift */,
+				370881C11E1509080027CDE4 /* VNTABTestTests.swift */,
+				370881BD1E1505850027CDE4 /* JSON model files */,
+				370881791E12B54C0027CDE4 /* Info.plist */,
+			);
+			path = "vinted-ab-iosTests";
+			sourceTree = "<group>";
+		};
+		370881891E12BD480027CDE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37BFCC7B1E1EA3FA003BC359 /* libz.tbd */,
+				37BFCC521E1BCC22003BC359 /* Nimble.framework */,
+				37BFCC4E1E1BCBFE003BC359 /* BigInt.framework */,
+				37BFCC4F1E1BCBFE003BC359 /* SipHash.framework */,
+				370881B81E1504540027CDE4 /* Nimble.framework */,
+				370881B61E1504510027CDE4 /* Quick.framework */,
+				370881A61E13C06D0027CDE4 /* SipHash.framework */,
+				3708818D1E12BF370027CDE4 /* BigInt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		370881B51E14FA1C0027CDE4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				370882281E156DB40027CDE4 /* VNTModel+Testable.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		370881BD1E1505850027CDE4 /* JSON model files */ = {
+			isa = PBXGroup;
+			children = (
+				370881BE1E1505920027CDE4 /* VNTABTestVariant */,
+				370881CE1E1540F20027CDE4 /* VNTABTestConfig */,
+				370881C31E15093E0027CDE4 /* VNTABTest */,
+			);
+			name = "JSON model files";
+			sourceTree = "<group>";
+		};
+		370881BE1E1505920027CDE4 /* VNTABTestVariant */ = {
+			isa = PBXGroup;
+			children = (
+				370881BB1E1505800027CDE4 /* VNTABTestVariant[required].json */,
+				370882211E156A070027CDE4 /* VNTABTestVariant[full].json */,
+			);
+			name = VNTABTestVariant;
+			sourceTree = "<group>";
+		};
+		370881C31E15093E0027CDE4 /* VNTABTest */ = {
+			isa = PBXGroup;
+			children = (
+				370881C41E15093E0027CDE4 /* VNTABTest[full].json */,
+				370881C51E15093E0027CDE4 /* VNTABTest[required].json */,
+				37BFCC3F1E1A77BE003BC359 /* VNTABTest[null_variant].json */,
+			);
+			name = VNTABTest;
+			path = "JSON model files/VNTABTest";
+			sourceTree = "<group>";
+		};
+		370881CE1E1540F20027CDE4 /* VNTABTestConfig */ = {
+			isa = PBXGroup;
+			children = (
+				370881ED1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json */,
+				370881EE1E15444B0027CDE4 /* VNTABTestConfig[already_finished_input].json */,
+				370881EF1E15444B0027CDE4 /* VNTABTestConfig[big_weights_input].json */,
+				370881F01E15444B0027CDE4 /* VNTABTestConfig[explicit_times_input].json */,
+				370881F11E15444B0027CDE4 /* VNTABTestConfig[few_buckets_input].json */,
+				370881F21E15444B0027CDE4 /* VNTABTestConfig[has_not_started_input].json */,
+				370881F31E15444B0027CDE4 /* VNTABTestConfig[multiple_tests_input].json */,
+				370881F41E15444B0027CDE4 /* VNTABTestConfig[multiple_variants_input].json */,
+				370881F51E15444B0027CDE4 /* VNTABTestConfig[no_buckets_input].json */,
+				370881F61E15444B0027CDE4 /* VNTABTestConfig[no_end_input].json */,
+				370881F71E15444B0027CDE4 /* VNTABTestConfig[no_variants_input].json */,
+				370881F81E15444B0027CDE4 /* VNTABTestConfig[zero_buckets_input].json */,
+				370881F91E15444B0027CDE4 /* VNTABTestConfig[zero_weight_input].json */,
+				370882071E155FB50027CDE4 /* VNTABTestConfig[all_buckets_output].json */,
+				370882081E155FB50027CDE4 /* VNTABTestConfig[already_finished_output].json */,
+				370882091E155FB50027CDE4 /* VNTABTestConfig[big_weights_output].json */,
+				3708820A1E155FB50027CDE4 /* VNTABTestConfig[explicit_times_output].json */,
+				3708820B1E155FB50027CDE4 /* VNTABTestConfig[few_buckets_output].json */,
+				3708820C1E155FB50027CDE4 /* VNTABTestConfig[has_not_started_output].json */,
+				3708820D1E155FB50027CDE4 /* VNTABTestConfig[multiple_tests_output].json */,
+				3708820E1E155FB50027CDE4 /* VNTABTestConfig[multiple_variants_output].json */,
+				3708820F1E155FB50027CDE4 /* VNTABTestConfig[no_buckets_output].json */,
+				370882101E155FB50027CDE4 /* VNTABTestConfig[no_end_output].json */,
+				370882111E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json */,
+				370882121E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json */,
+				370882131E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json */,
+			);
+			name = VNTABTestConfig;
+			path = "JSON model files/VNTABTestConfig";
+			sourceTree = "<group>";
+		};
+		370882231E156DAB0027CDE4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				370882241E156DAB0027CDE4 /* Info.plist */,
+				370882251E156DAB0027CDE4 /* vinted-ab-ios.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3708822A1E156DCE0027CDE4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3708822B1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		37BFCC671E1D4B4F003BC359 /* CommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				37BFCC691E1D4B4F003BC359 /* Info.plist */,
+				37BFCC6E1E1D4B80003BC359 /* CommonCrypto.xcconfig */,
+				37BFCC6F1E1D4BB4003BC359 /* iphoneos.modulemap */,
+				37BFCC701E1D4C0B003BC359 /* iphonesimulator.modulemap */,
+				37BFCC711E1D4C2E003BC359 /* macosx.modulemap */,
+			);
+			path = CommonCrypto;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		370881661E12B54C0027CDE4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				370882271E156DAB0027CDE4 /* vinted-ab-ios.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37BFCC631E1D4B4F003BC359 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		370881681E12B54C0027CDE4 /* vinted-ab-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3708817D1E12B54C0027CDE4 /* Build configuration list for PBXNativeTarget "vinted-ab-ios" */;
+			buildPhases = (
+				370881641E12B54C0027CDE4 /* Sources */,
+				370881651E12B54C0027CDE4 /* Frameworks */,
+				370881661E12B54C0027CDE4 /* Headers */,
+				370881671E12B54C0027CDE4 /* Resources */,
+				3708818C1E12BD540027CDE4 /* copy carthage frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37BFCC741E1D4CEE003BC359 /* PBXTargetDependency */,
+			);
+			name = "vinted-ab-ios";
+			productName = "vinted-ab-ios";
+			productReference = 370881691E12B54C0027CDE4 /* vinted_ab_ios.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		370881711E12B54C0027CDE4 /* vinted-ab-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 370881801E12B54C0027CDE4 /* Build configuration list for PBXNativeTarget "vinted-ab-iosTests" */;
+			buildPhases = (
+				3708816E1E12B54C0027CDE4 /* Sources */,
+				3708816F1E12B54C0027CDE4 /* Frameworks */,
+				370881701E12B54C0027CDE4 /* Resources */,
+				370881BA1E15046B0027CDE4 /* copy carthage frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				370881751E12B54C0027CDE4 /* PBXTargetDependency */,
+			);
+			name = "vinted-ab-iosTests";
+			productName = "vinted-ab-iosTests";
+			productReference = 370881721E12B54C0027CDE4 /* vinted-ab-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		37BFCC651E1D4B4F003BC359 /* CommonCrypto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37BFCC6B1E1D4B4F003BC359 /* Build configuration list for PBXNativeTarget "CommonCrypto" */;
+			buildPhases = (
+				37BFCC611E1D4B4F003BC359 /* Sources */,
+				37BFCC621E1D4B4F003BC359 /* Frameworks */,
+				37BFCC631E1D4B4F003BC359 /* Headers */,
+				37BFCC641E1D4B4F003BC359 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CommonCrypto;
+			productName = CommonCrypto;
+			productReference = 37BFCC661E1D4B4F003BC359 /* CommonCrypto.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		370881601E12B54C0027CDE4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Vinted;
+				TargetAttributes = {
+					370881681E12B54C0027CDE4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					370881711E12B54C0027CDE4 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					37BFCC651E1D4B4F003BC359 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 370881631E12B54C0027CDE4 /* Build configuration list for PBXProject "vinted-ab-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3708815F1E12B54C0027CDE4;
+			productRefGroup = 3708816A1E12B54C0027CDE4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				370881681E12B54C0027CDE4 /* vinted-ab-ios */,
+				370881711E12B54C0027CDE4 /* vinted-ab-iosTests */,
+				37BFCC651E1D4B4F003BC359 /* CommonCrypto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		370881671E12B54C0027CDE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		370881701E12B54C0027CDE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				370881FE1E15444B0027CDE4 /* VNTABTestConfig[few_buckets_input].json in Resources */,
+				370881C61E15093E0027CDE4 /* VNTABTest[full].json in Resources */,
+				3708821B1E155FB50027CDE4 /* VNTABTestConfig[multiple_variants_output].json in Resources */,
+				370882061E15444B0027CDE4 /* VNTABTestConfig[zero_weight_input].json in Resources */,
+				370882021E15444B0027CDE4 /* VNTABTestConfig[no_buckets_input].json in Resources */,
+				370882201E155FB50027CDE4 /* VNTABTestConfig[zero_weight_output].json in Resources */,
+				370881FB1E15444B0027CDE4 /* VNTABTestConfig[already_finished_input].json in Resources */,
+				370882181E155FB50027CDE4 /* VNTABTestConfig[few_buckets_output].json in Resources */,
+				370882151E155FB50027CDE4 /* VNTABTestConfig[already_finished_output].json in Resources */,
+				370882161E155FB50027CDE4 /* VNTABTestConfig[big_weights_output].json in Resources */,
+				370882221E156A070027CDE4 /* VNTABTestVariant[full].json in Resources */,
+				370882041E15444B0027CDE4 /* VNTABTestConfig[no_variants_input].json in Resources */,
+				370882191E155FB50027CDE4 /* VNTABTestConfig[has_not_started_output].json in Resources */,
+				370882031E15444B0027CDE4 /* VNTABTestConfig[no_end_input].json in Resources */,
+				370882051E15444B0027CDE4 /* VNTABTestConfig[zero_buckets_input].json in Resources */,
+				3708821A1E155FB50027CDE4 /* VNTABTestConfig[multiple_tests_output].json in Resources */,
+				370881FF1E15444B0027CDE4 /* VNTABTestConfig[has_not_started_input].json in Resources */,
+				370881FD1E15444B0027CDE4 /* VNTABTestConfig[explicit_times_input].json in Resources */,
+				370881C71E15093E0027CDE4 /* VNTABTest[required].json in Resources */,
+				370881FA1E15444B0027CDE4 /* VNTABTestConfig[all_buckets_input].json in Resources */,
+				3708821F1E155FB50027CDE4 /* VNTABTestConfig[zero_buckets_output].json in Resources */,
+				3708821E1E155FB50027CDE4 /* VNTABTestConfig[no_variants_output].json in Resources */,
+				370882141E155FB50027CDE4 /* VNTABTestConfig[all_buckets_output].json in Resources */,
+				37BFCC401E1A77BE003BC359 /* VNTABTest[null_variant].json in Resources */,
+				370881FC1E15444B0027CDE4 /* VNTABTestConfig[big_weights_input].json in Resources */,
+				370882011E15444B0027CDE4 /* VNTABTestConfig[multiple_variants_input].json in Resources */,
+				3708821C1E155FB50027CDE4 /* VNTABTestConfig[no_buckets_output].json in Resources */,
+				370881BC1E1505800027CDE4 /* VNTABTestVariant[required].json in Resources */,
+				370882001E15444B0027CDE4 /* VNTABTestConfig[multiple_tests_input].json in Resources */,
+				370882171E155FB50027CDE4 /* VNTABTestConfig[explicit_times_output].json in Resources */,
+				3708821D1E155FB50027CDE4 /* VNTABTestConfig[no_end_output].json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37BFCC641E1D4B4F003BC359 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3708818C1E12BD540027CDE4 /* copy carthage frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/BigInt.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SipHash.framework",
+			);
+			name = "copy carthage frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		370881BA1E15046B0027CDE4 /* copy carthage frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+			);
+			name = "copy carthage frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		370881641E12B54C0027CDE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				370881C01E1506430027CDE4 /* VNTABTest.swift in Sources */,
+				370881CB1E1527110027CDE4 /* VNTABTestConfig.swift in Sources */,
+				37BFCC421E1B7A71003BC359 /* VNTModel.swift in Sources */,
+				3708822C1E156DCE0027CDE4 /* VNTISO8601DateFormatter.swift in Sources */,
+				370881841E12B59C0027CDE4 /* VNTABTestVariant.swift in Sources */,
+				370882291E156DB40027CDE4 /* VNTModel+Testable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3708816E1E12B54C0027CDE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				370881B11E14F9BB0027CDE4 /* VNTABTestVariantTests.swift in Sources */,
+				370881C21E1509080027CDE4 /* VNTABTestTests.swift in Sources */,
+				370881CD1E1540E30027CDE4 /* VNTABTestConfigTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37BFCC611E1D4B4F003BC359 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		370881751E12B54C0027CDE4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 370881681E12B54C0027CDE4 /* vinted-ab-ios */;
+			targetProxy = 370881741E12B54C0027CDE4 /* PBXContainerItemProxy */;
+		};
+		37BFCC741E1D4CEE003BC359 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37BFCC651E1D4B4F003BC359 /* CommonCrypto */;
+			targetProxy = 37BFCC731E1D4CEE003BC359 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3708817B1E12B54C0027CDE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3708817C1E12B54C0027CDE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3708817E1E12B54C0027CDE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/vinted-ab-ios/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "vinted-ab-ios/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vinted.vinted-ab-ios";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3708817F1E12B54C0027CDE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/vinted-ab-ios/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "vinted-ab-ios/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vinted.vinted-ab-ios";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		370881811E12B54C0027CDE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/vinted-ab-ios/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "vinted-ab-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vinted.vinted-ab-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		370881821E12B54C0027CDE4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/vinted-ab-ios/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "vinted-ab-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vinted.vinted-ab-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		37BFCC6C1E1D4B4F003BC359 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37BFCC6E1E1D4B80003BC359 /* CommonCrypto.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CommonCrypto/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Vinted.CommonCrypto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		37BFCC6D1E1D4B4F003BC359 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37BFCC6E1E1D4B80003BC359 /* CommonCrypto.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CommonCrypto/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Vinted.CommonCrypto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		370881631E12B54C0027CDE4 /* Build configuration list for PBXProject "vinted-ab-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3708817B1E12B54C0027CDE4 /* Debug */,
+				3708817C1E12B54C0027CDE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3708817D1E12B54C0027CDE4 /* Build configuration list for PBXNativeTarget "vinted-ab-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3708817E1E12B54C0027CDE4 /* Debug */,
+				3708817F1E12B54C0027CDE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		370881801E12B54C0027CDE4 /* Build configuration list for PBXNativeTarget "vinted-ab-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				370881811E12B54C0027CDE4 /* Debug */,
+				370881821E12B54C0027CDE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37BFCC6B1E1D4B4F003BC359 /* Build configuration list for PBXNativeTarget "CommonCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37BFCC6C1E1D4B4F003BC359 /* Debug */,
+				37BFCC6D1E1D4B4F003BC359 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 370881601E12B54C0027CDE4 /* Project object */;
+}
