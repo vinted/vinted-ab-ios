@@ -354,7 +354,6 @@
 				370881651E12B54C0027CDE4 /* Frameworks */,
 				370881661E12B54C0027CDE4 /* Headers */,
 				370881671E12B54C0027CDE4 /* Resources */,
-				3708818C1E12BD540027CDE4 /* copy carthage frameworks */,
 			);
 			buildRules = (
 			);
@@ -503,22 +502,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3708818C1E12BD540027CDE4 /* copy carthage frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/BigInt.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SipHash.framework",
-			);
-			name = "copy carthage frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		370881BA1E15046B0027CDE4 /* copy carthage frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -849,6 +832,7 @@
 				37BFCC6D1E1D4B4F003BC359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
