@@ -1,5 +1,6 @@
 import Foundation
 import BigInt
+import CryptoSwift
 
 public final class VNTABTestConfig: NSObject, VNTModel {
     public let salt: String
@@ -51,20 +52,7 @@ public final class VNTABTestConfig: NSObject, VNTModel {
     }
     
     private func hexDigestedString(fromString: String) -> String? {
-        let shaData = sha256(fromString: fromString)
-        return shaData?.map { String(format: "%02hhx", $0) }.joined()
-    }
-    
-    private func sha256(fromString: String) -> Data? {
-        guard var stringData = fromString.data(using: String.Encoding.utf8) else { return nil }
-        var digestedData = Data(count: Int(CC_SHA256_DIGEST_LENGTH))
-        
-        _ = digestedData.withUnsafeMutableBytes { dataDigestBytes in
-            stringData.withUnsafeMutableBytes { stringDigestBytes in
-                CC_SHA256(stringDigestBytes, CC_LONG(stringData.count), dataDigestBytes)
-            }
-        }
-        return digestedData
+        return fromString.data(using: String.Encoding.utf8)?.sha256().toHexString()
     }
     
     private func testInBucket(test: VNTABTest, identifier: String) -> Bool {
