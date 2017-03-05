@@ -51,6 +51,7 @@
 		37BFCC421E1B7A71003BC359 /* VNTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BFCC411E1B7A71003BC359 /* VNTModel.swift */; };
 		37BFCC501E1BCBFE003BC359 /* BigInt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BFCC4E1E1BCBFE003BC359 /* BigInt.framework */; };
 		37BFCC511E1BCBFE003BC359 /* SipHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37BFCC4F1E1BCBFE003BC359 /* SipHash.framework */; };
+		37C4FE2D1E6CAFFF004321E0 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C4FE2C1E6CAFFF004321E0 /* CryptoSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		37BFCC4F1E1BCBFE003BC359 /* SipHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SipHash.framework; path = Carthage/Build/iOS/SipHash.framework; sourceTree = "<group>"; };
 		37BFCC521E1BCC22003BC359 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		37BFCC7B1E1EA3FA003BC359 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		37C4FE2C1E6CAFFF004321E0 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			files = (
 				37BFCC501E1BCBFE003BC359 /* BigInt.framework in Frameworks */,
 				37BFCC511E1BCBFE003BC359 /* SipHash.framework in Frameworks */,
+				37C4FE2D1E6CAFFF004321E0 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +191,7 @@
 		370881891E12BD480027CDE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37C4FE2C1E6CAFFF004321E0 /* CryptoSwift.framework */,
 				37BFCC7B1E1EA3FA003BC359 /* libz.tbd */,
 				37BFCC521E1BCC22003BC359 /* Nimble.framework */,
 				37BFCC4E1E1BCBFE003BC359 /* BigInt.framework */,
@@ -438,6 +442,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/BigInt.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SipHash.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
 			);
 			name = "copy carthage frameworks";
 			outputPaths = (
