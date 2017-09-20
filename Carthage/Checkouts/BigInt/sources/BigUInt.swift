@@ -3,203 +3,198 @@
 //  BigInt
 //
 //  Created by Károly Lőrentey on 2015-12-26.
-//  Copyright © 2016 Károly Lőrentey.
+//  Copyright © 2016-2017 Károly Lőrentey.
 //
 
 /// An arbitary precision unsigned integer type, also known as a "big integer".
 ///
-/// Operations on big integers never overflow, but they might take a long time to execute.
+/// Operations on big integers never overflow, but they may take a long time to execute.
 /// The amount of memory (and address space) available is the only constraint to the magnitude of these numbers.
 ///
 /// This particular big integer type uses base-2^64 digits to represent integers; you can think of it as a wrapper
-/// around `Array<UInt64>`. In fact, `BigUInt` implements a mutable collection of its `UInt64` digits, with the
-/// digit at index 0 being the least significant.
-///
-/// To make memory management simple, `BigUInt` allows you to subscript it with out-of-bounds indexes:
-/// the subscript getter zero-extends the digit sequence, while the subscript setter automatically extends the
-/// underlying storage when necessary:
-///
-/// ```Swift
-/// var number = BigUInt(1)
-/// number[42]                // Not an error, returns 0
-/// number[23] = 1            // Not an error, number is now 2^1472 + 1.
-/// ```
-///
-/// Note that it is rarely a good idea to use big integers as collections; in the vast majority of cases it is much
-/// easier to work with the provided high-level methods and operators rather than with raw big digits.
-public struct BigUInt {
+/// around `Array<UInt64>`. (In fact, `BigUInt` only uses an array if there are more than two digits.)
+public struct BigUInt: UnsignedInteger {
     /// The type representing a digit in `BigUInt`'s underlying number system.
-    public typealias Digit = UIntMax
-    
-    internal var _digits: [Digit]
-    internal var _start: Int
-    internal var _end: Int
+    public typealias Word = UInt
 
-    internal init(digits: [Digit], start: Int, end: Int) {
-        precondition(start >= 0 && start <= end)
-        let start = Swift.min(start, digits.count)
-        var end = Swift.min(end, digits.count)
-        while end > start && digits[end - 1] == 0 { end -= 1 }
-        self._digits = digits
-        self._start = start
-        self._end = end
+    /// The storage variants of a `BigUInt`.
+    enum Kind {
+        /// Value consists of the two specified words (low and high). Either or both words may be zero.
+        case inline(Word, Word)
+        /// Words are stored in a slice of the storage array.
+        case slice(from: Int, to: Int)
+        /// Words are stored in the storage array.
+        case array
     }
+
+    internal private(set) var kind: Kind // Internal for testing only
+    internal private(set) var storage: [Word] // Internal for testing only; stored separately to prevent COW copies
 
     /// Initializes a new BigUInt with value 0.
     public init() {
-        self.init([])
+        self.kind = .inline(0, 0)
+        self.storage = []
+    }
+
+    internal init(word: Word) {
+        self.kind = .inline(word, 0)
+        self.storage = []
+    }
+
+    internal init(low: Word, high: Word) {
+        self.kind = .inline(low, high)
+        self.storage = []
     }
 
     /// Initializes a new BigUInt with the specified digits. The digits are ordered from least to most significant.
-    public init(_ digits: [Digit]) {
-        self.init(digits: digits, start: 0, end: digits.count)
+    public init(words: [Word]) {
+        self.kind = .array
+        self.storage = words
+        normalize()
     }
 
-    /// Initializes a new BigUInt that has the supplied value.
-    public init<I: UnsignedInteger>(_ integer: I) {
-        self.init(Digit.digitsFromUIntMax(integer.toUIntMax()))
-    }
-
-    /// Initializes a new BigUInt that has the supplied value.
-    ///
-    /// - Requires: integer >= 0
-    public init<I: SignedInteger>(_ integer: I) {
-        precondition(integer >= 0)
-        self.init(UIntMax(integer.toIntMax()))
-    }
-}
-
-extension BigUInt: ExpressibleByIntegerLiteral {
-    //MARK: Init from Integer literals
-
-    /// Initialize a new big integer from an integer literal.
-    public init(integerLiteral value: UInt64) {
-        self.init(value.toUIntMax())
-    }
-}
-
-extension BigUInt: ExpressibleByStringLiteral {
-    //MARK: Init from String literals
-
-    /// Initialize a new big integer from a Unicode scalar.
-    /// The scalar must represent a decimal digit.
-    public init(unicodeScalarLiteral value: UnicodeScalar) {
-        self = BigUInt(String(value), radix: 10)!
-    }
-
-    /// Initialize a new big integer from an extended grapheme cluster.
-    /// The cluster must consist of a decimal digit.
-    public init(extendedGraphemeClusterLiteral value: String) {
-        self = BigUInt(value, radix: 10)!
-    }
-
-    /// Initialize a new big integer from a decimal number represented by a string literal of arbitrary length.
-    /// The string must contain only decimal digits.
-    public init(stringLiteral value: StringLiteralType) {
-        self = BigUInt(value, radix: 10)!
-    }
-}
-
-extension BigUInt: IntegerArithmetic {
-    /// Explicitly convert to `IntMax`, trapping on overflow.
-    public func toIntMax() -> IntMax {
-        precondition(count <= 1)
-        return IntMax(self[0])
+    internal init(words: [Word], from startIndex: Int, to endIndex: Int) {
+        self.kind = .slice(from: startIndex, to: endIndex)
+        self.storage = words
+        normalize()
     }
 }
 
 extension BigUInt {
-    //MARK: Lift and shrink
-    
-    /// True iff this integer is not a slice.
-    internal var isTop: Bool { return _start == 0 && _end == _digits.count }
-
-    /// Ensures that this integer is not a slice, allocating a new digit array if necessary.
-    internal mutating func lift() {
-        guard !isTop else { return }
-        _digits = Array(self)
-        _start = 0
-        _end = _digits.count
+    public static var isSigned: Bool {
+        return false
     }
 
-    /// Gets rid of leading zero digits in the digit array.
-    internal mutating func shrink() {
-        assert(isTop)
-        while _digits.last == 0 {
-            _digits.removeLast()
+    /// Return true iff this integer is zero.
+    ///
+    /// - Complexity: O(1)
+    var isZero: Bool {
+        switch kind {
+        case .inline(0, 0): return true
+        case .array: return storage.isEmpty
+        default:
+            return false
         }
-        _end = _digits.count
+    }
+
+    /// Returns `-1` if this value is negative and `1` if it’s positive; otherwise, `0`.
+    ///
+    /// - Returns: The sign of this number, expressed as an integer of the same type.
+    public func signum() -> BigUInt {
+        return isZero ? 0 : 1
     }
 }
 
-extension BigUInt: RandomAccessCollection {
-    //MARK: Collection
-
-    /// Big integers implement `Collection` to provide access to their big digits, indexed by integers; a zero index refers to the least significant digit.
-    public typealias Index = Int
-    /// The type representing the number of steps between two indices.
-    public typealias IndexDistance = Int
-    /// The type representing valid indices for subscripting the collection.
-    public typealias Indices = CountableRange<Int>
-    /// The type representing the iteration interface for the digits in a big integer.
-    public typealias Iterator = DigitIterator<Digit>
-    /// Big integers can be contiguous digit subranges of another big integer.
-    public typealias SubSequence = BigUInt
-
-    public var indices: Indices { return startIndex ..< endIndex }
-
-    /// The index of the first digit, starting from the least significant. (This is always zero.)
-    public var startIndex: Int { return 0 }
-    /// The index of the digit after the most significant digit in this integer.
-    public var endIndex: Int { return count }
-    /// The number of digits in this integer, excluding leading zero digits.
-    public var count: Int { return _end - _start }
-
-    /// Return a generator over the digits of this integer, starting at the least significant digit.
-    public func makeIterator() -> DigitIterator<Digit> {
-        return DigitIterator(digits: _digits, end: _end, index: _start)
-    }
-
-    /// Returns the position immediately after the given index.
-    public func index(after i: Int) -> Int {
-        return i + 1
-    }
-
-    /// Returns the position immediately before the given index.
-    public func index(before i: Int) -> Int {
-        return i - 1
-    }
-
-    /// Replaces the given index with its successor.
-    public func formIndex(after i: inout Int) {
-        i += 1
-    }
-
-    /// Replaces the given index with its predecessor.
-    public func formIndex(before i: inout Int) {
-        i -= 1
-    }
-
-    /// Returns an index that is the specified distance from the given index.
-    public func index(_ i: Int, offsetBy n: Int) -> Int {
-        return i + n
-    }
-
-    /// Returns an index that is the specified distance from the given index,
-    /// unless that distance is beyond a given limiting index.
-    public func index(_ i: Int, offsetBy n: Int, limitedBy limit: Int) -> Int? {
-        let r = i + n
-        if n >= 0 {
-            return r <= limit ? r : nil
+extension BigUInt {
+    mutating func ensureArray() {
+        switch kind {
+        case let .inline(w0, w1):
+            kind = .array
+            storage = w1 != 0 ? [w0, w1]
+                : w0 != 0 ? [w0]
+                : []
+        case let .slice(from: start, to: end):
+            kind = .array
+            storage = Array(storage[start ..< end])
+        case .array:
+            break
         }
-        return r >= limit ? r : nil
     }
 
-    /// Returns the number of steps between two indices.
-    public func distance(from start: Int, to end: Int) -> Int {
-        return end - start
+    var capacity: Int {
+        guard case .array = kind else { return 0 }
+        return storage.capacity
     }
 
+    mutating func reserveCapacity(_ minimumCapacity: Int) {
+        switch kind {
+        case let .inline(w0, w1):
+            kind = .array
+            storage.reserveCapacity(minimumCapacity)
+            if w1 != 0 {
+                storage.append(w0)
+                storage.append(w1)
+            }
+            else if w0 != 0 {
+                storage.append(w0)
+            }
+        case let .slice(from: start, to: end):
+            kind = .array
+            var words: [Word] = []
+            words.reserveCapacity(Swift.max(end - start, minimumCapacity))
+            words.append(contentsOf: storage[start ..< end])
+            storage = words
+        case .array:
+            storage.reserveCapacity(minimumCapacity)
+        }
+    }
+
+    /// Gets rid of leading zero digits in the digit array and converts slices into inline digits when possible.
+    internal mutating func normalize() {
+        switch kind {
+        case .slice(from: let start, to: var end):
+            assert(start >= 0 && end <= storage.count && start <= end)
+            while start < end, storage[end - 1] == 0 {
+                end -= 1
+            }
+            switch end - start {
+            case 0:
+                kind = .inline(0, 0)
+                storage = []
+            case 1:
+                kind = .inline(storage[start], 0)
+                storage = []
+            case 2:
+                kind = .inline(storage[start], storage[start + 1])
+                storage = []
+            case storage.count:
+                assert(start == 0)
+                kind = .array
+            default:
+                kind = .slice(from: start, to: end)
+            }
+        case .array where storage.last == 0:
+            while storage.last == 0 {
+                storage.removeLast()
+            }
+        default:
+            break
+        }
+    }
+
+    /// Set this integer to 0 without releasing allocated storage capacity (if any).
+    mutating func clear() {
+        self.load(0)
+    }
+
+    /// Set this integer to `value` by copying its digits without releasing allocated storage capacity (if any).
+    mutating func load(_ value: BigUInt) {
+        switch kind {
+        case .inline, .slice:
+            self = value
+        case .array:
+            self.storage.removeAll(keepingCapacity: true)
+            self.storage.append(contentsOf: value.words)
+        }
+    }
+}
+
+extension BigUInt {
+    //MARK: Collection-like members
+
+    /// The number of digits in this integer, excluding leading zero digits.
+    var count: Int {
+        switch kind {
+        case let .inline(w0, w1):
+            return w1 != 0 ? 2
+                : w0 != 0 ? 1
+                : 0
+        case let .slice(from: start, to: end):
+            return end - start
+        case .array:
+            return storage.count
+        }
+    }
 
     /// Get or set a digit at a given index.
     ///
@@ -211,67 +206,140 @@ extension BigUInt: RandomAccessCollection {
     ///    - The integer's storage is not shared with another integer
     ///    - The integer wasn't created as a slice of another integer
     ///    - `index < count`
-    public subscript(index: Int) -> Digit {
+    subscript(_ index: Int) -> Word {
         get {
             precondition(index >= 0)
-            let i = _start + index
-            return (i < Swift.min(_end, _digits.count) ? _digits[i] : 0)
+            switch (kind, index) {
+            case (.inline(let w0, _), 0): return w0
+            case (.inline(_, let w1), 1): return w1
+            case (.slice(from: let start, to: let end), _) where index < end - start:
+                return storage[start + index]
+            case (.array, _) where index < storage.count:
+                return storage[index]
+            default:
+                return 0
+            }
         }
-        set(digit) {
+        set(word) {
             precondition(index >= 0)
-            lift()
-            let i = _start + index
-            if i < _end {
-                _digits[i] = digit
-                if digit == 0 && i == _end - 1 {
-                    shrink()
-                }
-            }
-            else {
-                guard digit != 0 else { return }
-                while _digits.count < i { _digits.append(0) }
-                _digits.append(digit)
-                _end = i + 1
+            switch (kind, index) {
+            case let (.inline(_, w1), 0):
+                kind = .inline(word, w1)
+            case let (.inline(w0, _), 1):
+                kind = .inline(w0, word)
+            case let (.slice(from: start, to: end), _) where index < end - start:
+                replace(at: index, with: word)
+            case (.array, _) where index < storage.count:
+                replace(at: index, with: word)
+            default:
+                extend(at: index, with: word)
             }
         }
+    }
+
+    private mutating func replace(at index: Int, with word: Word) {
+        ensureArray()
+        precondition(index < storage.count)
+        storage[index] = word
+        if word == 0, index == storage.count - 1 {
+            normalize()
+        }
+    }
+
+    private mutating func extend(at index: Int, with word: Word) {
+        guard word != 0 else { return }
+        reserveCapacity(index + 1)
+        precondition(index >= storage.count)
+        storage.append(contentsOf: repeatElement(0, count: index - storage.count))
+        storage.append(word)
     }
 
     /// Returns an integer built from the digits of this integer in the given range.
-    public subscript(bounds: Range<Int>) -> BigUInt {
-        get {
-            return BigUInt(digits: _digits, start: _start + bounds.lowerBound, end: _start + bounds.upperBound)
+    internal func extract(_ bounds: Range<Int>) -> BigUInt {
+        switch kind {
+        case let .inline(w0, w1):
+            let bounds = bounds.clamped(to: 0 ..< 2)
+            if bounds == 0 ..< 2 {
+                return BigUInt(low: w0, high: w1)
+            }
+            else if bounds == 0 ..< 1 {
+                return BigUInt(word: w0)
+            }
+            else if bounds == 1 ..< 2 {
+                return BigUInt(word: w1)
+            }
+            else {
+                return BigUInt()
+            }
+        case let .slice(from: start, to: end):
+            let s = Swift.min(end, start + Swift.max(bounds.lowerBound, 0))
+            let e = Swift.max(s, (bounds.upperBound > end - start ? end : start + bounds.upperBound))
+            return BigUInt(words: storage, from: s, to: e)
+        case .array:
+            let b = bounds.clamped(to: storage.startIndex ..< storage.endIndex)
+            return BigUInt(words: storage, from: b.lowerBound, to: b.upperBound)
         }
     }
-}
 
-/// State for iterating through the digits of a big integer.
-public struct DigitIterator<Digit>: IteratorProtocol {
-    internal let digits: [Digit]
-    internal let end: Int
-    internal var index: Int
-
-    /// Return the next digit in the integer, or nil if there are no more digits.
-    /// Returned digits range from least to most significant.
-    public mutating func next() -> Digit? {
-        guard index < end else { return nil }
-        let v = digits[index]
-        index += 1
-        return v
+    internal func extract<Bounds: RangeExpression>(_ bounds: Bounds) -> BigUInt where Bounds.Bound == Int {
+        return self.extract(bounds.relative(to: 0 ..< Int.max))
     }
 }
 
-extension BigUInt: Strideable {
-    /// A type that can represent the distance between two values of `BigUInt`.
-    public typealias Stride = BigInt
-
-    /// Adds `n` to `self` and returns the result. Traps if the result would be less than zero.
-    public func advanced(by n: BigInt) -> BigUInt {
-        return n < 0 ? self - n.abs : self + n.abs
+extension BigUInt {
+    internal mutating func shiftRight(byWords amount: Int) {
+        assert(amount >= 0)
+        guard amount > 0 else { return }
+        switch kind {
+        case let .inline(_, w1) where amount == 1:
+            kind = .inline(w1, 0)
+        case .inline(_, _):
+            kind = .inline(0, 0)
+        case let .slice(from: start, to: end):
+            let s = start + amount
+            if s >= end {
+                kind = .inline(0, 0)
+            }
+            else {
+                kind = .slice(from: s, to: end)
+                normalize()
+            }
+        case .array:
+            if amount >= storage.count {
+                storage.removeAll(keepingCapacity: true)
+            }
+            else {
+                storage.removeFirst(amount)
+            }
+        }
     }
 
-    /// Returns the (potentially negative) difference between `self` and `other` as a `BigInt`. Never traps.
-    public func distance(to other: BigUInt) -> BigInt {
-        return BigInt(other) - BigInt(self)
+    internal mutating func shiftLeft(byWords amount: Int) {
+        assert(amount >= 0)
+        guard amount > 0 else { return }
+        guard !isZero else { return }
+        switch kind {
+        case let .inline(w0, 0) where amount == 1:
+            kind = .inline(0, w0)
+        case let .inline(w0, w1):
+            let c = (w1 == 0 ? 1 : 2)
+            storage.reserveCapacity(amount + c)
+            storage.append(contentsOf: repeatElement(0, count: amount))
+            storage.append(w0)
+            if w1 != 0 {
+                storage.append(w1)
+            }
+            kind = .array
+        case let .slice(from: start, to: end):
+            var words: [Word] = []
+            words.reserveCapacity(amount + count)
+            words.append(contentsOf: repeatElement(0, count: amount))
+            words.append(contentsOf: storage[start ..< end])
+            storage = words
+            kind = .array
+        case .array:
+            storage.insert(contentsOf: repeatElement(0, count: amount), at: 0)
+        }
     }
 }
 
@@ -282,14 +350,14 @@ extension BigUInt {
     ///
     /// - Requires: count > 1
     /// - Returns: `(low, high)` such that 
-    ///   - `self == low.add(high, atPosition: middleIndex)`
+    ///   - `self == low.add(high, shiftedBy: middleIndex)`
     ///   - `high.width <= floor(width / 2)`
     ///   - `low.width <= ceil(width / 2)`
     /// - Complexity: Typically O(1), but O(count) in the worst case, because high-order zero digits need to be removed after the split.
     internal var split: (high: BigUInt, low: BigUInt) {
         precondition(count > 1)
         let mid = middleIndex
-        return (self[mid ..< count], self[0 ..< mid])
+        return (self.extract(mid...), self.extract(..<mid))
     }
 
     /// Index of the digit at the middle of this integer.
@@ -304,7 +372,7 @@ extension BigUInt {
     /// - Returns: `self[0 ..< middleIndex]`
     /// - Requires: count > 1
     internal var low: BigUInt {
-        return self[0 ..< middleIndex]
+        return self.extract(0 ..< middleIndex)
     }
 
     /// The high-order half of this BigUInt.
@@ -312,7 +380,7 @@ extension BigUInt {
     /// - Returns: `self[middleIndex ..< count]`
     /// - Requires: count > 1
     internal var high: BigUInt {
-        return self[middleIndex ..< count]
+        return self.extract(middleIndex ..< count)
     }
 }
 

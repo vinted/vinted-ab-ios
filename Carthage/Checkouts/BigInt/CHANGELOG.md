@@ -1,3 +1,28 @@
+# 3.0.0 (2017-09-07)
+
+This is a major release upgrading BigInt to the new integer protocols introduced in Swift 4 as part of [SE-0104, Protocol-oriented integers][se-0104].
+
+[se-0104]: https://github.com/apple/swift-evolution/blob/master/proposals/0104-improved-integers.md
+
+- Adopting the new protocols involved major, breaking changes throughout the API. These aren't individually listed here.
+- The `BigUInt` struct now provides inline storage for big integers that fit inside two words. This optimization speeds up conversions from built-in fixed-width integer types, amongst other frequent operations.
+- `BigInt` and `BigUInt` implements the new `Codable` protocol. In both cases, values are encoded in an unkeyed container starting with a string indicating the sign (`"+"` or `"-"`), followed by a sequence of 64-bit unsigned integers representing component words, from least to most significant.
+- New method: `BigInt.modulo`, contributed by @FabioTacke.
+- `BigUInt` does not implement `Collection` in this release. The collection of words is available in the standard read-only `words` property. Direct public access to collection methods have been removed; if you have been manipulating big integers using collection methods, you need to rewrite your code. If you have a usecase that isn't covered by the public API, please submit a PR adding the missing functionality. (Public read-write access to the underlying storage inside `BigUInt` will not be restored, though.)
+
+BigInt is now part of the Attaswift project. The bundle identifiers in the supplied Xcode project have been updated accordingly.
+
+Note that the URL for the package's Git repository has changed; please update your references.
+
+# 2.2.0 (2017-06-20)
+
+This release contains the following changes:
+
+- `BigUInt.randomIntegerLessThan(_:)` was renamed to `BigUInt.randomInteger(lessThan:)` to match Swift 3 naming conventions. (The old name is still available for compatibility.)
+- The `ShiftOperations` protocol was merged into `BigDigit` and removed. It was previously public by accident. (Issue #9)
+- `BigInt.modulus(_:,_:)` is a new static method that returns the nonnegative modulus value of its two arguments. (PR #19 by @FabioTacke)
+
+
 # 2.1.2 (2017-02-03)
 
 This release contains the following bugfix:
@@ -114,8 +139,8 @@ It will trap when the divisor is zero. `BigUInt.divmod` returns the quotient and
 remainder at once; this is faster than calculating them separately.
 - Bitwise operators: `~`, `|`, `&`, `^`, `|=`, `&=`, `^=`, plus the following read-only properties:
 - `width`: the minimum number of bits required to store the integer,
-- `trailingZeroes`: the number of trailing zero bits in the binary representation,
-- `leadingZeroes`: the number of leading zero bits (when the last digit isn't full),
+- `trailingZeroBitCount`: the number of trailing zero bits in the binary representation,
+- `leadingZeroBitCount`: the number of leading zero bits (when the last digit isn't full),
 - Shift operators: `>>`, `<<`, `>>=`, `<<=`
 - Left shifts need to allocate memory to extend the digit array, so it's probably not a good idea
 to left shift a `BigUInt` by 2^50 bits.

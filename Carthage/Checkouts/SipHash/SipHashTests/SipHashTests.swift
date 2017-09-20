@@ -3,7 +3,7 @@
 //  SipHash
 //
 //  Created by Károly Lőrentey on 2016-03-08.
-//  Copyright © 2016 Károly Lőrentey.
+//  Copyright © 2016-2017 Károly Lőrentey.
 //
 
 import XCTest
@@ -81,7 +81,7 @@ private func vector(_ i: Int) -> Int {
         let b = UnsafeRawBufferPointer(buffer)
         return b.load(fromByteOffset: 8 * i, as: UInt64.self)
     }
-    return Int(truncatingBitPattern: v)
+    return Int(truncatingIfNeeded: v)
 }
 
 private let (k0, k1): (UInt64, UInt64) = Array(UInt8(0) ..< UInt8(16)).withUnsafeBufferPointer { buffer in

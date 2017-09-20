@@ -2,8 +2,19 @@
 //  ChaCha20.swift
 //  CryptoSwift
 //
-//  Created by Marcin Krzyzanowski on 25/08/14.
-//  Copyright (c) 2014 Marcin Krzyzanowski. All rights reserved.
+//  Copyright (C) 2014-2017 Krzyżanowski <marcin@krzyzanowskim.com>
+//  This software is provided 'as-is', without any express or implied warranty.
+//
+//  In no event will the authors be held liable for any damages arising from the use of this software.
+//
+//  Permission is granted to anyone to use this software for any purpose,including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+//
+//  - The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation is required.
+//  - Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+//  - This notice may not be removed or altered from any source or binary distribution.
+//
+
+//  https://tools.ietf.org/html/rfc7539
 //
 
 private typealias Key = SecureBytes
@@ -22,9 +33,7 @@ public final class ChaCha20: BlockCipher {
     public init(key: Array<UInt8>, iv nonce: Array<UInt8>) throws {
         precondition(nonce.count == 12 || nonce.count == 8)
 
-        let kbits = key.count * 8
-
-        if (kbits != 128 && kbits != 256) {
+        if (key.count != 32) {
             throw Error.invalidKeyOrInitializationVector
         }
 
@@ -206,7 +215,7 @@ public final class ChaCha20: BlockCipher {
 
         var block = Array<UInt8>(repeating: 0, count: ChaCha20.blockSize)
         var bytes = bytes //TODO: check bytes[bytes.indices]
-        var out = Array<UInt8>.init(reserveCapacity: bytes.count)
+        var out = Array<UInt8>(reserveCapacity: bytes.count)
 
         while bytes.count >= ChaCha20.blockSize {
             self.core(block: &block, counter: counter, key: key)
@@ -235,11 +244,11 @@ public final class ChaCha20: BlockCipher {
 // MARK: Cipher
 extension ChaCha20: Cipher {
 
-    public func encrypt<C: Collection>(_ bytes: C) throws -> Array<UInt8> where C.Iterator.Element == UInt8, C.IndexDistance == Int, C.Index == Int {
+    public func encrypt<C: Collection>(_ bytes: C) throws -> Array<UInt8> where C.Element == UInt8, C.IndexDistance == Int, C.Index == Int {
         return process(bytes: Array(bytes), counter: &self.counter, key: Array(self.key))
     }
 
-    public func decrypt<C: Collection>(_ bytes: C) throws -> Array<UInt8> where C.Iterator.Element == UInt8, C.IndexDistance == Int, C.Index == Int {
+    public func decrypt<C: Collection>(_ bytes: C) throws -> Array<UInt8> where C.Element == UInt8, C.IndexDistance == Int, C.Index == Int {
         return try encrypt(bytes)
     }
 }
@@ -260,7 +269,7 @@ extension ChaCha20 {
 
             var encrypted = Array<UInt8>()
             encrypted.reserveCapacity(self.accumulated.count)
-            for chunk in BytesSequence(chunkSize: ChaCha20.blockSize, data: self.accumulated) {
+            for chunk in self.accumulated.batched(by: ChaCha20.blockSize) {
                 if (isLast || self.accumulated.count >= ChaCha20.blockSize) {
                     encrypted += try chacha.encrypt(chunk)
                     self.accumulated.removeFirst(chunk.count) //TODO: improve performance
@@ -297,7 +306,7 @@ extension ChaCha20 {
 
             var plaintext = Array<UInt8>()
             plaintext.reserveCapacity(self.accumulated.count)
-            for chunk in BytesSequence(chunkSize: ChaCha20.blockSize, data: self.accumulated) {
+            for chunk in self.accumulated.batched(by: ChaCha20.blockSize) {
                 if (isLast || self.accumulated.count >= ChaCha20.blockSize) {
                     plaintext += try chacha.decrypt(chunk)
 
@@ -327,17 +336,3 @@ extension ChaCha20: Cryptors {
         return Decryptor(chacha: self)
     }
 }
-
-// MARK: Helpers
-
-/// Change array to number. It's here because arrayOfBytes is too slow
-//TODO: check if it should replace arrayOfBytes
-//private func wordNumber<T: Collection>(_ bytes: T) -> UInt32 where T.Iterator.Element == UInt8, T.IndexDistance == Int {
-//    var value: UInt32 = 0
-//    for i: UInt32 in 0 ..< 4 {
-//        let j = bytes.index(bytes.startIndex, offsetBy: Int(i))
-//        value = value | UInt32(bytes[j]) << (8 * i)
-//    }
-//
-//    return value
-//}

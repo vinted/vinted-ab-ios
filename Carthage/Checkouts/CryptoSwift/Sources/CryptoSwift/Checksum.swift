@@ -2,8 +2,16 @@
 //  Checksum.swift
 //  CryptoSwift
 //
-//  Created by Marcin Krzyzanowski on 25/08/14.
-//  Copyright (c) 2014 Marcin Krzyzanowski. All rights reserved.
+//  Copyright (C) 2014-2017 Krzyżanowski <marcin@krzyzanowskim.com>
+//  This software is provided 'as-is', without any express or implied warranty.
+//
+//  In no event will the authors be held liable for any damages arising from the use of this software.
+//
+//  Permission is granted to anyone to use this software for any purpose,including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+//
+//  - The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation is required.
+//  - Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+//  - This notice may not be removed or altered from any source or binary distribution.
 //
 
 /// CRC - cyclic redundancy check code.
@@ -76,7 +84,7 @@ public final class Checksum {
 
     func crc32(_ message: Array<UInt8>, seed: UInt32? = nil, reflect: Bool = true) -> UInt32 {
         var crc: UInt32 = seed != nil ? seed! : 0xffffffff
-        for chunk in BytesSequence(chunkSize: 256, data: message) {
+        for chunk in message.batched(by: 256) {
             for b in chunk {
                 let idx = Int((crc ^ UInt32(reflect ? b : reversed(b))) & 0xff)
                 crc = (crc >> 8) ^ Checksum.table32[idx]
@@ -87,7 +95,7 @@ public final class Checksum {
 
     func crc16(_ message: Array<UInt8>, seed: UInt16? = nil) -> UInt16 {
         var crc: UInt16 = seed != nil ? seed! : 0x0000
-        for chunk in BytesSequence(chunkSize: 256, data: message) {
+        for chunk in message.batched(by: 256) {
             for b in chunk {
                 crc = (crc >> 8) ^ Checksum.table16[Int((crc ^ UInt16(b)) & 0xFF)]
             }

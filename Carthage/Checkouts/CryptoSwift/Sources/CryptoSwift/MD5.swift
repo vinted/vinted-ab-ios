@@ -2,8 +2,16 @@
 //  MD5.swift
 //  CryptoSwift
 //
-//  Created by Marcin Krzyzanowski on 06/08/14.
-//  Copyright (c) 2014 Marcin Krzyzanowski. All rights reserved.
+//  Copyright (C) 2014-2017 Krzyżanowski <marcin@krzyzanowskim.com>
+//  This software is provided 'as-is', without any express or implied warranty.
+//
+//  In no event will the authors be held liable for any damages arising from the use of this software.
+//
+//  Permission is granted to anyone to use this software for any purpose,including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+//
+//  - The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation is required.
+//  - Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+//  - This notice may not be removed or altered from any source or binary distribution.
 //
 
 public final class MD5: DigestType {
@@ -52,10 +60,7 @@ public final class MD5: DigestType {
 
     // mutating currentHash in place is way faster than returning new result
     fileprivate func process(block chunk: ArraySlice<UInt8>, currentHash: inout Array<UInt32>) {
-
-        // break chunk into sixteen 32-bit words M[j], 0 ≤ j ≤ 15
-        var M = chunk.toUInt32Array()
-        assert(M.count == 16, "Invalid array")
+        assert(chunk.count == 16 * 4)
 
         // Initialize hash value for this chunk:
         var A: UInt32 = currentHash[0]
@@ -93,7 +98,17 @@ public final class MD5: DigestType {
             dTemp = D
             D = C
             C = B
-            B = B &+ rotateLeft(A &+ F &+ k[j] &+ M[g], by: s[j])
+
+            // break chunk into sixteen 32-bit words M[j], 0 ≤ j ≤ 15 and get M[g] value
+            let gAdvanced = g << 2
+
+            let Mg0 = UInt32(chunk[chunk.startIndex &+ gAdvanced])
+            let Mg1 = UInt32(chunk[chunk.startIndex &+ gAdvanced &+ 1]) << 8
+            let Mg2 = UInt32(chunk[chunk.startIndex &+ gAdvanced &+ 2]) << 16
+            let Mg3 = UInt32(chunk[chunk.startIndex &+ gAdvanced &+ 3]) << 24
+            let Mg = (Mg0 | Mg1 | Mg2) | Mg3
+
+            B = B &+ rotateLeft(A &+ F &+ k[j] &+ Mg, by: s[j])
             A = dTemp
         }
 
@@ -121,7 +136,7 @@ extension MD5: Updatable {
         }
 
         var processedBytes = 0
-        for chunk in BytesSequence(chunkSize: MD5.blockSize, data: self.accumulated) {
+        for chunk in self.accumulated.batched(by: MD5.blockSize) {
             if (isLast || (self.accumulated.count - processedBytes) >= MD5.blockSize) {
                 self.process(block: chunk, currentHash: &self.accumulatedHash)
                 processedBytes += chunk.count

@@ -2,8 +2,16 @@
 //  SHA1.swift
 //  CryptoSwift
 //
-//  Created by Marcin Krzyzanowski on 16/08/14.
-//  Copyright (c) 2014 Marcin Krzyzanowski. All rights reserved.
+//  Copyright (C) 2014-2017 Krzyżanowski <marcin@krzyzanowskim.com>
+//  This software is provided 'as-is', without any express or implied warranty.
+//
+//  In no event will the authors be held liable for any damages arising from the use of this software.
+//
+//  Permission is granted to anyone to use this software for any purpose,including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+//
+//  - The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation is required.
+//  - Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+//  - This notice may not be removed or altered from any source or binary distribution.
 //
 
 public final class SHA1: DigestType {
@@ -53,7 +61,7 @@ public final class SHA1: DigestType {
             var f: UInt32 = 0
             var k: UInt32 = 0
 
-            switch (j) {
+            switch j {
             case 0 ... 19:
                 f = (B & C) | ((~B) & D)
                 k = 0x5A827999
@@ -74,7 +82,7 @@ public final class SHA1: DigestType {
                 break
             }
 
-            let temp = (rotateLeft(A, by: 5) &+ f &+ E &+ M[j] &+ k) & 0xffffffff
+            let temp = rotateLeft(A, by: 5) &+ f &+ E &+ M[j] &+ k
             E = D
             D = C
             C = rotateLeft(B, by: 30)
@@ -82,11 +90,11 @@ public final class SHA1: DigestType {
             A = temp
         }
 
-        hh[0] = (hh[0] &+ A) & 0xffffffff
-        hh[1] = (hh[1] &+ B) & 0xffffffff
-        hh[2] = (hh[2] &+ C) & 0xffffffff
-        hh[3] = (hh[3] &+ D) & 0xffffffff
-        hh[4] = (hh[4] &+ E) & 0xffffffff
+        hh[0] = hh[0] &+ A
+        hh[1] = hh[1] &+ B
+        hh[2] = hh[2] &+ C
+        hh[3] = hh[3] &+ D
+        hh[4] = hh[4] &+ E
     }
 }
 
@@ -107,7 +115,7 @@ extension SHA1: Updatable {
         }
 
         var processedBytes = 0
-        for chunk in BytesSequence(chunkSize: SHA1.blockSize, data: self.accumulated) {
+        for chunk in self.accumulated.batched(by: SHA1.blockSize) {
             if (isLast || (self.accumulated.count - processedBytes) >= SHA1.blockSize) {
                 self.process(block: chunk, currentHash: &self.accumulatedHash)
                 processedBytes += chunk.count
