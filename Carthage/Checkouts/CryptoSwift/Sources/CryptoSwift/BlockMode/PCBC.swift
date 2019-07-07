@@ -1,8 +1,7 @@
 //
-//  PCBM.swift
 //  CryptoSwift
 //
-//  Copyright (C) 2014-2017 Krzyżanowski <marcin@krzyzanowskim.com>
+//  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
 //  This software is provided 'as-is', without any express or implied warranty.
 //
 //  In no event will the authors be held liable for any damages arising from the use of this software.
@@ -17,32 +16,55 @@
 //  Propagating Cipher Block Chaining (PCBC)
 //
 
+public struct PCBC: BlockMode {
+    public enum Error: Swift.Error {
+        /// Invalid IV
+        case invalidInitializationVector
+    }
+
+    public let options: BlockModeOption = [.initializationVectorRequired, .paddingRequired]
+    private let iv: Array<UInt8>
+
+    public init(iv: Array<UInt8>) {
+        self.iv = iv
+    }
+
+    public func worker(blockSize: Int, cipherOperation: @escaping CipherOperationOnBlock) throws -> CipherModeWorker {
+        if iv.count != blockSize {
+            throw Error.invalidInitializationVector
+        }
+
+        return PCBCModeWorker(blockSize: blockSize, iv: iv.slice, cipherOperation: cipherOperation)
+    }
+}
+
 struct PCBCModeWorker: BlockModeWorker {
-    typealias Element = Array<UInt8>
-
     let cipherOperation: CipherOperationOnBlock
-    private let iv: Element
-    private var prev: Element?
+    var blockSize: Int
+    let additionalBufferSize: Int = 0
+    private let iv: ArraySlice<UInt8>
+    private var prev: ArraySlice<UInt8>?
 
-    init(iv: Array<UInt8>, cipherOperation: @escaping CipherOperationOnBlock) {
+    init(blockSize: Int, iv: ArraySlice<UInt8>, cipherOperation: @escaping CipherOperationOnBlock) {
+        self.blockSize = blockSize
         self.iv = iv
         self.cipherOperation = cipherOperation
     }
 
-    mutating func encrypt(_ plaintext: ArraySlice<UInt8>) -> Array<UInt8> {
+    mutating func encrypt(block plaintext: ArraySlice<UInt8>) -> Array<UInt8> {
         guard let ciphertext = cipherOperation(xor(prev ?? iv, plaintext)) else {
             return Array(plaintext)
         }
-        prev = xor(plaintext, ciphertext)
+        prev = xor(plaintext, ciphertext.slice)
         return ciphertext
     }
 
-    mutating func decrypt(_ ciphertext: ArraySlice<UInt8>) -> Array<UInt8> {
-        guard let plaintext = cipherOperation(Array(ciphertext)) else {
+    mutating func decrypt(block ciphertext: ArraySlice<UInt8>) -> Array<UInt8> {
+        guard let plaintext = cipherOperation(ciphertext) else {
             return Array(ciphertext)
         }
-        let result = xor(prev ?? iv, plaintext)
-        self.prev = xor(plaintext, ciphertext)
+        let result: Array<UInt8> = xor(prev ?? iv, plaintext)
+        prev = xor(plaintext.slice, ciphertext)
         return result
     }
 }

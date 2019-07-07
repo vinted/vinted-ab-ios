@@ -1,34 +1,22 @@
 import XCTest
 import Nimble
 
-#if _runtime(_ObjC)
-
-final class MatchTest:XCTestCase, XCTestCaseProvider {
-    static var allTests: [(String, (MatchTest) -> () throws -> Void)] {
-        return [
-            ("testMatchPositive", testMatchPositive),
-            ("testMatchNegative", testMatchNegative),
-            ("testMatchPositiveMessage", testMatchPositiveMessage),
-            ("testMatchNegativeMessage", testMatchNegativeMessage),
-            ("testMatchNils", testMatchNils),
-        ]
-    }
-
+final class MatchTest: XCTestCase, XCTestCaseProvider {
     func testMatchPositive() {
         expect("11:14").to(match("\\d{2}:\\d{2}"))
     }
-    
+
     func testMatchNegative() {
         expect("hello").toNot(match("\\d{2}:\\d{2}"))
     }
-    
+
     func testMatchPositiveMessage() {
         let message = "expected to match <\\d{2}:\\d{2}>, got <hello>"
         failsWithErrorMessage(message) {
             expect("hello").to(match("\\d{2}:\\d{2}"))
         }
     }
-    
+
     func testMatchNegativeMessage() {
         let message = "expected to not match <\\d{2}:\\d{2}>, got <11:14>"
         failsWithErrorMessage(message) {
@@ -46,4 +34,3 @@ final class MatchTest:XCTestCase, XCTestCaseProvider {
         }
     }
 }
-#endif

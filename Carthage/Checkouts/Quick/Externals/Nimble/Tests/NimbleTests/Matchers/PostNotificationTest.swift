@@ -3,18 +3,6 @@ import Nimble
 import Foundation
 
 final class PostNotificationTest: XCTestCase, XCTestCaseProvider {
-    static var allTests: [(String, (PostNotificationTest) -> () throws -> Void)] {
-        return [
-            ("testPassesWhenNoNotificationsArePosted", testPassesWhenNoNotificationsArePosted),
-            ("testPassesWhenExpectedNotificationIsPosted", testPassesWhenExpectedNotificationIsPosted),
-            ("testPassesWhenAllExpectedNotificationsArePosted", testPassesWhenAllExpectedNotificationsArePosted),
-            ("testFailsWhenNoNotificationsArePosted", testFailsWhenNoNotificationsArePosted),
-            ("testFailsWhenNotificationWithWrongNameIsPosted", testFailsWhenNotificationWithWrongNameIsPosted),
-            ("testFailsWhenNotificationWithWrongObjectIsPosted", testFailsWhenNotificationWithWrongObjectIsPosted),
-            ("testPassesWhenExpectedNotificationEventuallyIsPosted", testPassesWhenExpectedNotificationEventuallyIsPosted),
-        ]
-    }
-
     let notificationCenter = NotificationCenter()
 
     func testPassesWhenNoNotificationsArePosted() {
@@ -76,7 +64,7 @@ final class PostNotificationTest: XCTestCase, XCTestCaseProvider {
     }
 
     func testPassesWhenExpectedNotificationEventuallyIsPosted() {
-        #if _runtime(_ObjC)
+        #if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
             let testNotification = Notification(name: Notification.Name("Foo"), object: nil)
             expect {
                 deferToMainQueue {

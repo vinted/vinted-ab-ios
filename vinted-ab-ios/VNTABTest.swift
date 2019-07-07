@@ -2,6 +2,7 @@ import Foundation
 
 public final class VNTABTest: NSObject, VNTModel {
     public let identifier: String
+    @objc
     public let name: String
     public let startAt: Date?
     public let endAt: Date?

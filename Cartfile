@@ -1,2 +1,2 @@
 github "lorentey/BigInt" == 3.0.0
-github "krzyzanowskim/CryptoSwift" == 0.7.0
+github "krzyzanowskim/CryptoSwift" == 1.0.0

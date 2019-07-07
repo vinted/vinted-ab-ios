@@ -26,8 +26,8 @@ extension VNTModel {
 
 private func updateDictionary(dict: [String: AnyObject], keyPath: String, value: AnyObject?) -> [String: AnyObject] {
     var dictToEdit: [String: AnyObject] = dict
-    
-    let keys = keyPath.characters.split { $0 == "." }.map(String.init)
+
+    let keys = keyPath.split(separator: ".").map(String.init)
     for (i, key) in keys.enumerated() {
         if keys.count == 1 {
             dictToEdit[key] = value

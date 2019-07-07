@@ -1,9 +1,8 @@
 import Foundation
 
-
 internal func identityAsString(_ value: Any?) -> String {
     let anyObject: AnyObject?
-#if os(Linux)
+#if os(Linux) && !swift(>=4.1.50)
     anyObject = value as? AnyObject
 #else
     anyObject = value as AnyObject?
@@ -51,7 +50,7 @@ extension NSNumber: TestOutputStringConvertible {
     // the travis CI build on linux.
     public var testDescription: String {
         let description = self.description
-        
+
         if description.contains(".") {
             // Travis linux swiftpm build doesn't like casting String to NSString,
             // which is why this annoying nested initializer thing is here.
@@ -87,14 +86,14 @@ extension AnySequence: TestOutputStringConvertible {
         let generator = self.makeIterator()
         var strings = [String]()
         var value: AnySequence.Iterator.Element?
-        
+
         repeat {
             value = generator.next()
             if let value = value {
                 strings.append(stringify(value))
             }
         } while value != nil
-        
+
         let list = strings.joined(separator: ", ")
         return "[\(list)]"
     }
@@ -123,6 +122,7 @@ extension String: TestOutputStringConvertible {
 extension Data: TestOutputStringConvertible {
     public var testDescription: String {
         #if os(Linux)
+            // swiftlint:disable:next todo
             // FIXME: Swift on Linux triggers a segfault when calling NSData's hash() (last checked on 03-11-16)
             return "Data<length=\(count)>"
         #else
@@ -145,27 +145,21 @@ extension Data: TestOutputStringConvertible {
 ///     will return the result of constructing a string from the value.
 ///
 /// - SeeAlso: `TestOutputStringConvertible`
-public func stringify<T>(_ value: T) -> String {
+public func stringify<T>(_ value: T?) -> String {
+    guard let value = value else { return "nil" }
+
     if let value = value as? TestOutputStringConvertible {
         return value.testDescription
     }
-    
+
     if let value = value as? CustomDebugStringConvertible {
         return value.debugDescription
     }
-    
+
     return String(describing: value)
 }
 
-/// -SeeAlso: `stringify<T>(value: T)`
-public func stringify<T>(_ value: T?) -> String {
-    if let unboxed = value {
-        return stringify(unboxed)
-    }
-    return "nil"
-}
-
-#if _runtime(_ObjC)
+#if canImport(Darwin)
 @objc public class NMBStringer: NSObject {
     @objc public class func stringify(_ obj: Any?) -> String {
         return Nimble.stringify(obj)

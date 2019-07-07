@@ -59,8 +59,17 @@
         expect(@[@"a", @"b", @"c"]).to(contain(@"a", @"bar"));
     });
 
-    expectFailureMessage(@"expected to not contain <Optional(bar), Optional(b)>, got <(a, b, c)>", ^{
-        expect(@[@"a", @"b", @"c"]).toNot(contain(@"bar", @"b"));
+    expectFailureMessage(@"expected to not contain <Optional(a), Optional(b)>, got <(a, b, c)>", ^{
+        expect(@[@"a", @"b", @"c"]).toNot(contain(@"a", @"b"));
+    });
+}
+
+- (void)testUnsupportedTypes {
+    expectFailureMessage(@"expected to contain <foo> (only works for NSArrays, NSSets, NSHashTables, and NSStrings), got <1>", ^{
+        expect(@1).to(contain(@"foo"));
+    });
+    expectFailureMessage(@"expected to not contain <foo> (only works for NSArrays, NSSets, NSHashTables, and NSStrings), got <1>", ^{
+        expect(@1).toNot(contain(@"foo"));
     });
 }
 

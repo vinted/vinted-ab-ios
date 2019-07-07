@@ -3,13 +3,6 @@ import XCTest
 import Nimble
 
 final class EndWithTest: XCTestCase, XCTestCaseProvider {
-    static var allTests: [(String, (EndWithTest) -> () throws -> Void)] {
-        return [
-            ("testEndWithPositives", testEndWithPositives),
-            ("testEndWithNegatives", testEndWithNegatives),
-        ]
-    }
-
     func testEndWithPositives() {
         expect([1, 2, 3]).to(endWith(3))
         expect([1, 2, 3]).toNot(endWith(2))
@@ -23,7 +16,7 @@ final class EndWithTest: XCTestCase, XCTestCaseProvider {
         expect(NSString(string: "foobar").description).to(endWith("bar"))
         expect(NSString(string: "foobar").description).toNot(endWith("oo"))
 
-#if _runtime(_ObjC)
+#if os(macOS) || os(iOS) || os(tvOS) || os(watchOS)
         expect(NSArray(array: ["a", "b"])).to(endWith("b"))
         expect(NSArray(array: ["a", "b"])).toNot(endWith("a"))
         expect(NSArray(array: [])).toNot(endWith("a"))

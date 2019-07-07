@@ -6,7 +6,7 @@ public protocol VNTModel {
 }
 
 public extension VNTModel {
-    public static func unboxIdentifier(from dictionary: [String : Any]) -> String? {
+    static func unboxIdentifier(from dictionary: [String : Any]) -> String? {
         if let stringValue = dictionary["id"] as? String {
             return stringValue
         } else if let intValue = dictionary["id"] as? Int {

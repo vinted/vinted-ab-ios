@@ -3,10 +3,10 @@
 # * https://github.com/supermarin/xcpretty#usage
 
 language: objective-c
-osx_image: xcode9
+osx_image: xcode10.2
 xcode_project: vinted-ab-ios.xcodeproj
 xcode_scheme: vinted-ab-ios
-before_install: 
+before_install:
   - carthage bootstrap --platform iOS --verbose
 script:
-  - xcodebuild clean build test -project vinted-ab-ios.xcodeproj -scheme vinted-ab-ios -destination 'platform=iOS Simulator,OS=11.0,name=iPhone X'
+  - xcodebuild clean build test -project vinted-ab-ios.xcodeproj -scheme vinted-ab-ios -destination 'platform=iOS Simulator,name=iPhone Xs'

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Quick.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "732D8D691E516780008558BD"
+               BuildableName = "SwiftLint"
+               BlueprintName = "SwiftLint"
+               ReferencedContainer = "container:Quick.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -33,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DAEB6B981943873100289F44"
-               BuildableName = "Quick-macOSTests.xctest"
-               BlueprintName = "Quick-macOSTests"
+               BuildableName = "Quick - macOSTests.xctest"
+               BlueprintName = "Quick - macOSTests"
                ReferencedContainer = "container:Quick.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,8 +57,18 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DA5663E71A4C8D8500193C88"
-               BuildableName = "QuickFocused-macOSTests.xctest"
-               BlueprintName = "QuickFocused-macOSTests"
+               BuildableName = "QuickFocused - macOSTests.xctest"
+               BlueprintName = "QuickFocused - macOSTests"
+               ReferencedContainer = "container:Quick.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "64076CE51D6D7C2000E2B499"
+               BuildableName = "QuickAfterSuite - macOSTests.xctest"
+               BlueprintName = "QuickAfterSuite - macOSTests"
                ReferencedContainer = "container:Quick.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -63,7 +63,7 @@ function test_ios {
 
 function test_tvos {
     run osascript -e 'tell app "Simulator" to quit'
-    run xcodebuild -project Nimble.xcodeproj -scheme "Nimble-tvOS" -configuration "Debug" -sdk "appletvsimulator$BUILD_TVOS_SDK_VERSION" -destination "name=Apple TV 1080p,OS=$RUNTIME_TVOS_SDK_VERSION" build-for-testing test-without-building
+    run xcodebuild -project Nimble.xcodeproj -scheme "Nimble-tvOS" -configuration "Debug" -sdk "appletvsimulator$BUILD_TVOS_SDK_VERSION" -destination "name=Apple TV,OS=$RUNTIME_TVOS_SDK_VERSION" build-for-testing test-without-building
 }
 
 function test_macos {
@@ -74,14 +74,24 @@ function test_podspec {
     echo "Gathering CocoaPods installation information..."
     run bundle exec pod --version
     echo "Linting podspec..."
-    run bundle exec pod lib lint Nimble.podspec
+    # To work around the lint error: "ERROR | swift: Specification `Nimble` specifies an inconsistent `swift_version` (`4.0`) compared to the one present in your `.swift-version` file (`4.1`). Please remove the `.swift-version` file which is now deprecated and only use the `swift_version` attribute within your podspec."
+    # `.swift-version` is for swiftenv, not for CocoaPods, so we can't remove the file as suggested.
+    run mv .swift-version .swift-version.backup
+    # Note: remove `--allow-warnings` once old Matcher API has been removed
+    run bundle exec pod lib lint Nimble.podspec --allow-warnings --skip-import-validation
+    run mv .swift-version.backup .swift-version
 }
 
 function test_swiftpm {
     if [ -d .build ]; then
-        run swift build --clean
+        run swift package clean
     fi
     run swift build && swift test
+}
+
+function test_swiftpm_docker {
+    run docker build -t nimble-tests -f Dockerfile.test --no-cache .
+    run docker run -it --privileged=true nimble-tests
 }
 
 function test() {
@@ -94,6 +104,12 @@ function test() {
     else
         echo "Not testing with the Swift Package Manager because swift-test is not installed"
     fi
+
+    if which docker; then
+        test_swiftpm_docker
+    else
+        echo "Not testing linux in docker container since docker is not in PATH!"
+    fi
 }
 
 function clean {
@@ -104,14 +120,15 @@ function help {
     echo "Usage: $0 COMMANDS"
     echo
     echo "COMMANDS:"
-    echo " clean        - Cleans the derived data directory of Xcode. Assumes default location"
-    echo " ios          - Runs the tests as an iOS device"
-    echo " tvos         - Runs the tests as an tvOS device"
-    echo " macos        - Runs the tests on macOS 10.10 (Yosemite and newer only)"
-    echo " podspec      - Runs pod lib lint against the podspec to detect breaking changes"
-    echo " all          - Runs the all tests of macos, ios and tvos"
-    echo " swiftpm      - Runs the tests built by the Swift Package Manager"
-    echo " help         - Displays this help"
+    echo " all             - Runs the all tests of macos, ios and tvos"
+    echo " clean           - Cleans the derived data directory of Xcode. Assumes default location"
+    echo " help            - Displays this help"
+    echo " ios             - Runs the tests as an iOS device"
+    echo " macos           - Runs the tests on macOS 10.10 (Yosemite and newer only)"
+    echo " podspec         - Runs pod lib lint against the podspec to detect breaking changes"
+    echo " swiftpm         - Runs the tests built by the Swift Package Manager"
+    echo " swiftpm_docker  - Runs the tests built by the Swift Package Manager in a docker linux container"
+    echo " tvos            - Runs the tests as an tvOS device"
     echo
     exit 1
 }
@@ -129,6 +146,7 @@ function main {
             test) test ;;
             all) test ;;
             swiftpm) test_swiftpm ;;
+            swiftpm_docker) test_swiftpm_docker ;;
             help) help ;;
         esac
     done

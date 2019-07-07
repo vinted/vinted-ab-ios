@@ -3,17 +3,6 @@ import XCTest
 import Nimble
 
 final class BeIdenticalToObjectTest: XCTestCase, XCTestCaseProvider {
-    static var allTests: [(String, (BeIdenticalToObjectTest) -> () throws -> Void)] {
-        return [
-            ("testBeIdenticalToPositive", testBeIdenticalToPositive),
-            ("testBeIdenticalToNegative", testBeIdenticalToNegative),
-            ("testBeIdenticalToPositiveMessage", testBeIdenticalToPositiveMessage),
-            ("testBeIdenticalToNegativeMessage", testBeIdenticalToNegativeMessage),
-            ("testFailsOnNils", testFailsOnNils),
-            ("testOperators", testOperators),
-        ]
-    }
-
     private class BeIdenticalToObjectTester {}
     private let testObjectA = BeIdenticalToObjectTester()
     private let testObjectB = BeIdenticalToObjectTester()
@@ -21,11 +10,11 @@ final class BeIdenticalToObjectTest: XCTestCase, XCTestCaseProvider {
     func testBeIdenticalToPositive() {
         expect(self.testObjectA).to(beIdenticalTo(testObjectA))
     }
-    
+
     func testBeIdenticalToNegative() {
         expect(self.testObjectA).toNot(beIdenticalTo(testObjectB))
     }
-    
+
     func testBeIdenticalToPositiveMessage() {
         let message = String(describing: NSString(format: "expected to be identical to <%p>, got <%p>",
             unsafeBitCast(testObjectB, to: Int.self), unsafeBitCast(testObjectA, to: Int.self)))
@@ -33,7 +22,7 @@ final class BeIdenticalToObjectTest: XCTestCase, XCTestCaseProvider {
             expect(self.testObjectA).to(beIdenticalTo(self.testObjectB))
         }
     }
-    
+
     func testBeIdenticalToNegativeMessage() {
         let message = String(describing: NSString(format: "expected to not be identical to <%p>, got <%p>",
             unsafeBitCast(testObjectA, to: Int.self), unsafeBitCast(testObjectA, to: Int.self)))
@@ -55,7 +44,7 @@ final class BeIdenticalToObjectTest: XCTestCase, XCTestCaseProvider {
             expect(nil as BeIdenticalToObjectTester?).toNot(beIdenticalTo(self.testObjectA))
         }
     }
-    
+
     func testOperators() {
         expect(self.testObjectA) === testObjectA
         expect(self.testObjectA) !== testObjectB

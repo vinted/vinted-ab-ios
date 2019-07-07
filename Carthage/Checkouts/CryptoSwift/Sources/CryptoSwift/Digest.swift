@@ -1,8 +1,7 @@
 //
-//  Hash.swift
 //  CryptoSwift
 //
-//  Copyright (C) 2014-2017 Krzyżanowski <marcin@krzyzanowskim.com>
+//  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
 //  This software is provided 'as-is', without any express or implied warranty.
 //
 //  In no event will the authors be held liable for any damages arising from the use of this software.
@@ -14,12 +13,11 @@
 //  - This notice may not be removed or altered from any source or binary distribution.
 //
 
-@available(*, deprecated: 0.6.0, renamed: "Digest")
+@available(*, renamed: "Digest")
 public typealias Hash = Digest
 
 /// Hash functions to calculate Digest.
 public struct Digest {
-
     /// Calculate MD5 Digest
     /// - parameter bytes: input message
     /// - returns: Digest bytes
@@ -69,7 +67,6 @@ public struct Digest {
     public static func sha2(_ bytes: Array<UInt8>, variant: SHA2.Variant) -> Array<UInt8> {
         return SHA2(variant: variant).calculate(for: bytes)
     }
-
 
     /// Calculate SHA3 Digest
     /// - parameter bytes: input message

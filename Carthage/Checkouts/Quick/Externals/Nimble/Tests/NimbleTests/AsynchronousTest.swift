@@ -1,30 +1,11 @@
+import Dispatch
 import Foundation
 import XCTest
 import Nimble
 
-// These tests require the ObjC runtimes do not currently have the GCD and run loop facilities
-// required for working with Nimble's async matchers
-#if _runtime(_ObjC)
-
 final class AsyncTest: XCTestCase, XCTestCaseProvider {
-    static var allTests: [(String, (AsyncTest) -> () throws -> Void)] {
-        return [
-            ("testToEventuallyPositiveMatches", testToEventuallyPositiveMatches),
-            ("testToEventuallyNegativeMatches", testToEventuallyNegativeMatches),
-            ("testWaitUntilPositiveMatches", testWaitUntilPositiveMatches),
-            ("testToEventuallyWithCustomDefaultTimeout", testToEventuallyWithCustomDefaultTimeout),
-            ("testWaitUntilTimesOutIfNotCalled", testWaitUntilTimesOutIfNotCalled),
-            ("testWaitUntilTimesOutWhenExceedingItsTime", testWaitUntilTimesOutWhenExceedingItsTime),
-            ("testWaitUntilNegativeMatches", testWaitUntilNegativeMatches),
-            ("testWaitUntilDetectsStalledMainThreadActivity", testWaitUntilDetectsStalledMainThreadActivity),
-            ("testCombiningAsyncWaitUntilAndToEventuallyIsNotAllowed", testCombiningAsyncWaitUntilAndToEventuallyIsNotAllowed),
-            ("testWaitUntilErrorsIfDoneIsCalledMultipleTimes", testWaitUntilErrorsIfDoneIsCalledMultipleTimes),
-            ("testWaitUntilMustBeInMainThread", testWaitUntilMustBeInMainThread),
-            ("testToEventuallyMustBeInMainThread", testToEventuallyMustBeInMainThread),
-        ]
-    }
-
-    let errorToThrow = NSError(domain: NSExceptionName.internalInconsistencyException.rawValue, code: 42, userInfo: nil)
+    class Error: Swift.Error {}
+    let errorToThrow = Error()
 
     private func doThrowError() throws -> Int {
         throw errorToThrow
@@ -47,10 +28,10 @@ final class AsyncTest: XCTestCase, XCTestCaseProvider {
         failsWithErrorMessage("expected to eventually equal <1>, got <0>") {
             expect { value }.toEventually(equal(1))
         }
-        failsWithErrorMessage("expected to eventually equal <1>, got an unexpected error thrown: <\(errorToThrow)>") {
+        failsWithErrorMessage("unexpected error thrown: <\(errorToThrow)>") {
             expect { try self.doThrowError() }.toEventually(equal(1))
         }
-        failsWithErrorMessage("expected to eventually not equal <0>, got an unexpected error thrown: <\(errorToThrow)>") {
+        failsWithErrorMessage("unexpected error thrown: <\(errorToThrow)>") {
             expect { try self.doThrowError() }.toEventuallyNot(equal(0))
         }
     }
@@ -63,28 +44,31 @@ final class AsyncTest: XCTestCase, XCTestCaseProvider {
 
         var value = 0
 
-        let sleepThenSetValueTo: (Int) -> () = { newValue in
+        let sleepThenSetValueTo: (Int) -> Void = { newValue in
             Thread.sleep(forTimeInterval: 1.1)
             value = newValue
         }
 
-        var asyncOperation: () -> () = { sleepThenSetValueTo(1) }
+        var asyncOperation: () -> Void = { sleepThenSetValueTo(1) }
 
-        if #available(OSX 10.10, *) {
-            DispatchQueue.global().async(execute: asyncOperation)
-        } else {
-            DispatchQueue.global(priority: .default).async(execute: asyncOperation)
-        }
+        DispatchQueue.global().async(execute: asyncOperation)
         expect { value }.toEventually(equal(1))
 
         asyncOperation = { sleepThenSetValueTo(0) }
 
-        if #available(OSX 10.10, *) {
-            DispatchQueue.global().async(execute: asyncOperation)
-        } else {
-            DispatchQueue.global(priority: .default).async(execute: asyncOperation)
-        }
+        DispatchQueue.global().async(execute: asyncOperation)
         expect { value }.toEventuallyNot(equal(1))
+    }
+
+    func testWaitUntilWithCustomDefaultsTimeout() {
+        AsyncDefaults.Timeout = 5
+        defer {
+            AsyncDefaults.Timeout = 1
+        }
+        waitUntil { done in
+            Thread.sleep(forTimeInterval: 4.8)
+            done()
+        }
     }
 
     func testWaitUntilPositiveMatches() {
@@ -100,7 +84,7 @@ final class AsyncTest: XCTestCase, XCTestCaseProvider {
 
     func testWaitUntilTimesOutIfNotCalled() {
         failsWithErrorMessage("Waited more than 1.0 second") {
-            waitUntil(timeout: 1) { done in return }
+            waitUntil(timeout: 1) { _ in return }
         }
     }
 
@@ -108,16 +92,12 @@ final class AsyncTest: XCTestCase, XCTestCaseProvider {
         var waiting = true
         failsWithErrorMessage("Waited more than 0.01 seconds") {
             waitUntil(timeout: 0.01) { done in
-                let asyncOperation: () -> () = {
+                let asyncOperation: () -> Void = {
                     Thread.sleep(forTimeInterval: 0.1)
                     done()
                     waiting = false
                 }
-                if #available(OSX 10.10, *) {
-                    DispatchQueue.global().async(execute: asyncOperation)
-                } else {
-                    DispatchQueue.global(priority: .default).async(execute: asyncOperation)
-                }
+                DispatchQueue.global().async(execute: asyncOperation)
             }
         }
 
@@ -150,15 +130,16 @@ final class AsyncTest: XCTestCase, XCTestCaseProvider {
     func testCombiningAsyncWaitUntilAndToEventuallyIsNotAllowed() {
         // Currently we are unable to catch Objective-C exceptions when built by the Swift Package Manager
 #if !SWIFT_PACKAGE
-        let referenceLine = #line + 9
-        var msg = "Unexpected exception raised: Nested async expectations are not allowed "
-        msg += "to avoid creating flaky tests."
-        msg += "\n\n"
-        msg += "The call to\n\t"
-        msg += "expect(...).toEventually(...) at \(#file):\(referenceLine + 7)\n"
-        msg += "triggered this exception because\n\t"
-        msg += "waitUntil(...) at \(#file):\(referenceLine + 1)\n"
-        msg += "is currently managing the main run loop."
+        let referenceLine = #line + 10
+        let msg = """
+            Unexpected exception raised: Nested async expectations are not allowed to avoid creating flaky tests.
+
+            The call to
+            \texpect(...).toEventually(...) at \(#file):\(referenceLine + 7)
+            triggered this exception because
+            \twaitUntil(...) at \(#file):\(referenceLine + 1)
+            is currently managing the main run loop.
+            """
         failsWithErrorMessage(msg) { // reference line
             waitUntil(timeout: 2.0) { done in
                 var protected: Int = 0
@@ -174,32 +155,26 @@ final class AsyncTest: XCTestCase, XCTestCaseProvider {
     }
 
     func testWaitUntilErrorsIfDoneIsCalledMultipleTimes() {
-#if !SWIFT_PACKAGE
-        waitUntil { done in
-            deferToMainQueue {
-                done()
-                expect {
+        failsWithErrorMessage("waitUntil(..) expects its completion closure to be only called once") {
+            waitUntil { done in
+                deferToMainQueue {
                     done()
-                }.to(raiseException(named: "InvalidNimbleAPIUsage"))
+                    done()
+                }
             }
         }
-#endif
     }
 
     func testWaitUntilMustBeInMainThread() {
 #if !SWIFT_PACKAGE
         var executedAsyncBlock: Bool = false
-        let asyncOperation: () -> () = {
+        let asyncOperation: () -> Void = {
             expect {
                 waitUntil { done in done() }
             }.to(raiseException(named: "InvalidNimbleAPIUsage"))
             executedAsyncBlock = true
         }
-        if #available(OSX 10.10, *) {
-            DispatchQueue.global().async(execute: asyncOperation)
-        } else {
-            DispatchQueue.global(priority: .default).async(execute: asyncOperation)
-        }
+        DispatchQueue.global().async(execute: asyncOperation)
         expect(executedAsyncBlock).toEventually(beTruthy())
 #endif
     }
@@ -207,20 +182,38 @@ final class AsyncTest: XCTestCase, XCTestCaseProvider {
     func testToEventuallyMustBeInMainThread() {
 #if !SWIFT_PACKAGE
         var executedAsyncBlock: Bool = false
-        let asyncOperation: () -> () = {
+        let asyncOperation: () -> Void = {
             expect {
                 expect(1).toEventually(equal(2))
             }.to(raiseException(named: "InvalidNimbleAPIUsage"))
             executedAsyncBlock = true
         }
-        if #available(OSX 10.10, *) {
-            DispatchQueue.global().async(execute: asyncOperation)
-        } else {
-            DispatchQueue.global(priority: .default).async(execute: asyncOperation)
-        }
+        DispatchQueue.global().async(execute: asyncOperation)
         expect(executedAsyncBlock).toEventually(beTruthy())
 #endif
     }
-}
-#endif
 
+    final class ClassUnderTest {
+        var deinitCalled: (() -> Void)?
+        var count = 0
+        deinit { deinitCalled?() }
+    }
+
+    func testSubjectUnderTestIsReleasedFromMemory() {
+        var subject: ClassUnderTest? = ClassUnderTest()
+
+        if let sub = subject {
+            expect(sub.count).toEventually(equal(0), timeout: 0.1)
+            expect(sub.count).toEventuallyNot(equal(1), timeout: 0.1)
+        }
+
+        waitUntil(timeout: 0.5) { done in
+            subject?.deinitCalled = {
+                done()
+            }
+
+            deferToMainQueue { subject = nil }
+        }
+    }
+
+}

@@ -5,6 +5,7 @@ import CryptoSwift
 public final class VNTABTestConfig: NSObject, VNTModel {
     public let salt: String
     public let bucketCount: Int
+    @objc
     public let abTests: [VNTABTest]
     
     public required init?(dictionary: [String : Any]) {
@@ -28,7 +29,8 @@ public final class VNTABTestConfig: NSObject, VNTModel {
             }
         }()
     }
-    
+
+    @objc
     public func assignedVariant(forTestName name:String, identifier:String) -> VNTABTestVariant? {
         guard let test = abtest(forName: name) else {
             return nil
@@ -48,7 +50,7 @@ public final class VNTABTestConfig: NSObject, VNTModel {
         
         let bucketCount = BigInt(self.bucketCount)
         let remainder = bigInteger % bucketCount
-        return Int(truncatingBitPattern: remainder.toIntMax())
+        return Int(truncatingIfNeeded: remainder)
     }
     
     private func hexDigestedString(fromString: String) -> String? {
@@ -97,7 +99,7 @@ public final class VNTABTestConfig: NSObject, VNTModel {
         let variantWeightSum = self.variantWeightSum(ofTest: test)
         let variantWeightSumBigInteger = BigInt(variantWeightSum > 0 ? variantWeightSum : 1)
         let remainder = bigInteger % variantWeightSumBigInteger
-        return Int(truncatingBitPattern: remainder.toIntMax())
+        return Int(truncatingIfNeeded: remainder)
     }
     
     private func variantWeightSum(ofTest: VNTABTest) -> Int {

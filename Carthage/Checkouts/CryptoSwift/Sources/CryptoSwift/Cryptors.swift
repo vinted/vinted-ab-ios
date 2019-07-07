@@ -1,8 +1,7 @@
 //
-//  Cryptors.swift
 //  CryptoSwift
 //
-//  Copyright (C) 2014-2017 Krzyżanowski <marcin@krzyzanowskim.com>
+//  Copyright (C) 2014-2017 Marcin Krzyżanowski <marcin@krzyzanowskim.com>
 //  This software is provided 'as-is', without any express or implied warranty.
 //
 //  In no event will the authors be held liable for any damages arising from the use of this software.
@@ -14,29 +13,26 @@
 //  - This notice may not be removed or altered from any source or binary distribution.
 //
 
-#if os(Linux) || os(Android) || os(FreeBSD)
-    import Glibc
+#if canImport(Darwin)
+import Darwin
 #else
-    import Darwin
+import Glibc
 #endif
 
 /// Worker cryptor/decryptor of `Updatable` types
 public protocol Cryptors: class {
-    associatedtype EncryptorType: Updatable
-    associatedtype DecryptorType: Updatable
 
     /// Cryptor suitable for encryption
-    func makeEncryptor() -> EncryptorType
+    func makeEncryptor() throws -> Cryptor & Updatable
 
     /// Cryptor suitable for decryption
-    func makeDecryptor() -> DecryptorType
+    func makeDecryptor() throws -> Cryptor & Updatable
 
     /// Generate array of random bytes. Helper function.
     static func randomIV(_ blockSize: Int) -> Array<UInt8>
 }
 
 extension Cryptors {
-
     public static func randomIV(_ blockSize: Int) -> Array<UInt8> {
         var randomIV: Array<UInt8> = Array<UInt8>()
         randomIV.reserveCapacity(blockSize)

@@ -17,8 +17,8 @@ import Quick
 import Nimble
 
 class EdibleSharedExamplesConfiguration: QuickConfiguration {
-  override class func configure(configuration: Configuration) {
-    sharedExamples("something edible") { (sharedExampleContext: SharedExampleContext) in
+  override class func configure(_ configuration: Configuration) {
+    sharedExamples("something edible") { (sharedExampleContext: @escaping SharedExampleContext) in
       it("makes dolphins happy") {
         let dolphin = Dolphin(happy: false)
         let edible = sharedExampleContext()["edible"]
@@ -81,7 +81,7 @@ beforeEach(^{
   mackerel = [[Mackerel alloc] init];
 });
 
-itBehavesLike(@"someting edible", ^{ return @{ @"edible": mackerel }; });
+itBehavesLike(@"something edible", ^{ return @{ @"edible": mackerel }; });
 
 QuickSpecEnd
 
@@ -92,7 +92,7 @@ beforeEach(^{
   cod = [[Cod alloc] init];
 });
 
-itBehavesLike(@"someting edible", ^{ return @{ @"edible": cod }; });
+itBehavesLike(@"something edible", ^{ return @{ @"edible": cod }; });
 
 QuickSpecEnd
 ```

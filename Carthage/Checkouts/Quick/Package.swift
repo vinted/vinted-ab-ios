@@ -1,18 +1,45 @@
+// swift-tools-version:5.0
+
 import PackageDescription
 
 let package = Package(
     name: "Quick",
-    // TODO: Once the `test` command has been implemented in the Swift Package Manager, this should be changed to
-    // be `testDependencies:` instead. For now it has to be done like this for the library to get linked with the test targets.
-    // See: https://github.com/apple/swift-evolution/blob/master/proposals/0019-package-manager-testing.md
-    dependencies: [
-        .Package(url: "https://github.com/Quick/Nimble", "5.0.0")
+    platforms: [
+        .macOS(.v10_10), .iOS(.v8), .tvOS(.v9)
     ],
-    exclude: [
-      "Sources/QuickObjectiveC",
-      "Tests/QuickTests/QuickFocusedTests/FocusedTests+ObjC.m",
-      "Tests/QuickTests/QuickTests/FunctionalTests/ObjC",
-      "Tests/QuickTests/QuickTests/Helpers",
-      "Tests/QuickTests/QuickTests/QuickConfigurationTests.m",
-    ]
+    products: [
+        .library(name: "Quick", targets: ["Quick"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/Quick/Nimble.git", from: "8.0.0"),
+    ],
+    targets: {
+        var targets: [Target] = [
+            .testTarget(
+                name: "QuickTests",
+                dependencies: [ "Quick", "Nimble" ],
+                exclude: [
+                    "QuickAfterSuiteTests/AfterSuiteTests+ObjC.m",
+                    "QuickFocusedTests/FocusedTests+ObjC.m",
+                    "QuickTests/FunctionalTests/ObjC",
+                    "QuickTests/Helpers/QCKSpecRunner.h",
+                    "QuickTests/Helpers/QCKSpecRunner.m",
+                    "QuickTests/Helpers/QuickTestsBridgingHeader.h",
+                    "QuickTests/QuickConfigurationTests.m",
+                ]
+            ),
+        ]
+#if os(macOS)
+        targets.append(contentsOf: [
+            .target(name: "QuickSpecBase", dependencies: []),
+            .target(name: "Quick", dependencies: [ "QuickSpecBase" ]),
+        ])
+#else
+        targets.append(contentsOf: [
+            .target(name: "Quick", dependencies: []),
+        ])
+#endif
+        return targets
+    }(),
+    swiftLanguageVersions: [.v5]
 )

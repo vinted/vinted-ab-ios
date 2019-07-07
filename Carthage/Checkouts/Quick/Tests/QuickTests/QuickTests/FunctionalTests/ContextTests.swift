@@ -2,7 +2,7 @@ import XCTest
 import Quick
 import Nimble
 
-#if _runtime(_ObjC) && !SWIFT_PACKAGE
+#if canImport(Darwin) && !SWIFT_PACKAGE
 class QuickContextTests: QuickSpec {
     override func spec() {
         describe("Context") {

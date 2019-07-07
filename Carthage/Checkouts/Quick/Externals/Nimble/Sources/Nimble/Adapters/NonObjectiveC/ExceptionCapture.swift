@@ -1,6 +1,6 @@
 import Foundation
 
-#if !_runtime(_ObjC)
+#if !canImport(Darwin)
 // swift-corelibs-foundation doesn't provide NSException at all, so provide a dummy
 class NSException {}
 #endif

@@ -18,3 +18,7 @@ timeline.xctimeline
 
 /Framework
 .DS_Store
+Carthage/Build
+
+.idea
+.vscode

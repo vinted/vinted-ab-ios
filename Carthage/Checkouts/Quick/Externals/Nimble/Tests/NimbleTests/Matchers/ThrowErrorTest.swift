@@ -1,54 +1,54 @@
 import XCTest
 import Nimble
 
-enum NimbleError : Error {
+enum NimbleError: Error {
     case laugh
     case cry
 }
 
-enum EquatableError : Error {
+enum EquatableError: Error {
     case parameterized(x: Int)
 }
 
-extension EquatableError : Equatable {
+extension EquatableError: CustomDebugStringConvertible {
+    var debugDescription: String {
+        switch self {
+        case .parameterized(let x):
+            return "parameterized(x: \(x))"
+        }
+    }
 }
 
-func ==(lhs: EquatableError, rhs: EquatableError) -> Bool {
+extension EquatableError: Equatable {
+}
+
+func == (lhs: EquatableError, rhs: EquatableError) -> Bool {
     switch (lhs, rhs) {
     case (.parameterized(let l), .parameterized(let r)):
         return l == r
     }
 }
 
-enum CustomDebugStringConvertibleError : Error {
+enum CustomDebugStringConvertibleError: Error {
+    // swiftlint:disable identifier_name
     case a
     case b
+    // swiftlint:enable identifier_name
 }
 
-extension CustomDebugStringConvertibleError : CustomDebugStringConvertible {
-    var debugDescription : String {
+extension CustomDebugStringConvertibleError: CustomDebugStringConvertible {
+    var debugDescription: String {
         return "code=\(_code)"
     }
 }
 
 final class ThrowErrorTest: XCTestCase, XCTestCaseProvider {
-    static var allTests: [(String, (ThrowErrorTest) -> () throws -> Void)] {
-        return [
-            ("testPositiveMatches", testPositiveMatches),
-            ("testPositiveMatchesWithClosures", testPositiveMatchesWithClosures),
-            ("testNegativeMatches", testNegativeMatches),
-            ("testPositiveNegatedMatches", testPositiveNegatedMatches),
-            ("testNegativeNegatedMatches", testNegativeNegatedMatches),
-            ("testNegativeMatchesDoNotCallClosureWithoutError", testNegativeMatchesDoNotCallClosureWithoutError),
-            ("testNegativeMatchesWithClosure", testNegativeMatchesWithClosure),
-        ]
-    }
-
     func testPositiveMatches() {
         expect { throw NimbleError.laugh }.to(throwError())
         expect { throw NimbleError.laugh }.to(throwError(NimbleError.laugh))
         expect { throw NimbleError.laugh }.to(throwError(errorType: NimbleError.self))
         expect { throw EquatableError.parameterized(x: 1) }.to(throwError(EquatableError.parameterized(x: 1)))
+        expect { throw EquatableError.parameterized(x: 1) }.toNot(throwError(EquatableError.parameterized(x: 2)))
     }
 
     func testPositiveMatchesWithClosures() {
@@ -79,11 +79,11 @@ final class ThrowErrorTest: XCTestCase, XCTestCaseProvider {
 
     func testNegativeMatches() {
         // Same case, different arguments
-        failsWithErrorMessage("expected to throw error <parameterized(2)>, got <parameterized(1)>") {
+        failsWithErrorMessage("expected to throw error <parameterized(x: 2)>, got <parameterized(x: 1)>") {
             expect { throw EquatableError.parameterized(x: 1) }.to(throwError(EquatableError.parameterized(x: 2)))
         }
         // Same case, different arguments
-        failsWithErrorMessage("expected to throw error <parameterized(2)>, got <parameterized(1)>") {
+        failsWithErrorMessage("expected to throw error <parameterized(x: 2)>, got <parameterized(x: 1)>") {
             expect { throw EquatableError.parameterized(x: 1) }.to(throwError(EquatableError.parameterized(x: 2)))
         }
         // Different case
@@ -120,13 +120,13 @@ final class ThrowErrorTest: XCTestCase, XCTestCaseProvider {
 
     func testNegativeMatchesDoNotCallClosureWithoutError() {
         failsWithErrorMessage("expected to throw error that satisfies block, got no error") {
-            expect { return }.to(throwError { error in
+            expect { return }.to(throwError { _ in
                 fail()
             })
         }
-        
+
         failsWithErrorMessage("expected to throw error <laugh> that satisfies block, got no error") {
-            expect { return }.to(throwError(NimbleError.laugh) { error in
+            expect { return }.to(throwError(NimbleError.laugh) { _ in
                 fail()
             })
         }
@@ -136,7 +136,6 @@ final class ThrowErrorTest: XCTestCase, XCTestCaseProvider {
         let moduleName = "NimbleTests"
         let innerFailureMessage = "expected to equal <foo>, got <\(moduleName).NimbleError>"
         let closure = { (error: Error) in
-            print("** In closure! With domain \(error._domain)")
             expect(error._domain).to(equal("foo"))
         }
 
